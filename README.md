@@ -12,6 +12,9 @@ Link to Video Recordings on YouTube:
 
 https://www.youtube.com/watch?v=vvftvjnXzsY&list=PLpOGQvPCDQzsgK1XuhUXO8r9M4WRqhvDf
 
+Link to compiled slides for Summer 2021:
+https://zenodo.org/record/5850336#.YeGYIy1XYUE
+
 ## PDFs
 
 You can download the latest PDFs from the [CI](https://git5.cs.fau.de/teaching/MT1-lecture/pipelines).
