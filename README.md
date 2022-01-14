@@ -1,39 +1,16 @@
 [![pipeline status](https://git5.cs.fau.de/teaching/MT1-lecture/badges/master/pipeline.svg)](https://git5.cs.fau.de/teaching/MT1-lecture/pipelines)
 
-# Medizintechnik 2 – Lecture Slides
+# Medizintechnik – Lecture Slides
 
-This repo has submodules. So clone with 
+These are the lecture slides used at FAU Erlangen-Nuremberg, Germany for the lecture "Medical Engineering". This class gives a complete and comprehensive introduction to the fields of medical imaging systems, as designed for a broad range of applications. The authors of the book first explain the foundations of system theory and image processing, before highlighting several modalities in a dedicated chapter. The initial focus is on modalities that are closely related to traditional camera systems such as endoscopy and microscopy. This is followed by more complex image formation processes: magnetic resonance imaging, X-ray projection imaging, computed tomography, X-ray phase-contrast imaging, nuclear imaging, ultrasound, and optical coherence tomography.
 
-    git clone --recurse-submodules -j8 git@git5.cs.fau.de:teaching/MT1-lecture.git
+Open Access Link to the Text Book:
 
-There are symlinks to the LME beamer theme in each folder.
-This works only on Linux and MacOS.
-Windows users could copy the theme in the respective folders or change the theme folder in the preamble.
+https://link.springer.com/book/10.1007/978-3-319-96520-8#about
 
-## TODOs
+Link to Video Recordings on YouTube:
 
- - US
- - extend OCT-A?
-
-- Link to this demo: http://www.jezzamon.com/fourier/index.html
-
-Teach students about exception breakpoints in exercise slides:
-
- - https://stackoverflow.com/questions/3066199/break-when-exception-is-thrown
- - IntelliJ: Run | View Breakpoints | Exception Breakpoints
-
-For excercise:
-
-Enable this flag automatically in exercises. Java is not helpful by default.
-```
-Helpful NullPointerExceptions describing precisely which variable was null
-JDK 14 (enabled with -XX:+ShowCodeDetailsInExceptionMessages)
-
-a.b.c.i = 99;
----
-Exception in thread "main" java.lang.NullPointerException:
-      Cannot read field "c" because "a.b" is null
-```
+https://www.youtube.com/watch?v=vvftvjnXzsY&list=PLpOGQvPCDQzsgK1XuhUXO8r9M4WRqhvDf
 
 ## PDFs
 
