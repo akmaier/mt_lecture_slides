@@ -1,0 +1,28 @@
+\tikzsetnextfilename{mr_t2_preparation_spins_2}
+\begin{tikzpicture}[x  = {(-0.5cm,-0.5cm)},
+                    y  = {(0.9659cm,-0.25882cm)},
+                    z  = {(0cm,1cm)},
+                    scale = 2,
+                    >=stealth']
+
+	\draw[->] (1,0,1.2) -- (1,0,1.6) node [above] {$\B0$};
+	\draw[->] (0,0,0) -- (0,0,1) node [above] {$z$};
+	\draw[->] (0,-0.3,0) -- (0,1,0) node [right] {$y$};
+	\draw[->] (-0.3,0,0) -- (1,0,0) node [below left] {$x$};
+
+	\draw[->,ultra thick] (0,0,0) -- (0,-0.79,0);
+	\draw[->,ultra thick,densely dashed] (0.2,0,0) -- (0.2,-0.6,0);
+	\draw[->,ultra thick,densely dotted] (-0.2,0,0) -- (-0.2,-0.55);
+
+	\draw[->,ultra thick,lightgray] (0,0,0) -- (0,0.8,0);
+	\draw[->,ultra thick,densely dashed,lightgray] (0.2,0,0) -- (0.2,0.8,0);
+	\draw[->,ultra thick,densely dotted,lightgray] (-0.2,0,0) -- (-0.2,0.8,0);
+
+	\draw[overlay] (-0.2, 0.3, 0) to[out=80,in=0]  (-0.2, 0, 0.3) node [above, anchor=south west] {$180^\circ$ pulse};
+	\draw[->] (-0.2, 0, 0.3) to[out=180,in=80]  (-0.2, -0.3, 0);
+
+	%\draw (-0.2, 0, 0.6) -- +(-0.5, 0.4, 0.2) node [right] {venous blood};
+	%\draw (0, 0, 0.6)    -- +(-0.5, 0.4, 0.1) node [right] {arterial blood};
+	%\draw (0.2, 0, 0.6)  -- +(-0.5, 0.4, 0) node [right] {myocardium};
+
+\end{tikzpicture}

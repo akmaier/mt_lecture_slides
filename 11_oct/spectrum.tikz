@@ -1,0 +1,54 @@
+\renewcommand*{\do}[1]{
+  \storeRGBofWavelength{\Rval}{\Gval}{\Bval}{#1}
+  \definecolor{wl#1}{rgb}{\Rval, \Gval, \Bval}
+}
+\newdimen\XCoord
+\newdimen\YCoord
+\newcommand*{\ExtractCoordinate}[1]{\path (#1); \pgfgetlastxy{\XCoord}{\YCoord};}%
+\docsvlist{380,400,450,500,550,600,650,700,750,780}
+
+\pgfdeclarehorizontalshading{spectrum}{1.5cm}{
+  color(0cm)=(wl380);
+  color({0.2cm})=(wl400); color(0.7cm)=(wl450);
+  color(1.2cm)=(wl500); color(1.7cm)=(wl550);
+  color(2.2cm)=(wl600); color(2.7cm)=(wl650);
+  color(3.2cm)=(wl700); color(3.7cm)=(wl750);
+  color(4cm)=(wl780)
+}
+
+\begin{tikzpicture}
+
+
+  \node (spectrum) [inner sep=0pt] {\pgfuseshading{spectrum}};
+  \node (visible_box) [above=1.1cm of spectrum.north,draw=black!50, minimum height=1.5cm, fill=yellow!60] {\rotatebox{90}{Visible}};
+
+  \node (uv_box) [left=0cm of visible_box.west,draw=black!50, minimum height=1.5cm, minimum width=0.6cm] {UV};
+  \node (xray_box) [left=0cm of uv_box.west,draw=black!50, minimum height=1.5cm, minimum width=1.7cm] {X-rays};
+  \node (gamma_box) [left=0cm of xray_box.west,draw=black!50, minimum height=1.5cm] {Gamma rays};
+
+  \node (ir_box) [right=0cm of visible_box.east,draw=black!50, minimum height=1.5cm] {Infrared};
+  \node (micro_box) [right=0cm of ir_box.east,draw=black!50, minimum height=1.5cm] {Microwaves};
+  \node (radio_box) [right=0cm of micro_box.east,draw=black!50, minimum height=1.5cm] {Radio frequency};
+
+  \node (visible) [above=0.0cm of spectrum.north]  {\footnotesize Visible spectrum};
+  \node (purple) [below=0.1cm of spectrum.south west]  {\SI{400}{nm}};
+  \node (red) [below=0.1cm of spectrum.south east]  {\SI{750}{nm}};
+
+  %\node (left_wave) [above=0.2cm of xray_box.north west]  {\tiny $10^{-11}$};
+  \ExtractCoordinate{xray_box.north west}
+  \foreach \x in {-0,...,7}
+  {
+    \FPeval{\result}{round(2*\x-11,0)}
+    \node (right_wave) [] at ( 1.2cm*\x + \XCoord, 3.7cm )  {\color{black!80}{\scriptsize $10^{\result}$\,m}};
+  \node (foo) [] at ( 1.2cm*\x+\XCoord, \YCoord ) {};
+  \path[draw=black!30, line width=0.4mm] (right_wave.south) -- (foo.center) node[midway, above right] {};
+
+  }
+  \node (wavelength) [above left=0.3cm and 0.1cm of gamma_box.north west, anchor=west, inner sep= 0]  {\scriptsize \color{black!80}{Wavelength:}};
+  
+
+  %\node (right_wave) [above=0.2cm of xray_box.north west]  {\footnotesize $10^{-3}$};
+
+  \path[draw=black!50] (spectrum.north east) -- (visible_box.south east) node[midway, above right] {};
+  \path[draw=black!50] (spectrum.north west) -- (visible_box.south west) node[midway, above right] {};
+\end{tikzpicture}

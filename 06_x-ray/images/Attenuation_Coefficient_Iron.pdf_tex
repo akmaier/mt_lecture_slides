@@ -1,0 +1,113 @@
+%% Creator: Inkscape inkscape 0.92.4, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'Attenuation_Coefficient_Iron.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{979.5bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.68912711)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{Attenuation_Coefficient_Iron.pdf}}%
+    \put(0.11255743,0.0482389){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
+    \put(0.13399694,0.05589587){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-3\end{tabular}}}}%
+    \put(0.20980092,0.0482389){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
+    \put(0.23124043,0.05589587){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-2\end{tabular}}}}%
+    \put(0.30627871,0.0482389){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
+    \put(0.32771822,0.05589587){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-1\end{tabular}}}}%
+    \put(0.4058193,0.0482389){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
+    \put(0.42725881,0.05589587){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.50229709,0.0482389){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
+    \put(0.5237366,0.05589587){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1\end{tabular}}}}%
+    \put(0.59954058,0.0482389){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
+    \put(0.62098009,0.05589587){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2\end{tabular}}}}%
+    \put(0.69601838,0.0482389){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
+    \put(0.71745789,0.05589587){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3\end{tabular}}}}%
+    \put(0.79326187,0.0482389){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
+    \put(0.81470138,0.05589587){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}4\end{tabular}}}}%
+    \put(0.88973966,0.0482389){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
+    \put(0.91117917,0.05589587){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}5\end{tabular}}}}%
+    \put(0.45520712,0.02457672){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Energy (MeV)\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{Attenuation_Coefficient_Iron.pdf}}%
+    \put(0.08805513,0.06738132){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
+    \put(0.10949464,0.07503828){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-4\end{tabular}}}}%
+    \put(0.08805513,0.13782542){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
+    \put(0.10949464,0.14548239){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-3\end{tabular}}}}%
+    \put(0.08805513,0.20750383){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
+    \put(0.10949464,0.2151608){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-2\end{tabular}}}}%
+    \put(0.08805513,0.27794793){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
+    \put(0.10949464,0.2856049){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}-1\end{tabular}}}}%
+    \put(0.09264931,0.34839204){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
+    \put(0.11408882,0.356049){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.09264931,0.41883614){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
+    \put(0.11408882,0.42649311){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1\end{tabular}}}}%
+    \put(0.09264931,0.48851455){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
+    \put(0.11408882,0.49617152){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2\end{tabular}}}}%
+    \put(0.09264931,0.55895865){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
+    \put(0.11408882,0.56661562){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3\end{tabular}}}}%
+    \put(0.09264931,0.62940276){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
+    \put(0.11408882,0.63705972){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}4\end{tabular}}}}%
+    \put(0.07886677,0.26416539){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Attenuation (cm\end{tabular}}}}}%
+    \put(0.0704441,0.41347626){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2\end{tabular}}}}}%
+    \put(0.07886677,0.42343032){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}/g)\end{tabular}}}}}%
+    \put(0.27947986,0.64452527){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textbf{Photon Mass Attenuation Coefficients for Iron}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{Attenuation_Coefficient_Iron.pdf}}%
+    \put(0.64497657,0.60493606){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Coherent Scattering\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{Attenuation_Coefficient_Iron.pdf}}%
+    \put(0.64497657,0.58623882){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Incoherent Scattering\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{Attenuation_Coefficient_Iron.pdf}}%
+    \put(0.64497657,0.56754158){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Photoelectric Absorption\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{Attenuation_Coefficient_Iron.pdf}}%
+    \put(0.64497657,0.54884433){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Pair Production In Nuclear Field\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{Attenuation_Coefficient_Iron.pdf}}%
+    \put(0.64497657,0.53014709){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Pair Production In Electron Field\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{Attenuation_Coefficient_Iron.pdf}}%
+    \put(0.64497657,0.51144985){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Total Attenuation\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{Attenuation_Coefficient_Iron.pdf}}%
+  \end{picture}%
+\endgroup%

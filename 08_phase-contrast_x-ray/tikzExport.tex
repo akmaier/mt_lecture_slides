@@ -1,0 +1,58 @@
+\documentclass[12pt, a4paper]{scrbook}
+\input{sty/script.own}
+\input{sty/commands.own}
+
+\begin{document}
+\pagenumbering{gobble}
+\begin{figure}[tb]
+\footnotesize
+\centering
+\def\axisLength{20}
+\def\axisDist{7}
+\def\overlap{1}
+\def\scalingFreq{1.3684210526315789473684210526316}
+\begin{tikzpicture}[y=.2cm, x=.72cm]
+ 	%axis
+			\draw [thick, ->](\overlap,\axisDist) -- coordinate (frequAxis) (\axisLength+\overlap,\axisDist);
+    	\draw [thick, <-](0,0) -- coordinate (lambdaAxis) (\axisLength,0);
+			    	%ticks
+			\foreach \x in {0,2,...,24}
+     		\draw (\x/\scalingFreq+1/\scalingFreq+\overlap,\axisDist) -- (\x/\scalingFreq+1/\scalingFreq+\overlap,\axisDist+0.7)
+							node[anchor=south] {$10^{\x}$};
+			\foreach \x in {-16,-14,...,8}
+     		\draw (-\x/\scalingFreq+9.4/\scalingFreq+\overlap,0) -- (-\x/\scalingFreq+9.4/\scalingFreq+\overlap,-0.7)
+							node[anchor=north] {$10^{\x}$};
+			\global\def\bla{0}		
+			%
+%			5.65,7.85,10,12.5,12.85,13.81,15.87} {
+     		\draw (5.65,\axisDist) -- (5.65,0)
+				(5.65/2+\overlap/2,\axisDist/2) node[align=center] {Long\\Radio Waves};
+				\draw (7.85,\axisDist) -- (7.85,0)
+				(7.85/2+5.65/2,\axisDist/2) node[align=center]  {Radio\\Waves};
+				\draw (10,\axisDist) -- (10,0)
+				(10/2+7.85/2,\axisDist/2) node[align=center]    {Micro\\-waves};
+				\draw (12.5,\axisDist) -- (12.5,0)
+				(12.5/2+10/2,\axisDist/2) node  {IR};
+				\draw (12.85,\axisDist) -- (12.85,0);
+				%
+				\draw [decorate,decoration={brace,amplitude=12pt}, rotate around={180:(12.675,\axisDist+5.5)}] (12.675-1.5,\axisDist+5.5) -- (12.675+1.5,\axisDist+5.5);
+				\draw (12.675,\axisDist+6.0) node[align=center]    {Visible Light};
+				%
+				\draw (13.81,\axisDist) -- (13.81,0)
+				(13.81/2+12.85/2,\axisDist/2) node  {UV};
+				\draw (15.87,\axisDist) -- (15.87,0)
+				(15.87/2+13.81/2,\axisDist/2) node  {X-rays};
+				\draw (\axisLength/2+15.87/2,\axisDist/2) node {$\gamma$-rays};
+				%
+				%			
+				%
+				\footnotesize
+				\draw[very thick, ->] (\overlap,\axisDist+5) -- (\overlap+1,\axisDist+5)
+				node[anchor=west] {{\bfseries Frequency $f_p$ \si{[\hertz]}}};
+				%
+				\draw[very thick, ->] (\axisLength,-5) -- (\axisLength-1,-5)
+				node[anchor=east] {{\bfseries Wavelength $\wavelength_p$ \si{[\meter]}}};
+%
+\end{tikzpicture}
+\end{figure}
+\end{document}

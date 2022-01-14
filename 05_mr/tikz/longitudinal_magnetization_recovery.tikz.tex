@@ -1,0 +1,9 @@
+\tikzsetnextfilename{mr_longitudinal_magnetization_recovery}
+\begin{tikzpicture}[yscale=2,xscale=0.85]
+	\draw[->] (0, 0) -- (0, 1.2) node (yl) [above right,xshift=-5ex] {$\Vert\magnlong(t)\Vert=\Vert\magnzero\Vert (1-\mathrm{e}^{-t/\longtime})$};
+	\draw[->] (0, 0) -- (6, 0) node [right] {$t$};
+	\draw[densely dashed] (1, -0.05) node [below] {$\longtime = 2.5\,\textrm{s}$} -- (1, 0.63);
+	\draw[densely dashed] (5, -0.05) node [below] {$5\longtime = 12.5\,\textrm{s}$} -- (5, 0.97);
+	\draw[domain=0:5.5,samples=100,very thick] plot[id=mr_t1_recovery] function{1-exp(-x)};
+	\draw[densely dashed] (-0.05, 1) node [left] {$\Vert\magnzero{}\Vert$} -- (5.5, 1);
+\end{tikzpicture}

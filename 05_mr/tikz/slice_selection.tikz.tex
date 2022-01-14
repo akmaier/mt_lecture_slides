@@ -1,0 +1,23 @@
+\tikzsetnextfilename{mr_slice_selection}
+\begin{tikzpicture}
+	\draw[->] (0, 0) -- (5, 0) node [right] {$z$};
+	\draw[->] (0, 0) -- (0, 4) node [above] {$\larmorfreq(z)$};
+	\draw (0.5,0.5) -- (3.5,3.5);
+	\draw (1, -1) circle (1.5ex) node [left=2ex, anchor=east] {head};
+	%\draw (1.5, -1) -- (2, -1.25); % arms
+	%\draw (1.5, -1) -- (2, -0.85); % arms
+	\draw (1, -1) ++(1.5ex, 0) -- (4, -1) node [right=1ex] {feet} -- (4,-0.5) -- (3.75, -1);
+	\draw[fill=white] (2.1, -0.75) node (A1) {} -- (2.5, -0.25) node (B1) {} -- (2.5, -1.25) node (C1) {} -- (2.1, -1.75) node (D1) {} -- cycle;
+	\draw[fill=white] (2.5, -0.75) node (A2) {} -- (2.9, -0.25) node (B2) {} -- (2.9, -1.25) node (C2) {} -- (2.5, -1.75) node (D2) {} -- cycle;
+	\draw[fill=white] (A1.center) -- (A2.center) -- (B2.center) -- (B1.center) -- cycle;
+	\draw[fill=white] (A1.center) -- (A2.center) -- (D2.center) -- (D1.center) -- cycle;
+	\draw (2.7, -1) -- (2.9, -1);
+	\visible<2->{\draw[densely dashed] (2.3, -0.5) -- (2.3,2.3) -- ++(-2.3,0);}
+	\visible<3->{\draw[densely dashed] (2.7, -0.5) -- (2.7,2.7) -- ++(-2.7,0);}
+	\visible<2->{\draw[fill=black] (2.3, 0) circle (1.5pt) node [above left]  {{\footnotesize $z_1$}};}
+	\visible<3->{\draw[fill=black] (2.7, 0) circle (1.5pt) node [above right] {{\footnotesize $z_2$}};}
+	\visible<2->{\draw[fill=black] (0, 2.3) circle (1.5pt) node [left] {{\footnotesize $\larmorfreq(z_1)$}};}
+	\visible<3->{\draw[fill=black] (0, 2.7) circle (1.5pt) node [left] {{\footnotesize $\larmorfreq(z_2)$}};}
+	\visible<4->{\draw[<->, shorten >=1pt, shorten <=1pt] ($(A1.center)!0.5!(D1.center)$) -- node (mid) {} ($(A2.center)!0.5!(D2.center)$);}
+	\visible<4->{\draw[shorten <=2pt] (mid.center) to[out=270] ++(0.75, -0.2) node [right] {slice thickness};}
+\end{tikzpicture}

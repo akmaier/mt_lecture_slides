@@ -1,0 +1,1717 @@
+\input{../preamble}
+
+
+
+
+\newcommand{\greenbox}{\begin{tikzpicture}\node (linear) [rounded corners, fill=green!60, text width=0.1cm, minimum height=0.3cm] {};\end{tikzpicture}}
+\newcommand{\redbox}{\begin{tikzpicture}\node (linear) [rounded corners, fill=red!60, text width=0.1cm, minimum height=0.3cm] {};\end{tikzpicture}}
+\newcommand{\bluebox}{\begin{tikzpicture}\node (linear) [rounded corners, fill=blue!60, text width=0.1cm, minimum height=0.3cm] {};\end{tikzpicture}}
+\subtitle{System Theory}
+ 
+\begin{document}
+
+
+\frame[plain,c]{\titlepage} % plain-Option deaktiviert Kopf- und Fusszeile
+
+\section{Recap}%
+\label{sec:recap}
+
+
+
+\begin{frame}[c]{Medical Imaging}
+    \framesubtitle{X-ray, CT, MR, Ultra Sound, Angio, PET, SPECT}
+    \centering{}
+    \begin{tabular}{ccc}
+        \includegraphics[height=2.7cm]{../02_image_processing/img/m1000-1000HU.png}    &
+        \includegraphics[height=2.7cm]{../06_x-ray/Siemens_Images/150_7.png}           &
+        \includegraphics[height=2.7cm]{../06_x-ray/images/dsa_diff.pdf}                                          \\
+        CT                                                                             & X-Ray & Angio           \\[0.2cm]
+        \includegraphics[height=2.7cm]{images/parallel_full.png}      &
+        \includegraphics[height=2.7cm]{images/appB.png} &
+        \includegraphics[height=2.7cm]{images/SH_US_34572_12.jpg}                       \\
+        MR                                                                             & SPECT & 3-d Ultra Sound \\
+    \end{tabular}
+    %\begin{minipage}{0.3\linewidth}
+    %\begin{center}
+    %\begin{figure}
+    %\includegraphics[width=.8\linewidth]{../mt1-script/mr/images/parallel_full.png} \\
+    %\vspace*{.1cm}{\normalsize MRT} \\
+    %\vspace*{.1cm}
+    %\includegraphics[width=.8\linewidth]{../02_image_processing/img/m1000-1000HU.png} \\
+    %\vspace*{.1cm}{\normalsize CT} \\
+    %\end{figure}
+    %\end{center}
+    %\end{minipage}
+    %\hspace*{.3cm}
+    %\begin{minipage}{0.3\linewidth}
+    %\begin{figure}
+    %\includegraphics[width=.55\linewidth]{../06_x-ray/Siemens_Images/150_7.png} \\
+    %\vspace*{.1cm}{\normalsize X-ray} \\
+    %\vspace*{.1cm}
+    %\includegraphics[width=.55\linewidth]{../mt1-script/emission_tomography/fig/appB.png} \\
+    %\vspace*{.1cm}{\normalsize SPECT} \\
+    %\end{figure}
+    %\end{minipage}
+    %\hspace*{.3cm}
+    %\begin{minipage}{0.3\linewidth}
+    %\begin{figure}
+    %\includegraphics[width=.8\linewidth]{../06_x-ray/images/dsa_diff.pdf} \\
+    %\vspace*{.1cm}{\normalsize Angio} \\
+    %\vspace*{.1cm}
+    %\includegraphics[width=.8\linewidth]{../mt1-script/Siemens_Images/US/SH_US_34572_12.jpg} \\
+    %\vspace*{.1cm}{\normalsize Ultra Sound} \\
+    %\end{figure}
+    %\end{minipage}
+\end{frame}
+
+
+
+
+\begin{frame}[c]{Molecular and Morphologic Imaging}
+    \begin{figure}
+        \includegraphics[width=.8\linewidth]{../00_motivation/Bilder/moletab.pdf}
+    \end{figure}
+\end{frame}
+
+
+
+
+%Section 1
+\section{Signals and Systems} %book chapter: 'Systemtheorie abbildender Systeme'
+
+%subtitle
+%toc for this chapter
+
+\begin{frame}
+
+    \frametitle{Signals}
+    \begin{myDefinition}
+        ``A signal is a function that conveys information about the behavior or attributes of some phenomenon.''\quad
+        {\scriptsize
+            Roland Priemer (1991). Introductory Signal Processing.
+        }
+    \end{myDefinition}
+    \begin{columns}[c, onlytextwidth]
+        \begin{column}{0.4\textwidth}
+            \myExample{} of a 1D signal:
+        \end{column}\begin{column}{0.6\textwidth}
+            \includegraphics[height=.45\textheight ]{images/ecg}
+            \begin{flushright}
+                \scriptsize Sources: Wikimedia Commons
+            \end{flushright}
+        \end{column}
+    \end{columns}
+
+\end{frame}
+
+
+%%TODO maybe include
+%\begin{frame}
+%\frametitle{Signal Examples}
+%\begin{center}
+%\includegraphics[height=.50\textheight ]{images/ultrasound} \quad
+%\includegraphics[height=.60\textheight ]{images/endoscope_simba} \quad
+%\includegraphics[height=.60\textheight ]{images/EEG}
+%\end{center}
+%\begin{flushright}
+%\scriptsize Sources: Siemens, Wikimedia Commons, Wikimedia Commons
+%\end{flushright}
+%\end{frame}
+
+
+\begin{frame}
+    \frametitle{Signals and Systems}
+    \begin{myDefinition}
+        A \textbf{signal} is a function $f(t)$ that represents some information.
+
+        \vspace{5mm}
+
+        Signals are processed and transformed by \textbf{systems}, which are denoted by an operator $\mathcal{H}\{.\}$.
+    \end{myDefinition}
+    \begin{center}
+        \includegraphics[height=.35\textheight ]{images/SystemBlock.pdf}
+    \end{center}
+
+\end{frame}
+
+
+
+
+\begin{frame}
+    \frametitle{System Characteristics}
+
+    \begin{myDefinition}
+        A system denoted by:
+        \begin{center}
+            $f_i(t) \quad \rightarrow \quad System \quad \rightarrow \quad g_i(t)$
+        \end{center}
+        is \textit{linear}, if:
+        \begin{center}
+            ${\sum c_if_i(t)} \quad \rightarrow \quad System \quad \rightarrow \quad {\sum c_ig_i(t)}$
+        \end{center}
+        is \textit{shift-invariant}, if:
+        \begin{center}
+            $f(t-t_0) \quad \rightarrow \quad System \quad \rightarrow \quad g(t-t_0)$
+        \end{center}
+        is \textit{causal}, if:
+        \begin{center}
+            $f_1(t) = f_2(t) \; \forall t < t_0 \quad \rightarrow \quad System \quad \rightarrow \quad g_1(t) = g_2(t) \; \forall t < t_0$
+        \end{center}
+    \end{myDefinition}
+\end{frame}
+
+
+\begin{frame}[c]{Simple Examples}
+
+    \begin{columns}[c, onlytextwidth]
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item $g(t) = f(t)$ \visible<3->{\redbox{}} \visible<4->{\bluebox{}} \visible<5->{\greenbox{}}
+                \item[]
+                \item $g(t) = \sin(f(t))$ \visible<11->{\bluebox{}} \visible<12->{\greenbox{}}
+                \item[]
+                \item $g(t) = 3 f(t+2)$ \visible<18->{\redbox{}} \visible<19->{\bluebox{}}
+                \item[]
+                \item $g(t) = f(t) - 2 f(t-1)$ \visible<25->{\redbox{}} \visible<26->{\bluebox{}} \visible<27->{\greenbox{}}
+                \item[]
+                \item $g(t) = f(t) \cdot e^{-0.5t}$ \visible<33->{\greenbox{}}
+            \end{itemize}
+        \end{column}\begin{column}{0.5\textwidth}
+            \only<2-5>{
+                \begin{center}
+                    \begin{tikzpicture}[scale=1, transform shape]
+                        \node (linear) [rounded corners, fill=red!30, text width=5cm, align=center, inner sep=0.3cm] {
+                            \textbf{Linear}\\[0.3cm]
+                            ${\sum_{i}  c_if_i(t)} \quad{} \Rightarrow \quad {\sum_{i}  c_ig_i(t)}$
+                        };
+                        \node (shift) [rounded corners, fill=blue!30, text width=5cm, align=center, below=0.5cm of linear, inner sep=0.3cm] {
+                            \textbf{Shift-Invariant}\\[0.3cm]
+                            $f(t-t_0) \quad  \Rightarrow \quad g(t-t_0)$
+                        };
+                        \node (Causal) [rounded corners, fill=green!30, text width=5cm, align=center, below=0.5cm of shift, inner sep=0.3cm] {
+                            \hfill{}\textbf{\hspace{1.3cm}Causal}\hfill{} ($\forall t < t_0$)\\[0.3cm]
+                            \begin{center}
+                                $f_1(t) = f_2(t) \quad{} \Rightarrow \quad g_1(t) = g_2(t) \; $
+                            \end{center}};
+                    \end{tikzpicture}
+                \end{center}
+            }
+            \only<6>{
+                \begin{center}
+                \includegraphics[width=\textwidth ]{a1.png}
+                \end{center}
+            }
+            \only<7>{
+                \begin{center}
+                \includegraphics[width=\textwidth ]{a2.png}
+                \end{center}
+            }
+            \only<8>{
+                \begin{center}
+                \includegraphics[width=\textwidth ]{a3.png}
+                \end{center}
+            }
+            \only<9>{
+                \begin{center}
+                \includegraphics[width=\textwidth ]{a4.png}
+                \end{center}
+            }
+            \only<10-12>{
+                \begin{center}
+                    \begin{tikzpicture}[scale=1, transform shape]
+                        \node (linear) [rounded corners, fill=red!30, text width=5cm, align=center, inner sep=0.3cm] {
+                            \textbf{Linear}\\[0.3cm]
+                            ${\sum_{i}  c_if_i(t)} \quad{} \Rightarrow \quad {\sum_{i}  c_ig_i(t)}$
+                        };
+                        \node (shift) [rounded corners, fill=blue!30, text width=5cm, align=center, below=0.5cm of linear, inner sep=0.3cm] {
+                            \textbf{Shift-Invariant}\\[0.3cm]
+                            $f(t-t_0) \quad  \Rightarrow \quad g(t-t_0)$
+                        };
+                        \node (Causal) [rounded corners, fill=green!30, text width=5cm, align=center, below=0.5cm of shift, inner sep=0.3cm] {
+                            \hfill{}\textbf{\hspace{1.3cm}Causal}\hfill{} ($\forall t < t_0$)\\[0.3cm]
+                            \begin{center}
+                                $f_1(t) = f_2(t) \quad{} \Rightarrow \quad g_1(t) = g_2(t) \; $
+                            \end{center}};
+                    \end{tikzpicture}
+                \end{center}
+            }
+            \only<13>{
+                \begin{center}
+                \includegraphics[width=\textwidth ]{a5.png}
+                \end{center}
+            }
+            \only<14>{
+                \begin{center}
+                \includegraphics[width=\textwidth ]{a6.png}
+                \end{center}
+            }
+            \only<15>{
+                \begin{center}
+                \includegraphics[width=\textwidth ]{a7.png}
+                \end{center}
+            }
+            \only<16>{
+                \begin{center}
+                \includegraphics[width=\textwidth ]{a8.png}
+                \end{center}
+            }
+            \only<17-19>{
+                \begin{center}
+                    \begin{tikzpicture}[scale=1, transform shape]
+                        \node (linear) [rounded corners, fill=red!30, text width=5cm, align=center, inner sep=0.3cm] {
+                            \textbf{Linear}\\[0.3cm]
+                            ${\sum_{i}  c_if_i(t)} \quad{} \Rightarrow \quad {\sum_{i}  c_ig_i(t)}$
+                        };
+                        \node (shift) [rounded corners, fill=blue!30, text width=5cm, align=center, below=0.5cm of linear, inner sep=0.3cm] {
+                            \textbf{Shift-Invariant}\\[0.3cm]
+                            $f(t-t_0) \quad  \Rightarrow \quad g(t-t_0)$
+                        };
+                        \node (Causal) [rounded corners, fill=green!30, text width=5cm, align=center, below=0.5cm of shift, inner sep=0.3cm] {
+                            \hfill{}\textbf{\hspace{1.3cm}Causal}\hfill{} ($\forall t < t_0$)\\[0.3cm]
+                            \begin{center}
+                                $f_1(t) = f_2(t) \quad{} \Rightarrow \quad g_1(t) = g_2(t) \; $
+                            \end{center}};
+                    \end{tikzpicture}
+                \end{center}
+            }
+            \only<20>{
+                \begin{center}
+                \includegraphics[width=\textwidth ]{a9.png}
+                \end{center}
+            }
+            \only<21>{
+                \begin{center}
+                \includegraphics[width=\textwidth ]{a10.png}
+                \end{center}
+            }
+            \only<22>{
+                \begin{center}
+                \includegraphics[width=\textwidth ]{a11.png}
+                \end{center}
+            }
+            \only<23>{
+                \begin{center}
+                \includegraphics[width=\textwidth ]{a12.png}
+                \end{center}
+            }
+            \only<24-27>{
+                \begin{center}
+                    \begin{tikzpicture}[scale=1, transform shape]
+                        \node (linear) [rounded corners, fill=red!30, text width=5cm, align=center, inner sep=0.3cm] {
+                            \textbf{Linear}\\[0.3cm]
+                            ${\sum_{i}  c_if_i(t)} \quad{} \Rightarrow \quad {\sum_{i}  c_ig_i(t)}$
+                        };
+                        \node (shift) [rounded corners, fill=blue!30, text width=5cm, align=center, below=0.5cm of linear, inner sep=0.3cm] {
+                            \textbf{Shift-Invariant}\\[0.3cm]
+                            $f(t-t_0) \quad  \Rightarrow \quad g(t-t_0)$
+                        };
+                        \node (Causal) [rounded corners, fill=green!30, text width=5cm, align=center, below=0.5cm of shift, inner sep=0.3cm] {
+                            \hfill{}\textbf{\hspace{1.3cm}Causal}\hfill{} ($\forall t < t_0$)\\[0.3cm]
+                            \begin{center}
+                                $f_1(t) = f_2(t) \quad{} \Rightarrow \quad g_1(t) = g_2(t) \; $
+                            \end{center}};
+                    \end{tikzpicture}
+                \end{center}
+            }
+            \only<28>{
+                \begin{center}
+                \includegraphics[width=\textwidth ]{a13.png}
+                \end{center}
+            }
+            \only<29>{
+                \begin{center}
+                \includegraphics[width=\textwidth ]{a14.png}
+                \end{center}
+            }
+            \only<30>{
+                \begin{center}
+                \includegraphics[width=\textwidth ]{a15.png}
+                \end{center}
+            }
+            \only<31>{
+                \begin{center}
+                \includegraphics[width=\textwidth ]{a16.png}
+                \end{center}
+            }
+            \only<32-33>{
+                \begin{center}
+                    \begin{tikzpicture}[scale=1, transform shape]
+                        \node (linear) [rounded corners, fill=red!30, text width=5cm, align=center, inner sep=0.3cm] {
+                            \textbf{Linear}\\[0.3cm]
+                            ${\sum_{i}  c_if_i(t)} \quad{} \Rightarrow \quad {\sum_{i}  c_ig_i(t)}$
+                        };
+                        \node (shift) [rounded corners, fill=blue!30, text width=5cm, align=center, below=0.5cm of linear, inner sep=0.3cm] {
+                            \textbf{Shift-Invariant}\\[0.3cm]
+                            $f(t-t_0) \quad  \Rightarrow \quad g(t-t_0)$
+                        };
+                        \node (Causal) [rounded corners, fill=green!30, text width=5cm, align=center, below=0.5cm of shift, inner sep=0.3cm] {
+                            \hfill{}\textbf{\hspace{1.3cm}Causal}\hfill{} ($\forall t < t_0$)\\[0.3cm]
+                            \begin{center}
+                                $f_1(t) = f_2(t) \quad{} \Rightarrow \quad g_1(t) = g_2(t) \; $
+                            \end{center}};
+                    \end{tikzpicture}
+                \end{center}
+            }
+            \only<34>{
+                \begin{center}
+                \includegraphics[width=\textwidth ]{a17.png}
+                \end{center}
+            }
+            \only<35>{
+                \begin{center}
+                \includegraphics[width=\textwidth ]{a18.png}
+                \end{center}
+            }
+            \only<36>{
+                \begin{center}
+                \includegraphics[width=\textwidth ]{a19.png}
+                \end{center}
+            }
+            \only<37>{
+                \begin{center}
+                \includegraphics[width=\textwidth ]{a20.png}
+                \end{center}
+            }
+        \end{column}
+    \end{columns}
+
+\end{frame}
+
+\begin{frame}[c]{Imaging Systems}
+
+    \myExample{} of some imaging systems:\newline{}
+
+    \begin{table}
+        \def\arraystretch{1.7}
+        \begin{tabular}{lll}
+            \toprule
+            Input $f(x,y)$                      & Imaging System & Output $g(x,y)$ \\
+            \midrule
+            X-ray dose $D(x,y)$                 & X-ray system   & X-ray film      \\
+            X-ray attenuation coeff. $\mu(x,y)$ & CT system      & digital image   \\
+            proton density $\rho(x,y)$          & MR system      & monitor         \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+
+%------------------------------
+
+%\begin{frame}
+%\frametitle{Complex Numbers}
+%\begin{myDefinition}
+%\textbf{Known:} Real numbers $x \in \mathbb{R}$
+%\end{myDefinition}
+
+
+%\question{} How to compute $\sqrt{-1}$?\newline
+
+%\answer{} Define new numbers $\sqrt{-1} = i$
+
+
+%\begin{myDefinition}
+%Complex numbers $z \in \mathbb{C}$
+%\begin{align*}
+%z & = a + bi \quad a,b \in \mathbb{R} \\
+%a & = Re(z)                           \\
+%b & = Im(z)
+%\end{align*}
+%\end{myDefinition}
+
+
+%\end{frame}
+
+
+%\begin{frame}
+%\frametitle{Complex Numbers: Coordinate Types}
+%\begin{center}
+%\includegraphics[height=.6\textheight ]{images/ComplexPlane.pdf} \quad
+%\end{center}
+
+
+%\begin{itemize}
+%\item Cartesian coordinates $z = a + b i$
+%\item Polar coordinates $z = A \left( \cos \phi + i \sin \phi\right)$
+%\item Exponential representation $ z = A e^{i \phi}$
+%\end{itemize}
+
+%\end{frame}
+
+
+
+
+%\section{Examples}%
+%\label{sec:examples}
+
+
+
+
+
+
+%\begin{frame}
+%\frametitle{High-Pass}
+%\begin{myDefinition}
+%\begin{center}
+%Applying a high-pass filter eliminates all low frequencies.
+%\end{center}
+%\end{myDefinition}
+
+%\vspace{5mm}
+
+%This can be beneficial if you have inhomogeneous illumination of your image:\newline
+
+%\begin{center}
+%\includegraphics[height=.42\textheight ]{images/angio} \quad
+%\includegraphics[height=.42\textheight ]{images/angioI} \quad
+%\includegraphics[height=.42\textheight ]{images/angioIF}
+%\end{center}
+%\end{frame}
+
+
+
+%\begin{frame}
+%\frametitle{Low-Pass}
+%\begin{myDefinition}
+%\begin{center}
+%Applying a low-pass filter eliminates all high frequencies.
+%\end{center}
+%\end{myDefinition}
+
+%\vspace{5mm}
+
+%This can be beneficial if you have added noise in your image:\newline
+
+%\begin{center}
+%\includegraphics[height=.42\textheight ]{images/angio} \quad
+%\includegraphics[height=.42\textheight ]{images/angioN} \quad
+%\includegraphics[height=.42\textheight ]{images/angioNF}
+%\end{center}
+%\end{frame}
+
+%%\begin{frame}
+%%\frametitle{Correlation}
+%%\begin{myDefinition}
+%%The correlation of two 1-D signals is defined as:
+
+%%\begin{eqnarray*}
+%%f(t) \star h(t) &=& \int\limits_{-\infty}^{+\infty}f(\tau)g(t+\tau) \, d\tau
+%%\end{eqnarray*}\newline
+
+%%The correlation of two 2-D signals is defined as:
+
+%%\begin{eqnarray*}
+%%f(x,y) \star g(x,y) &=& \int\limits_{-\infty}^{+\infty}\int\limits_{-\infty}^{+\infty}f(x',y')g(x+x',y+y') \, dx' \, dy'
+%%\end{eqnarray*}
+
+%%\end{myDefinition}
+%%\end{frame}
+
+
+
+%%\begin{frame}
+%%\frametitle{Correlation}
+%%\question{} What is a correlation good for?\newline
+
+%%\answer{} The most intuitive application is the measurement of similarity between two signals.
+
+
+%%\begin{center}
+%%\includegraphics[height=.40\textheight ]{images/CorrSig1.eps}
+%%\includegraphics[height=.40\textheight ]{images/CorrSig2.eps}
+%%\includegraphics[height=.40\textheight ]{images/CorrSig3.eps}
+%%\end{center}
+
+%%\end{frame}
+
+\subtitle{Fourier Series}
+\frame[plain,c]{\titlepage}
+
+\section{Fourier Series}%
+\label{sec:fourier_series}
+
+
+
+\begin{frame}
+    \frametitle{Vector Spaces}
+
+    Set of linear independent vectors can be used as a basis for a vector space.\newline
+
+    \myExample in $\mathbb{R}^2$:
+
+    \begin{center}
+
+        $\bf{e}_1= \left( \begin{array}{cc} 1 \\ 0 \end{array} \right)$
+        \hspace{10 mm}
+        $\bf{e}_2= \left( \begin{array}{cc} 0 \\ 1 \end{array} \right)$\newline
+
+        \includegraphics[height=.45\textheight ]{images/2DPlane}
+
+        \begin{flushright}
+            \scriptsize Sources: Wikimedia Commons
+        \end{flushright}
+    \end{center}\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{Fourier Series}
+
+    \question Is there a finite or infinite set of base elements for signals?
+
+    \answer Yes (given certain constraints).\newline
+
+    \begin{itemize}
+        \item All periodic signals can be expressed in terms of a linear combination of cosine and sine functions
+        \item The weighted sum is finite or infinite dependent on certain function properties
+    \end{itemize}
+
+    \begin{center}
+        \includegraphics[height=.45\textheight ]{images/functions}
+    \end{center}
+\end{frame}
+
+
+%➜ isympy
+%IPython console for SymPy 1.6.dev (Python 3.7.5-64-bit) (ground types: python)
+
+%These commands were executed:
+%>>> from __future__ import division
+%>>> from sympy import *
+%>>> x, y, z, t = symbols('x y z t')
+%>>> k, m, n = symbols('k m n', integer=True)
+%>>> f, g, h = symbols('f g h', cls=Function)
+%>>> init_printing()
+
+%Documentation can be found at https://docs.sympy.org/dev
+
+
+%In [1]: from sympy.abc import t                                                                                                                                                                                                                                                    
+
+%In [2]: fourier_series(t/pi, (t,-pi,pi))                                                                                                                                                                                                                                           
+%Out[2]: 
+%2⋅sin(t)   sin(2⋅t)   2⋅sin(3⋅t)    
+%──────── - ──────── + ────────── + …
+%π          π          3⋅π        
+
+%In [3]: fourier_series(t/pi, (t,-pi,pi)).truncate(12)                                                                                                                                                                                                                              
+%Out[3]: 
+%2⋅sin(t)   sin(2⋅t)   2⋅sin(3⋅t)   sin(4⋅t)   2⋅sin(5⋅t)   sin(6⋅t)   2⋅sin(7⋅t)   sin(8⋅t)   2⋅sin(9⋅t)   sin(10⋅t)   2⋅sin(11⋅t)   sin(12⋅t)
+%──────── - ──────── + ────────── - ──────── + ────────── - ──────── + ────────── - ──────── + ────────── - ───────── + ─────────── - ─────────
+%π          π          3⋅π         2⋅π         5⋅π         3⋅π         7⋅π         4⋅π         9⋅π          5⋅π          11⋅π         6⋅π   
+%In [4]: latex(_)                                                                                                                                                                                                                                                                   
+%Out[4]: '\\frac{2 \\sin{\\left(t \\right)}}{\\pi} - \\frac{\\sin{\\left(2 t \\right)}}{\\pi} + \\frac{2 \\sin{\\left(3 t \\right)}}{3 \\pi} - \\frac{\\sin{\\left(4 t \\right)}}{2 \\pi} + \\frac{2 \\sin{\\left(5 t \\right)}}{5 \\pi} - \\frac{\\sin{\\left(6 t \\right)}}{3 \\pi} + \\frac{2 \\sin{\\left(7 t \\right)}}{7 \\pi} - \\frac{\\sin{\\left(8 t \\right)}}{4 \\pi} + \\frac{2 \\sin{\\left(9 t \\right)}}{9 \\pi} - \\frac{\\sin{\\left(10 t \\right)}}{5 \\pi} + \\frac{2 \\sin{\\left(11 t \\right)}}{11 \\pi} - \\frac{\\sin{\\left(12 t \\right)}}{6 \\pi}'
+
+\begin{frame}[t]{Fourier Series}
+
+    \myExample of an approximation (a sawtooth wave):
+    {\scriptsize
+    \begin{align*}
+        f(t) & = t \quad\quad t \in \left(-\pi,+\pi\right) \\
+        %& = 2 \sin{\left(t \right)} - \sin{\left(2 t \right)} + \frac{2 \sin{\left(3 t \right)}}{3} - \frac{\sin{\left(4 t \right)}}{2} + \frac{2 \sin{\left(5 t \right)}}{5} - \frac{\sin{\left(6 t \right)}}{3} +  \ldots
+    \end{align*}}%
+
+    \vspace{-0.5cm}
+    \begin{center}
+        \includegraphics[height=0.7\textheight, trim={0  0.5cm 0 1cm},clip]{zigzag_signal.pdf}
+    \end{center}
+\end{frame}
+
+\mode<presentation>{
+    \setbeamercolor{background canvas}{bg=white}
+    \begin{frame}[plain,c]{}
+        \centering
+        \begin{center}
+            \only<1>{\includegraphics[height=1.1\textheight]{zigzag_reco_1.pdf}}%
+            \only<2>{\includegraphics[height=1.1\textheight]{zigzag_reco_2.pdf}}%
+            \only<3>{\includegraphics[height=1.1\textheight]{zigzag_reco_3.pdf}}%
+            \only<4>{\includegraphics[height=1.1\textheight]{zigzag_reco_4.pdf}}%
+            \only<5>{\includegraphics[height=1.1\textheight]{zigzag_reco_5.pdf}}%
+            \only<6>{\includegraphics[height=1.1\textheight]{zigzag_reco_6.pdf}}%
+            \only<7>{\includegraphics[height=1.1\textheight]{zigzag_reco_7.pdf}}%
+            \only<8>{\includegraphics[height=1.1\textheight]{zigzag_reco_8.pdf}}%
+            \only<9>{\includegraphics[height=1.1\textheight]{zigzag_reco_9.pdf}}%
+            \only<10>{\includegraphics[height=1.1\textheight]{zigzag_reco_10.pdf}}%
+            \only<11>{\includegraphics[height=1.1\textheight]{zigzag_reco_20.pdf}}%
+            \only<12>{\includegraphics[height=1.1\textheight]{zigzag_reco_29.pdf}}%
+            \only<13>{\includegraphics[height=1.1\textheight]{zigzag_reco_70.pdf}}% 
+        \end{center}
+        %\begin{textblock}{6.5}(9.0,10.0)
+        %\color{white}
+        %\textbf{Conventional DSA}
+        %\end{textblock}
+    \end{frame}
+}
+\setbeamercolor{background canvas}{bg=white}
+\begin{frame}[t]{Fourier Series}
+
+    \myExample of an approximation (a sawtooth wave):
+    {\scriptsize
+    \begin{align*}
+        f(t) & = t \quad\quad t \in \left(-\pi,+\pi\right)                                                                                                                                                                           \\
+             & = 2 \sin{\left(t \right)} - \sin{\left(2 t \right)} + \frac{2 \sin{\left(3 t \right)}}{3} - \frac{\sin{\left(4 t \right)}}{2} + \frac{2 \sin{\left(5 t \right)}}{5 \pi} - \frac{\sin{\left(6 t \right)}}{3} +  \ldots
+    \end{align*}}%
+    \begin{center}
+        \only<1-13>{%
+            \begin{columns}[t, onlytextwidth]
+                \begin{column}{0.5\textwidth}
+                    \centering{}
+                    \only<1>{\includegraphics[height=0.65\textheight]{zigzag_reco_1.pdf}}%
+                    \only<2>{\includegraphics[height=0.65\textheight]{zigzag_reco_2.pdf}}%
+                    \only<3>{\includegraphics[height=0.65\textheight]{zigzag_reco_3.pdf}}%
+                    \only<4>{\includegraphics[height=0.65\textheight]{zigzag_reco_4.pdf}}%
+                    \only<5>{\includegraphics[height=0.65\textheight]{zigzag_reco_5.pdf}}%
+                    \only<6>{\includegraphics[height=0.65\textheight]{zigzag_reco_6.pdf}}%
+                    \only<7>{\includegraphics[height=0.65\textheight]{zigzag_reco_7.pdf}}%
+                    \only<8>{\includegraphics[height=0.65\textheight]{zigzag_reco_8.pdf}}%
+                    \only<9>{\includegraphics[height=0.65\textheight]{zigzag_reco_9.pdf}}%
+                    \only<10>{\includegraphics[height=0.65\textheight]{zigzag_reco_10.pdf}}%
+                    \only<11>{\includegraphics[height=0.65\textheight]{zigzag_reco_20.pdf}}%
+                    \only<12>{\includegraphics[height=0.65\textheight]{zigzag_reco_29.pdf}}%
+                    \only<13>{\includegraphics[height=0.65\textheight]{zigzag_reco_70.pdf}}%
+                \end{column}\begin{column}{0.5\textwidth}
+                    \centering{}
+                    \only<1>{\includegraphics[height=0.65\textheight]{zigzag_sin_1.pdf}}%
+                    \only<2>{\includegraphics[height=0.65\textheight]{zigzag_sin_2.pdf}}%
+                    \only<3>{\includegraphics[height=0.65\textheight]{zigzag_sin_3.pdf}}%
+                    \only<4>{\includegraphics[height=0.65\textheight]{zigzag_sin_4.pdf}}%
+                    \only<5>{\includegraphics[height=0.65\textheight]{zigzag_sin_5.pdf}}%
+                    \only<6>{\includegraphics[height=0.65\textheight]{zigzag_sin_6.pdf}}%
+                    \only<7>{\includegraphics[height=0.65\textheight]{zigzag_sin_7.pdf}}%
+                    \only<8>{\includegraphics[height=0.65\textheight]{zigzag_sin_8.pdf}}%
+                    \only<9>{\includegraphics[height=0.65\textheight]{zigzag_sin_9.pdf}}%
+                    \only<10>{\includegraphics[height=0.65\textheight]{zigzag_sin_10.pdf}}%
+                    \only<11>{\includegraphics[height=0.65\textheight]{zigzag_sin_11.pdf}}%
+                    \only<12>{\includegraphics[height=0.65\textheight]{zigzag_sin_12.pdf}}% 
+                    \only<13>{\includegraphics[height=0.65\textheight]{zigzag_sin_70.pdf}}%
+                \end{column}
+            \end{columns}}%
+        \only<14>{%
+            \centering{}
+            \centering{}
+            \begin{columns}[c, onlytextwidth]
+                \begin{column}{0.3\textwidth}
+                    \centering{}
+                    f(t) point symmetric to origin:
+                    \vspace{0.3cm}
+
+                    Only sine functions needed!
+                \end{column}\begin{column}{0.7\textwidth}
+                    \centering{}
+                    \includegraphics[height=0.68\textheight, trim={0  0 0 1.3cm},clip]{zigzag_coefficients.pdf}
+                \end{column}
+            \end{columns}
+        }%
+
+    \end{center}
+\end{frame}
+
+
+
+\begin{frame}[t]{Fourier Series}
+
+    \myExample of an approximation (a rectangle puls):
+    {\scriptsize
+    \begin{align*}
+        f(t) & = \mathsf{rect}\left( \frac{t}{\pi} \right) \quad\quad t \in \left(-\pi,+\pi\right)                                                                 \\
+             & = \frac{1}{2} + \frac{2\cos(t)}{\pi} + \frac{2\cos(3t)}{3\pi} + \frac{2\cos(5t)}{5\pi} +  \frac{2\cos(7t)}{7\pi} +  \frac{2\cos(9t)}{9\pi} + \ldots
+    \end{align*}}%
+    \vspace{-0.4cm}
+    \begin{center}
+        \only<1-13>{
+            \begin{columns}[t, onlytextwidth]
+                \begin{column}{0.5\textwidth}
+                    \centering{}
+                    \only<1>{\includegraphics[height=0.65\textheight]{boxfourier_reco_1.pdf}}%
+                    \only<2>{\includegraphics[height=0.65\textheight]{boxfourier_reco_2.pdf}}%
+                    \only<3>{\includegraphics[height=0.65\textheight]{boxfourier_reco_3.pdf}}%
+                    \only<4>{\includegraphics[height=0.65\textheight]{boxfourier_reco_4.pdf}}%
+                    \only<5>{\includegraphics[height=0.65\textheight]{boxfourier_reco_5.pdf}}%
+                    \only<6>{\includegraphics[height=0.65\textheight]{boxfourier_reco_6.pdf}}%
+                    \only<7>{\includegraphics[height=0.65\textheight]{boxfourier_reco_7.pdf}}%
+                    \only<8>{\includegraphics[height=0.65\textheight]{boxfourier_reco_8.pdf}}%
+                    \only<9>{\includegraphics[height=0.65\textheight]{boxfourier_reco_9.pdf}}%
+                    \only<10>{\includegraphics[height=0.65\textheight]{boxfourier_reco_10.pdf}}%
+                    \only<11>{\includegraphics[height=0.65\textheight]{boxfourier_reco_20.pdf}}%
+                    \only<12>{\includegraphics[height=0.65\textheight]{boxfourier_reco_29.pdf}}%
+                    \only<13>{\includegraphics[height=0.65\textheight]{boxfourier_reco_70.pdf}}%
+                \end{column}\begin{column}{0.5\textwidth}
+                    \centering{}
+                    \only<1>{\includegraphics[height=0.65\textheight]{boxfourier_cos_1.pdf}}% 
+                    \only<2>{\includegraphics[height=0.65\textheight]{boxfourier_cos_2.pdf}}%
+                    \only<3>{\includegraphics[height=0.65\textheight]{boxfourier_cos_3.pdf}}%
+                    \only<4>{\includegraphics[height=0.65\textheight]{boxfourier_cos_4.pdf}}%
+                    \only<5>{\includegraphics[height=0.65\textheight]{boxfourier_cos_5.pdf}}%
+                    \only<6>{\includegraphics[height=0.65\textheight]{boxfourier_cos_6.pdf}}%
+                    \only<7>{\includegraphics[height=0.65\textheight]{boxfourier_cos_7.pdf}}%
+                    \only<8>{\includegraphics[height=0.65\textheight]{boxfourier_cos_8.pdf}}%
+                    \only<9>{\includegraphics[height=0.65\textheight]{boxfourier_cos_9.pdf}}%
+                    \only<10>{\includegraphics[height=0.65\textheight]{boxfourier_cos_10.pdf}}%
+                    \only<11>{\includegraphics[height=0.65\textheight]{boxfourier_cos_11.pdf}}%
+                    \only<12>{\includegraphics[height=0.65\textheight]{boxfourier_cos_12.pdf}}% 
+                    \only<13>{\includegraphics[height=0.65\textheight]{boxfourier_cos_70.pdf}}%
+                \end{column}
+            \end{columns}}%
+        \only<14>{%
+            \centering{}
+            \begin{columns}[c, onlytextwidth]
+                \begin{column}{0.3\textwidth}
+                    \centering{}
+                    f(t) symmetric to y-axis:
+                    \vspace{0.3cm}
+
+                    Only cosine functions needed!
+                \end{column}\begin{column}{0.7\textwidth}
+                    \centering{}
+                    \includegraphics[height=0.60\textheight, trim={0  0 0 1.3cm},clip]{boxfourier_coefficients.pdf}
+                \end{column}
+            \end{columns}
+        }%
+    \end{center}
+\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{Fourier Series (Definition)}
+
+    \begin{myDefinition}
+        Let $f$ be an $T$-periodic function, i.e. $f(t) = f\left(t + T\right)$, then its \textit{Fourier series} is defined as
+        \begin{center}
+            \[f(t) = \dfrac {a[0]}{2} + \sum\limits_{k\ge1} a[k] \cos\left(\frac{2\pi}{T} k t\right) + b[k] \sin\left(\frac{2\pi}{T}kt\right)\]
+        \end{center}
+        \bigskip
+        This is a superposition of weighted sine and cosine functions of different frequency. \\
+        The scalar weights $a[k] \in \real$ and $b[k] \in \real$ are called the \textit{Fourier coefficients} and can be used for the unique mathematical description of periodic functions.
+    \end{myDefinition}
+\end{frame}
+
+
+
+\begin{frame}[t]{Fourier Series}
+
+    \begin{center}
+        \[f(t) = \dfrac {a[0]}{2} + \sum\limits_{k\ge1} a[k] \cos\left(\frac{2\pi}{T}kt\right) + b[k] \sin\left(\frac{2\pi}{T}kt\right)\quad.\]
+    \end{center}
+
+    \begin{itemize}
+        \setlength\itemsep{1.5em}
+        \item For even functions a superposition of weighted cosine functions is sufficient
+              \vspace{0.1cm}
+              \begin{itemize}
+                  \item [$\Rightarrow$] if $f(-t)=f(t)$ then all $b[k]=0$
+              \end{itemize}
+
+        \item For odd functions a superposition of weighted sin functions is sufficient
+
+              \vspace{0.1cm}
+              \begin{itemize}
+                  \item[$\Rightarrow$] if $f(-t)=-f(t)$ then all $a[k]=0$
+              \end{itemize}
+
+    \end{itemize}
+
+\end{frame}
+
+
+
+%\begin{frame}
+%\frametitle{Fourier Series ($a[k]$)}
+%\vspace{-2cm}
+%{\LARGE
+
+%\begin{eqnarray*}
+%f(t) =& \dfrac {a[0]}{2} + \sum\limits_{k\ge1} \left[ a[k] \cos(\frac{2\pi}{T}kt) + b[k] \sin(\frac{2\pi}{T}kt) \right] \; &\Big| \cdot\cos(\frac{2\pi}{T}lt) \\
+%f(t)\cos(\frac{2\pi}{T}lt) =& \dfrac {a[0]}{2}\cos(\frac{2\pi}{T}lt) + \sum\limits_{k\ge1} \Big[ a[k] \cos(\frac{2\pi}{T}kt)\cos(lt) + & \\
+%& b[k] \sin(\frac{2\pi}{T}kt)\cos(\frac{2\pi}{T}lt) \Big] & \Big| \int\limits_{-T/2}^{T/2}
+%\end{eqnarray*}
+
+%\begin{align*}
+%\int\limits_{-T/2}^{T/2} f(t) \cos\left(\frac{2\pi}{T}lt\right) \, dt & = \dfrac {a[0]}{2} \int\limits_{-T/2}^{T/2} \cos\left(\frac{2\pi}{T}lt\right) \, dt +                                                                \\
+%& \phantom{{} = {} }\sum\limits_{k\ge1} \Big[ a[k] \int\limits_{-T/2}^{T/2} \cos\left(\frac{2\pi}{T}kt\right)\cos\left(\frac{2\pi}{T}lt\right) \, dt + \\
+%& \phantom{{} = {} } b[k] \int\limits_{-T/2}^{T/2} \sin\left(\frac{2\pi}{T}kt\right)\cos\left(\frac{2\pi}{T}lt\right) \, dt \Big]
+%\end{align*}
+
+%}
+
+%\end{frame}
+
+
+
+%\begin{frame}
+%\frametitle{Fourier Series ($a[k]$)}
+%\vspace{-2cm}
+%{\LARGE
+%\begin{align*}
+%\int\limits_{-T/2}^{T/2} f(t) \cos(\frac{2\pi}{T}kt) \, dt & = \dfrac {a[0]}{2} \int\limits_{-T/2}^{T/2} cos(\frac{2\pi}{T}kt) \, dt + \sum\limits_{k\ge1}                                                                                      \\
+%& \left[ a[k] \int\limits_{-T/2}^{T/2} \cos(\frac{2\pi}{T}kt)\cos(\frac{2\pi}{T}lt) \, dt + b[k] \int\limits_{-T/2}^{T/2} \sin(\frac{2\pi}{T}kt)\cos(\frac{2\pi}{T}lt) \, dt \right]
+%\end{align*}
+
+%\begin{eqnarray*}
+%\int\limits_{-T/2}^{T/2} \cos (\frac{2\pi}{T}kt) \, dt &=& 0\\
+%\int\limits_{-T/2}^{T/2} \sin (\frac{2\pi}{T}kt) \sin  (\frac{2\pi}{T}lt) \, dt =
+%\int\limits_{-T/2}^{T/2} \cos (\frac{2\pi}{T}kt) \cos  (\frac{2\pi}{T}lt) \, dt &=&
+%\left\{
+%\begin{array}{cc}
+%0,   & \hspace*{-.3cm} \mbox{if}\quad  k\not= l \\
+%\pi, & \hspace*{-.3cm} \mbox{if}\quad  k= l     \\
+%\end{array}
+%\right. \\
+%\int\limits_{-T/2}^{T/2} \sin (\frac{2\pi}{T}kt) \cos (\frac{2\pi}{T}lt) \, dt &=& 0
+%\end{eqnarray*}
+%}
+
+
+%\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{Fourier Series}
+
+    \begin{eqnarray*}
+        %F% \fbox{
+        a[k] &=& \frac{2}{T} \int\limits_{-T/2}^{T/2} f(t) \cos \left(\frac{2\pi}{T}kt\right) \, dt
+        %F% }
+    \end{eqnarray*}
+
+    \begin{eqnarray*}
+        %F% \fbox{
+        b[k] &=& \frac{2}{T} \int\limits_{-T/2}^{T/2} f(t) \sin \left(\frac{2\pi}{T}kt\right) \, dt
+        %F% }
+    \end{eqnarray*}
+
+    %\hspace{2cm}
+
+    \begin{flushright}
+        \href{https://upload.wikimedia.org/wikipedia/commons/5/50/Fourier_transform_time_and_frequency_domains.gif}{\texttt{Aninmation}}
+    \end{flushright}
+    %\begin{flushright}
+    %\href{https://en.wikipedia.org/wiki/User:LucasVB/Gallery#/media/File:Fourier_transform_time_and_frequency_domains.gif}{\texttt{Aninmation}}
+    %\end{flushright}
+
+\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{Fourier Series}
+
+    \myExample of the saw tooth with period $T=2\pi$:\newline
+
+    Calculate all $a[k]$ and $b[k]$ for
+
+    \begin{eqnarray*}
+        f(t) = t &\quad& if \quad -\pi < t < \pi\\
+        f(t + 2\pi k) = f(t) &\quad& if \quad -\infty < t < \infty
+    \end{eqnarray*}
+
+    \begin{center}
+        \includegraphics[height=0.5\textheight, trim={0  0.5cm 0 1cm},clip]{zigzag_signal.pdf}
+    \end{center}
+
+\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{Fourier Series}
+
+    \begin{itemize}
+        \item $f(t)$ is an odd function $\rightarrow$ all $a[k]=0$
+        \item Only sine waves are needed
+    \end{itemize}
+
+    \begin{align*}
+        b[k] = & \frac{1}{\pi} \int\limits_{-\pi}^{\pi} f(t) \sin ( kt) \, \mathsf{d}t \quad \text{and} \quad f(t)=t \\
+        b[k] = & \frac{1}{\pi} \int\limits_{-\pi}^{\pi} t \sin (kt) \, \mathsf{dt}                                   \\
+        =      & -\frac{2}{k} \cos (k\pi) + \frac{2}{\pi k^2} \sin (k\pi) = 2 \frac{(-1)^{k+1}}{k}
+    \end{align*}
+
+\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{Fourier Series (Note)}
+    Each pair of sine and cosine can be interpreted as a complex number.
+    \begin{equation*}
+        e^{i\varphi} = \cos(\varphi) + i \sin(\varphi)
+    \end{equation*}\newline
+    Using the Euler representation the Fourier series can then be written as:
+
+
+    \begin{equation*}
+        f(t) = \dfrac {a[0]}{2} + \sum\limits_{k\ge1} \left[ \frac{1}{2} a[k] \left(e^{2\pi ikt/T} + e^{-2\pi ikt/T} \right)+ \frac{1}{2i} b[k] \left(e^{2\pi ikt/T} - e^{-2\pi ikt/T} \right) \right]
+    \end{equation*}
+
+    \begin{equation*}
+        f(t) = \sum\limits_{k=-\infty}^{\infty} c[k] e^{2\pi ikt/T} \quad , \quad
+        c[k] = \frac{1}{T}\int\limits_{0}^{T} f(t) e^{-2\pi ikt/T}\, \mathsf{d}t
+    \end{equation*}
+\end{frame}
+
+
+
+\begin{frame}[t]{Fourier Series (Summary)}
+    \begin{itemize}
+        \item Approximate functions using sine and cosine waves
+        \item Special cases for odd and even functions
+        \item Fourier series might have finite or infinite terms
+        \item The function has to be periodic (!)
+    \end{itemize}
+
+    \begin{flushright}
+
+        \includegraphics[height=.45\textheight ]{images/Fourier}
+
+        \scriptsize Sources: Wikimedia Commons
+    \end{flushright}
+\end{frame}
+
+
+
+\section{Fourier Transform}%
+\label{sec:fourier_transform}
+
+
+
+\begin{frame}
+    \frametitle{Fourier Transform}
+    \question How can we extend the Fourier series to non-periodic signals?\newline
+
+    \answer We need to extend the period $T$ of the signal to $\infty$.\newline
+
+    But with a big period $T$ the number of terms needed for approximation increases and thereby the distance of successive $k$ decreases. With $T\rightarrow\infty$ $k$ becomes a continuous variable. Therefore, $c[k]$ becomes a function of $k$ and the summation needs to be an integral.
+
+        {
+            \begin{align*}
+                f(t) = \sum\limits_{k=-\infty}^{\infty} c[k] e^{2\pi ikt/T} \quad\quad            & \rightarrow \quad\quad f(t) = \int\limits_{-\infty}^{\infty} c(k) e^{2\pi ikt}\, dk  \\
+                c[k] = \frac{1}{T}\int\limits_{-T/2}^{T/2} f(t) e^{-2\pi ikt/T}\, dt \quad\quad & \rightarrow \quad\quad c(k) = \int\limits_{-\infty}^{\infty} f(t) e^{-2\pi ikt}\, dt
+            \end{align*}
+        }
+\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{Fourier Transform}
+
+    \begin{myDefinition}
+
+        The weight function $c(k)$ is called the \textit{Fourier transform} of $f(t)$. In the following we will denote the Fourier transform of $f(t)$ by:
+
+        \begin{eqnarray*}
+            F(\xi)&=& \int\limits_{-\infty}^{+\infty} f(t) e^{-2\pi i\xi t} \, dt\quad =
+            \quad  \mathcal{F}\{f\}\quad .
+        \end{eqnarray*}
+
+        The Fourier transform of a function represents the amplitude of each frequency. It converts a time function into a frequency domain function.
+
+    \end{myDefinition}
+    \vspace{1cm}
+
+    \begin{flushright}
+        \href{https://upload.wikimedia.org/wikipedia/commons/a/a3/Continuous_Fourier_transform_of_rect_and_sinc_functions.gif}{$\longrightarrow$ \texttt{Aninmation}}
+    \end{flushright}
+
+\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{Fourier Transform}
+    \myExample of a cosine wave with a frequency of $5\,Hz$ and 100 samples/sec.\\
+    The magnitude response is calculated by the absolute value of $\mathcal{F}\{f\}$.
+
+    %the negative frequency is there just for mathematic reasons. pos and neg frequency are needed to get a real function (sine) without the imaginary part left
+    \begin{center}
+        \includegraphics[height=.65\textheight ]{images/fourier1}\includegraphics[height=.65\textheight ]{images/fourier2}
+    \end{center}
+\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{Fourier Transform}
+    \myExample of two sine waves with a frequency of $50\,Hz$ and $120\,Hz$ and 1000 samples/sec.\newline
+
+    \begin{center}
+        \includegraphics[height=.65\textheight ]{images/fourier1N}\includegraphics[height=.65\textheight ]{images/fourier2N}
+    \end{center}
+\end{frame}
+
+
+
+%\begin{frame}
+%\frametitle{2-D Signals}
+%
+%Images are matrices with intensity values. According to our definition it is a signal, but depending on two variables $x$ and $y$ instead of a single $t$.\newline
+%
+%\begin{center}
+%	\includegraphics[height=.55\textheight ]{images/Smile1} \quad
+%	\includegraphics[height=.55\textheight ]{images/Smile2}
+%\end{center}
+%\end{frame}
+%
+%
+%
+%\begin{frame}
+%\frametitle{2-D Signals (Note)}
+%
+%The imaging system samples the "function" only at discrete values. We distinguish between node and cell based representation.\newline
+%
+%\begin{center}
+%	\includegraphics[height=.50\textheight ]{images/nodebased.eps} \quad\quad
+%	\includegraphics[height=.50\textheight ]{images/cellbased.eps}
+%\end{center}
+%
+%\end{frame}
+%
+%
+%
+%\begin{frame}
+%\frametitle{2-D Fourier Transform}
+%
+%The 1-D Fourier transform can easily be extended into the 2-D domain. This allows to detect frequency in images.\newline
+%
+%%Shift zero-frequency component to center of spectrum
+%%similar to the 1-D second peak "negative frequency"
+%\begin{center}
+%	\includegraphics[height=.50\textheight ]{images/fourier2D1.eps} \quad\quad
+%	\includegraphics[height=.50\textheight ]{images/fourier2D2.eps}
+%\end{center}
+%
+%\end{frame}
+%
+%
+%
+%\begin{frame}
+%\frametitle{2-D Fourier Transform}
+%
+%The position of both dots denote the orientation of the wave. The magnitude is decoded in the intensity of the peaks.
+%\begin{center}
+%	\includegraphics[height=.5\textheight ]{images/fourier2D3.eps} \quad\quad
+%	\includegraphics[height=.5\textheight ]{images/fourier2D4.eps}
+%\end{center}
+%\end{frame}
+%
+%
+%
+%\begin{frame}
+%\frametitle{2-D Fourier Transform}
+%For visual representation a logarithmic scaling is applied.\newline
+%
+%
+%\begin{center}
+%	\includegraphics[height=.4\textheight ]{images/FourierBox1.eps}
+%	\includegraphics[height=.4\textheight ]{images/FourierBox2.eps}
+%	\includegraphics[height=.4\textheight ]{images/FourierBox3.eps}
+%\end{center}
+%% we see that a lot of frequency in the x and y direction are needed (compare square wave)
+%\end{frame}
+
+
+
+%\begin{frame}
+%\frametitle{2-D Fourier Transform}
+%We can extend the 1-D Fourier transform for a 2-D signal by integrating over both dimensions.\newline
+%
+%1-D Fourier transform:
+%
+%\begin{eqnarray*}
+% F(\xi)&=& \int\limits_{-\infty}^{+\infty} f(t) e^{-2\pi i\xi t} \, dt\quad
+%\end{eqnarray*}
+%
+%2-D Fourier transform:
+%%the order of the integral is irrelevant
+%\begin{eqnarray*}
+% F(u,v)&=& \int\limits_{-\infty}^{+\infty}\int\limits_{-\infty}^{+\infty} f(x,y) e^{-2\pi i(ux + vy)} \, dx\, dy\quad
+%\end{eqnarray*}
+%\end{frame}
+%
+%
+%
+%\begin{frame}
+%\frametitle{2-D Fourier Transform}
+%The Fourier transformation of $F(u,v)$ is again the original image:\newline
+%
+%\begin{eqnarray*}
+% F(u,v)&=& \int\limits_{-\infty}^{+\infty}\int\limits_{-\infty}^{+\infty} f(x,y) e^{-2\pi i(ux + vy)} \, dx\, dy\quad
+%\end{eqnarray*}
+%
+%\begin{eqnarray*}
+% f(x,y)&=& \int\limits_{-\infty}^{+\infty}\int\limits_{-\infty}^{+\infty} F(u,v) e^{2\pi i(ux + vy)} \, du\, dv\quad
+%\end{eqnarray*}
+%\end{frame}
+%
+%
+%
+%\begin{frame}
+%\frametitle{2-D Fourier Transform}
+%In general we sample our signal at fixed intervals and thereby we can use a discrete version of the 2-D Fourier transform:\newline
+%
+%
+%\begin{eqnarray*}
+%  F(u,v)& =& \sum^{N-1}_{x=0}
+%        \sum^{M-1}_{y=0} f(x,y)
+%          e^{-2\pi i\frac{ux}{N}} 
+%          e^{-2\pi i\frac{vy}{M}}\\
+%         &=&\sum^{N-1}_{x=0} 
+%        \left( 
+%         \sum^{M-1}_{y=0} f(x,y) e^{-2\pi i\frac{vy}{M}}
+%        \right)
+%        e^{-2\pi i\frac{xu}{N}}\quad .
+%\end{eqnarray*}
+%\end{frame}
+
+\subtitle{Convolution}
+\frame[plain,c]{\titlepage}
+
+\section{Convolution}%
+\label{sec:convolution}
+
+
+\begin{frame}[t]{Convolution}
+    \visible<1-2>{Two functions can be combined in several different ways.}
+
+    %\vspace{0.3cm}
+    \alt<1>{\myExample{} of building the sum of two functions:}{\textbf{Convolution} is just a different way to combine two functions.}
+    \vspace{0.1cm}
+    \begin{align*}
+        \textcolor{red!80!black}{f(t)~}   & \textcolor{red!80!black}{= \mathsf{rect}\left(0.5\cdot t\right) \cdot \left(1-\left| t \right|\right)} \\[0.2cm]
+        \textcolor{green!40!black}{h(t)~} & \textcolor{green!40!black}{= \mathsf{rect}\left(0.5\cdot t\right)}                                     \\[0.2cm]
+        \textcolor{blue!80}{g(t)~}        & \textcolor{blue!80}{= \alt<1>{f(t) + h(t)}{f(t) \ast h(t)}}
+    \end{align*}
+    \vspace{-0.1cm}
+    \begin{center}
+        \alt<1>{\begin{columns}[t, onlytextwidth]
+                \begin{column}{0.33\textwidth}
+                    \centering{}
+                    \scalebox{0.4}{\input{triangle.tex}}
+
+                    $\quad{}f(t)$
+                \end{column}\begin{column}{0.33\textwidth}
+                    \centering{}
+                    \scalebox{0.4}{\input{box.tex}}
+
+                    $\quad{}h(t)$
+                \end{column}\begin{column}{0.33\textwidth}
+                    \centering{}
+                    \scalebox{0.4}{\input{triangle_plus_box.tex}}
+
+                    $\quad{}f(t) + h(t)$
+                \end{column}
+            \end{columns}}{%
+            \begin{columns}[t, onlytextwidth]
+                \begin{column}{0.33\textwidth}
+                    \centering{}
+                    \scalebox{0.4}{\input{triangle.tex}}
+
+                    $\quad{}f(t)$
+                \end{column}\begin{column}{0.33\textwidth}
+                    \centering{}
+                    \scalebox{0.4}{\input{box.tex}}
+
+                    $\quad{}h(t)$
+                \end{column}\begin{column}{0.33\textwidth}
+                    \centering{}
+                    \scalebox{0.4}{\input{convolved.tex}}
+
+                    $\quad{}f(t) \ast h(t)$
+                \end{column}
+            \end{columns}}
+        %	\includegraphics[height=.35\textheight ]{images/AddF.eps} \quad 
+        %	\includegraphics[height=.35\textheight ]{images/AddG.eps} \quad 
+        %	\includegraphics[height=.35\textheight ]{images/AddH.eps}
+    \end{center}
+
+\end{frame}
+
+\begin{frame}[t]{Convolution}
+    The convolution of two 1-d signals is defined as:
+
+    \begin{eqnarray*}
+        f(t) \ast h(t) &=& \int\limits_{-\infty}^{+\infty}f\left(\tau\right)h\left(t-\tau\right) \, d\tau
+    \end{eqnarray*}\newline
+
+    The convolution of two 2-d signals is defined as:
+
+    \begin{eqnarray*}
+        f\left(x,y\right) \ast h\left(x,y\right) &=& \int\limits_{-\infty}^{+\infty}\int\limits_{-\infty}^{+\infty}f\left(x',y'\right)h\left(x-x',y-y'\right) \, dx' \, dy'
+    \end{eqnarray*}
+
+
+\end{frame}
+
+% build takes long? This is the reason!
+\begin{frame}[t]{Convolution}
+
+    %\begin{align*}
+    %\textcolor{red!80!black}{f(\tau)~} & \textcolor{red!80!black}{= \mathsf{rect}\left(0.5\cdot \tau\right) \cdot \left(1-\left| \tau \right|\right)} \\[0.2cm]
+    %\textcolor{green!40!black}{h(t-\tau)~} & \textcolor{green!40!black}{= \mathsf{rect}\left(0.5\cdot t-\tau\right)}\\[0.2cm]
+    %& \textcolor{orange!80!black}{f(\tau) \cdot h(t-\tau)}\\[0.2cm]
+    %\textcolor{blue!80}{g(t)~} & \textcolor{blue!80}{= \alt<1>{f(t) + h(t)}{f(t) \ast h(t)}}
+    %\end{align*}
+    How can the convolution be visualized?
+    \vspace{0.2cm}
+
+    %\vspace{0.3cm} 
+    \begin{center}
+        \begin{columns}[t, onlytextwidth]
+            \begin{column}{0.5\textwidth}
+                \centering{}
+                \only<1>{\scalebox{0.5}{\input{box_moved_0.tex}}}%
+                \only<2>{\scalebox{0.5}{\input{box_moved_1.tex}}}%
+                \only<3>{\scalebox{0.5}{\input{box_moved_2.tex}}}%
+                \only<4>{\scalebox{0.5}{\input{box_moved_3.tex}}}%
+                \only<5>{\scalebox{0.5}{\input{box_moved_4.tex}}}%
+                \only<6>{\scalebox{0.5}{\input{box_moved_5.tex}}}%
+                \only<7>{\scalebox{0.5}{\input{box_moved_6.tex}}}%
+                \only<8>{\scalebox{0.5}{\input{box_moved_7.tex}}}%
+                \only<9>{\scalebox{0.5}{\input{box_moved_8.tex}}}%
+                \only<10>{\scalebox{0.5}{\input{box_moved_9.tex}}}%
+                \begin{align*}
+                    \textcolor{red!80!black}{f(\tau)~}     & \textcolor{red!80!black}{= \mathsf{rect}\left(0.5\cdot \tau\right) \cdot \left(1-\left| \tau \right|\right)} \\[0.2cm]
+                    \textcolor{green!40!black}{h(t-\tau)~} & \textcolor{green!40!black}{= \mathsf{rect}\left(0.5\cdot \left(t-\tau\right)\right)}                         \\[0.2cm]
+                                                           & \textcolor{orange!80!black}{~~~f(\tau) \cdot h(t-\tau)}                                                      \\[0.2cm]
+                    %\textcolor{blue!80}{g(t)~} & \textcolor{blue!80}{= \alt<1>{f(t) + h(t)}{f(t) \ast h(t)}}
+                \end{align*}
+
+            \end{column}%
+            %\begin{column}{0.33\textwidth}
+            %\centering{}
+            %\scalebox{0.4}{\input{multiplied_0.tex}}
+
+            %\quad{}f(\tau)$ \cdot h(t-\tau)$
+            %\end{column}
+            \begin{column}{0.5\textwidth}
+                \centering{}
+                \only<1>{\scalebox{0.5}{\input{convolved_partial_0.tex}}}%
+                \only<2>{\scalebox{0.5}{\input{convolved_partial_1.tex}}}%
+                \only<3>{\scalebox{0.5}{\input{convolved_partial_2.tex}}}%
+                \only<4>{\scalebox{0.5}{\input{convolved_partial_3.tex}}}%
+                \only<5>{\scalebox{0.5}{\input{convolved_partial_4.tex}}}%
+                \only<6>{\scalebox{0.5}{\input{convolved_partial_5.tex}}}%
+                \only<7>{\scalebox{0.5}{\input{convolved_partial_6.tex}}}%
+                \only<8>{\scalebox{0.5}{\input{convolved_partial_7.tex}}}%
+                \only<9>{\scalebox{0.5}{\input{convolved_partial_8.tex}}}%
+                \only<10>{\scalebox{0.5}{\input{convolved_partial_9.tex}}}%
+                \begin{align*}
+                    \textcolor{blue!80}{g(t)~} & \textcolor{blue!80}{= f(t) \ast h(t)}                                                                                   \\[0.2cm]
+                                               & \textcolor{blue!80}{= \int_{-\infty}^{+\infty} \textcolor{orange!80!black}{f(\tau) \cdot h(t-\tau)}\, \mathsf{d}\,\tau}
+                \end{align*}
+
+            \end{column}
+        \end{columns}
+    \end{center}
+\end{frame}
+
+\begin{frame}[t]{Convolution}
+
+    %\begin{align*}
+    %\textcolor{red!80!black}{f(\tau)~} & \textcolor{red!80!black}{= \mathsf{rect}\left(0.5\cdot \tau\right) \cdot \left(1-\left| \tau \right|\right)} \\[0.2cm]
+    %\textcolor{green!40!black}{h(t-\tau)~} & \textcolor{green!40!black}{= \mathsf{rect}\left(0.5\cdot t-\tau\right)}\\[0.2cm]
+    %& \textcolor{orange!80!black}{f(\tau) \cdot h(t-\tau)}\\[0.2cm]
+    %\textcolor{blue!80}{g(t)~} & \textcolor{blue!80}{= \alt<1>{f(t) + h(t)}{f(t) \ast h(t)}}
+    %\end{align*}
+    Another example:
+    \vspace{0.2cm}
+
+    %\vspace{0.3cm}
+    \begin{center}
+        \begin{columns}[t, onlytextwidth]
+            \begin{column}{0.5\textwidth}
+                \centering{}
+                \only<1>{\scalebox{0.5}{\input{example1_box_moved_0.tex}}}%
+                \only<2>{\scalebox{0.5}{\input{example1_box_moved_1.tex}}}%
+                \only<3>{\scalebox{0.5}{\input{example1_box_moved_2.tex}}}%
+                \only<4>{\scalebox{0.5}{\input{example1_box_moved_3.tex}}}%
+                \only<5>{\scalebox{0.5}{\input{example1_box_moved_4.tex}}}%
+                \only<6>{\scalebox{0.5}{\input{example1_box_moved_5.tex}}}%
+                \only<7>{\scalebox{0.5}{\input{example1_box_moved_6.tex}}}%
+                \only<8>{\scalebox{0.5}{\input{example1_box_moved_7.tex}}}%
+                \only<9>{\scalebox{0.5}{\input{example1_box_moved_8.tex}}}%
+                \only<10>{\scalebox{0.5}{\input{example1_box_moved_9.tex}}}%
+                \begin{align*}
+                    \textcolor{red!80!black}{f(\tau)~}     & \textcolor{red!80!black}{= \mathsf{rect}\left(0.5\cdot \tau \right)}                 \\[0.2cm]
+                    \textcolor{green!40!black}{h(t-\tau)~} & \textcolor{green!40!black}{= \mathsf{rect}\left(0.5\cdot \left(t-\tau\right)\right)} \\[0.2cm]
+                                                           & \textcolor{orange!80!black}{~~~f(\tau) \cdot h(t-\tau)}                              \\[0.2cm]
+                    %\textcolor{blue!80}{g(t)~} & \textcolor{blue!80}{= \alt<1>{f(t) + h(t)}{f(t) \ast h(t)}}
+                \end{align*}
+
+
+            \end{column}%
+            %\begin{column}{0.33\textwidth}
+            %\centering{}
+            %\scalebox{0.4}{\input{multiplied_0.tex}}
+
+            %\quad{}f(\tau)$ \cdot h(t-\tau)$
+            %\end{column}
+            \begin{column}{0.5\textwidth}
+                \centering{}
+                \only<1>{\scalebox{0.5}{\input{example1_convolved_partial_0.tex}}}%
+                \only<2>{\scalebox{0.5}{\input{example1_convolved_partial_1.tex}}}%
+                \only<3>{\scalebox{0.5}{\input{example1_convolved_partial_2.tex}}}%
+                \only<4>{\scalebox{0.5}{\input{example1_convolved_partial_3.tex}}}%
+                \only<5>{\scalebox{0.5}{\input{example1_convolved_partial_4.tex}}}%
+                \only<6>{\scalebox{0.5}{\input{example1_convolved_partial_5.tex}}}%
+                \only<7>{\scalebox{0.5}{\input{example1_convolved_partial_6.tex}}}%
+                \only<8>{\scalebox{0.5}{\input{example1_convolved_partial_7.tex}}}%
+                \only<9>{\scalebox{0.5}{\input{example1_convolved_partial_8.tex}}}%
+                \only<10>{\scalebox{0.5}{\input{example1_convolved_partial_9.tex}}}%
+                \begin{align*}
+                    \textcolor{blue!80}{g(t)~} & \textcolor{blue!80}{= f(t) \ast h(t)}                                                                                   \\[0.2cm]
+                                               & \textcolor{blue!80}{= \int_{-\infty}^{+\infty} \textcolor{orange!80!black}{f(\tau) \cdot h(t-\tau)}\, \mathsf{d}\,\tau}
+                \end{align*}
+
+            \end{column}
+        \end{columns}
+    \end{center}
+\end{frame}
+
+
+%\begin{frame}
+%\frametitle{Convolved}
+
+%\myExample: Convolution of square and Gauss function
+
+%\begin{columns}[c, onlytextwidth]
+%\begin{column}{0.8\textwidth}
+%\begin{center}
+%\includegraphics[height=.35\textheight]{images/convolve_t.pdf}
+%\end{center}
+%\end{column}\begin{column}{0.2\textwidth}
+
+%\end{column}
+%\end{columns}
+
+%\myExample: Convolution of two squares
+
+%\begin{columns}[c, onlytextwidth]
+%\begin{column}{0.8\textwidth}
+
+%\begin{center}
+%\includegraphics[height=.35\textheight]{images/square_convolve_t.pdf}
+%\end{center}
+%\end{column}\begin{column}{0.2\textwidth}
+
+%\href{https://en.wikipedia.org/wiki/File:Convolution_of_box_signal_with_itself2.gif}{\texttt{Animation}}
+%\end{column}
+%\end{columns}
+
+%\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{Fundamental Theorem of Linear Systems}
+    \begin{myDefinition}
+        If a system is linear and shift-invariant then there is a function $h(x,y)$, such that:
+        \begin{center}
+            $g(x,y) = f(x,y) \ast h(x,y) = \int\limits_{-\infty}^{\infty}\int\limits_{-\infty}^{\infty} f(x',y')h(x-x',y-y') \, dx' \, dy'$
+        \end{center}
+
+        \vspace{5 mm}
+
+        The function $h(x,y)$ is called \textit{Impulse Response}.
+    \end{myDefinition}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Impulse response}
+
+    \begin{columns}[c, onlytextwidth]
+        \begin{column}{.48\linewidth}
+            \hspace{1.2cm}\begin{myDefinition}
+                The \textit{Impulse Response} is the output of a system with a Dirac distribution $\delta(t)$ at the input
+                \begin{equation*}
+                    \delta(t) = \begin{cases}
+                        \infty, & \text{if } t = 0 \\
+                        0,      & \text{otherwise}
+                    \end{cases}
+                \end{equation*}
+            \end{myDefinition}
+        \end{column}
+        \hfill{}%
+        \begin{column}{.48\linewidth}
+            \begin{center}
+
+                \includegraphics[height=.45\textheight]{images/dirac_t.pdf}
+            \end{center}
+        \end{column}
+    \end{columns}
+
+    \vspace{0.5cm}
+    \textbf{Reason}: Shifting property of the Dirac puls
+    \begin{equation*}
+        f(t) * \delta(t-T) = \int_{-\infty}^{\infty}{f(\tau)\delta(\tau - t - T)\; \mathrm{d}\tau} = f(t-T)
+    \end{equation*}
+
+\end{frame}
+
+\begin{frame}[t]{Impuls response}
+    \begin{itemize}
+        \item The Dirac puls can be approximated by a series of short rectangle pulses
+        \item This means we can estimate the puls response of a physical system by sending in short rectangle pulses
+    \end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{Convolution}
+    \question{} What is a convolution good for?\newline
+
+    \answer{} The most intuitive application is smoothing of a signal.\newline
+
+    \begin{figure}[htpb]
+        \begin{center}
+            \begin{tikzpicture}[scale=0.95, transform shape]
+                \node (signal) [] at (0,1.5) {\includegraphics[height=.30\textheight ]{images/ConvSig.eps}};
+                \node (filter) [] at (0,-1.5) {\includegraphics[height=.30\textheight ]{images/ConvSigG.eps}};
+                \node (output) [] at (6,0) {\includegraphics[height=.30\textheight ]{images/ConvSigC.eps}};
+                \node (star) [draw=faublue, line width=0.4mm,circle] at (3,0) {\color{faublue}$\ast$};
+
+                \path[fauarrow] (signal) -| (star) node[midway, above right] {};
+                \path[fauarrow] (filter) -| (star) node[midway, above right] {};
+                \path[fauarrow] (star) -- (output) node[midway, above right] {};
+
+            \end{tikzpicture}
+        \end{center}
+        \caption{}
+        \label{fig:}
+    \end{figure}
+
+
+    %\begin{center}
+    %\includegraphics[height=.40\textheight ]{images/ConvSig.eps}
+    %\includegraphics[height=.40\textheight ]{images/ConvSigG.eps}
+    %\includegraphics[height=.40\textheight ]{images/ConvSigC.eps}
+    %\end{center}
+\end{frame}
+
+\begin{frame}[c]{Convolution theorem}
+    \begin{myDefinition}
+        A convolution in the time domain is a multiplication in the frequency domain.\newline
+
+        \begin{center}
+            $f(t) \ast h(t)$ $\quad$ \laplace $\quad$ $F(u)H(u)$
+        \end{center}
+        %
+        %\vspace{10 mm}
+        %
+        %For a 2-D signal, e.g. in image processing this results in:\newline
+        %
+        %\begin{center}
+        %  $f(x,y) \ast g(x,y)$ \put(40,5){\circle{15}} \put(46,5){\line(1,0){35}} \put(81,5){\circle*{15}} \quad \quad \quad \quad \quad \quad $F(u,v)G(u,v)$
+        %\end{center}
+    \end{myDefinition}
+
+
+    %\begin{myDefinition}
+    %A correlation in the time domain is a multiplication in the frequency domain using the complex conjugate.\newline
+
+    %\begin{center}
+    %$f(t) \star g(t)$ \put(40,5){\circle{15}} \put(46,5){\line(1,0){35}} \put(81,5){\circle*{15}} \quad \quad \quad \quad \quad \quad $F^{*}(u)G(u)$
+    %\end{center}
+    %\end{myDefinition}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Description of Imaging Systems}
+    \begin{myDefinition}
+        Applying the convolution theorem to imaging systems we can conclude:
+        \begin{align*}
+            \setlength{\jot}{32pt}
+            g(x,y) = f(x,y) \ast h(x,y) \quad \quad & \laplace & \quad \quad  G(u,v)=F(u,v)H(u,v) \\
+            h(x,y)            \quad \quad           & \laplace & \quad \quad  H(u,v)
+        \end{align*}
+
+        \vspace{5 mm}
+
+        The function $h(x,y)$ is called \textit{Point Spread Function}. It describes how a single point is spread on the sensor matrix using a certain imaging system. \\[0.3cm]
+        The function $H(u,v)$ is called \textit{Transfer Function}. It describes how frequencies are changed by the imaging system.
+    \end{myDefinition}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Fundamental Theorem}
+    \question Why is $h(x,y)$ called Point Spread Function?\newline
+
+    \answer
+    \begin{center}
+        $f(x,y) = \delta(x,y) \quad \quad \rightarrow \quad \quad$ Input is a single point (impulse)
+    \end{center}
+    %dirac delta function is everywhere zero but in the origin (infinity)
+
+    \vspace{5 mm}
+
+    Properties of the delta functions:
+    \begin{eqnarray*}
+        \int\int\limits_{-\infty}^{+\infty} f(x,y)\delta(x-x_0,y-y_0) \, dx\, dy &=& f(x_0,y_0)\\
+        \int\int\limits_{-\infty}^{+\infty} \delta(x-x_0,y-y_0) \, dx\, dy &=& 1
+    \end{eqnarray*}
+\end{frame}
+%\begin{frame}
+%\frametitle{Correlation theorem}
+%\begin{myDefinition}
+%A correlation in the time domain is a multiplication in the frequency domain using the complex conjugate.\newline
+%
+%\begin{center}
+%  $f(t) \star g(t)$ \put(40,5){\circle{15}} \put(46,5){\line(1,0){35}} \put(81,5){\circle*{15}} \quad \quad \quad \quad \quad \quad $F^{*}(u)G(u)$
+%\end{center}
+%
+%\vspace{10 mm}
+%
+%For a 2-D signal, e.g. in image processing this results in:\newline
+%
+%\begin{center}
+%  $f(x,y) \star g(x,y)$ \put(40,5){\circle{15}} \put(46,5){\line(1,0){35}} \put(81,5){\circle*{15}} \quad \quad \quad \quad \quad \quad $F^{*}(u,v)G(u,v)$
+%\end{center}
+%\end{myDefinition}
+%\end{frame}
+
+\subtitle{Sampling}
+\frame[plain,c]{\titlepage}
+
+\section{Sampling}%
+\label{sec:sampling}
+
+
+\begin{frame}
+    \frametitle{Sampling}
+    \begin{myDefinition}
+        Sampling is the reduction of a continuous signal to a discrete signal.
+    \end{myDefinition}
+
+    \vspace{5mm}
+
+    \begin{columns}[c, onlytextwidth]
+        \begin{column}{0.4\textwidth}
+            %\begin{flushleft}
+            %When converting an analogue signal into a digital signal this means to
+            %discretize the signal along the \textbf<1>{time axis}, and to \textbf<2>{discretize the values} of the
+            %signal. This is a complex process and is demonstrated in the image on the
+            %right.
+            %\end{flushleft}
+            Sampling means:
+            \begin{itemize}
+                \item Discretization along \textbf<1>{time axis}
+                \item Discretization along \textbf<2>{value axis}
+            \end{itemize}
+        \end{column}\begin{column}{0.6\textwidth}
+            \only<1>{\begin{figure}[]
+                    \centering{}
+                    \includegraphics[height=0.5\textheight]{images/sampling_t.pdf}
+                    \caption{Time Discretization}
+                \end{figure}}\only<2>{
+                \begin{figure}[]
+                    \centering
+                    \includegraphics[height=0.5\textheight]{images/quantization_t.pdf}
+                    \caption{Quantization}
+                \end{figure}
+            }
+            %file:///localhome/seitz_local/projects/MT1-lecture/mt1-script/system_theory/Pictures/quantization_t.pdf
+            %file:///localhome/seitz_local/projects/MT1-lecture/mt1-script/system_theory/Pictures/sampling_t.pdf
+        \end{column}
+    \end{columns}
+
+    %\begin{minipage}{.55\linewidth}
+    %\end{minipage}
+    %\begin{minipage}{.35\linewidth}
+    %\begin{flushright}
+    %\includegraphics[height=.5\textheight ]{images/sampling}\\
+    %\scriptsize Sources: BVM
+    %\end{flushright}
+
+    %\end{minipage}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Sampling}
+    When our sampling is too sparse several signals might have the same samples and therefore our original signal will not be digitized correctly (aliasing artifacts).\newline
+
+    \begin{center}
+        \includegraphics[height=.4\textheight ]{images/AliasingSines.pdf}
+        \begin{flushright}
+            \scriptsize Source: Wikimedia Commons$\quad$
+        \end{flushright}
+    \end{center}
+\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{Sampling Theorem}
+    To preserve the original signal we have to follow the Nyquist-Shannon sampling theorem.\newline
+
+    \begin{myDefinition}
+        "If a function $x(t)$ contains no frequencies higher than B $hertz$, it is completely determined by giving its ordinates at a series of points spaced $1/(2B)$ seconds apart."
+    \end{myDefinition}
+
+    \vspace{5mm}
+
+    This means that our sampling distance $\Delta x$ must be equal or smaller than half of the size of the shortest wave length.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Sampling Frequencies}
+    Sampling frequencies are determined by their purpose.\newline
+
+    \begin{itemize}
+        \item Speech: $8,000$ Hz
+        \item Compact Disc: $44.1$ kHz
+        \item Orca Calls: $96$ kHz
+        \item Retina Display: $~ 150$ pixel/cm \\
+                 Human Eye: $~580$ Mpixels / 210 deg field of view
+        \item Video: $~24$ frames/s\\
+                 Flickering is perceived up to 50 Hz
+    \end{itemize}
+
+    \vspace{5mm}
+
+\end{frame}
+
+
+
+%\begin{frame}
+%\frametitle{Sampling Theorem}
+
+%\begin{center}
+%\includegraphics[height=.7\textheight ]{images/samplingR}
+%\end{center}
+
+%\end{frame}
+
+%\begin{frame}
+%\frametitle{Outline}
+%\begin{itemize}
+%	\item Signals and Systems
+%	\item Complex Numbers
+%	\item Convolution \& Correlation
+%	\item Fourier Series
+%	\item Fourier Transform
+%	\item Sampling
+%%	\bolditem Noise
+%	\item Examples
+%\end{itemize}
+%\end{frame}
+
+
+\section{Further Questions?}
+
+\begin{frame}[t]{Further Readings}
+    \begin{itemize}
+        \item \fullcite{Fischer2018}
+        \item \fullcite{Girod2007}
+    \end{itemize}
+
+\end{frame}
+
+\end{document}
+

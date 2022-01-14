@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.0" width="940.80603pt" height="288.00699pt" viewBox="0 0 940.806 288.007" id="svg3761" xml:space="preserve" sodipodi:version="0.32" inkscape:version="0.45.1" sodipodi:docname="Electromagnetic_spectrum.svg" sodipodi:docbase="C:\Documents and Settings\Administrator\Desktop" inkscape:output_extension="org.inkscape.output.svg.inkscape">
+	<metadata id="metadata6591">
+		<rdf:RDF>
+			<cc:Work rdf:about="">
+				<dc:format>image/svg+xml</dc:format>
+				<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+			</cc:Work>
+		</rdf:RDF>
+	</metadata>
+	<sodipodi:namedview borderopacity="1.0" bordercolor="#666666" pagecolor="#ffffff" id="base" inkscape:zoom="1.0170003" inkscape:cx="588.00378" inkscape:cy="180.00436" inkscape:window-width="1280" inkscape:window-height="977" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:current-layer="svg3761" showguides="true" inkscape:guide-bbox="true"/>
+	<defs id="defs4888"><linearGradient id="linearGradient10974"><stop style="stop-color:#f5f5f5;stop-opacity:1;" offset="0" id="stop10976"/><stop id="stop10994" offset="0.53571427" style="stop-color:#f5f5f5;stop-opacity:1;"/><stop style="stop-color:#f5f5f5;stop-opacity:0;" offset="1" id="stop10978"/></linearGradient><linearGradient id="linearGradient3142"><stop style="stop-color:#00121F;stop-opacity:1;" offset="0" id="WL380nm"/><stop style="stop-color:#00121F;stop-opacity:1;" offset="0.00602409638554217" id="WL381nm"/><stop style="stop-color:#00121F;stop-opacity:1;" offset="0.0120481927710843" id="WL383nm"/><stop style="stop-color:#00121F;stop-opacity:1;" offset="0.0180722891566265" id="WL385nm"/><stop style="stop-color:#00121F;stop-opacity:1;" offset="0.0240963855421687" id="WL387nm"/><stop style="stop-color:#001930;stop-opacity:1;" offset="0.0301204819277108" id="WL389nm"/><stop style="stop-color:#001930;stop-opacity:1;" offset="0.036144578313253" id="WL391nm"/><stop style="stop-color:#240036;stop-opacity:1;" offset="0.0421686746987952" id="WL393nm"/><stop style="stop-color:#24003E;stop-opacity:1;" offset="0.0481927710843374" id="WL395nm"/><stop style="stop-color:#1F0043;stop-opacity:1;" offset="0.0542168674698795" id="WL397nm"/><stop style="stop-color:#190048;stop-opacity:1;" offset="0.0602409638554217" id="WL399nm"/><stop style="stop-color:#330052;stop-opacity:1;" offset="0.0662650602409639" id="WL401nm"/><stop style="stop-color:#2C0059;stop-opacity:1;" offset="0.072289156626506" id="WL403nm"/><stop style="stop-color:#240061;stop-opacity:1;" offset="0.0783132530120482" id="WL405nm"/><stop style="stop-color:#1F006A;stop-opacity:1;" offset="0.0843373493975904" id="WL407nm"/><stop style="stop-color:#2C0078;stop-opacity:1;" offset="0.0903614457831325" id="WL409nm"/><stop style="stop-color:#360087;stop-opacity:1;" offset="0.0963855421686747" id="WL411nm"/><stop style="stop-color:#390096;stop-opacity:1;" offset="0.102409638554217" id="WL413nm"/><stop style="stop-color:#4C00A8;stop-opacity:1;" offset="0.108433734939759" id="WL415nm"/><stop style="stop-color:#5500BC;stop-opacity:1;" offset="0.114457831325301" id="WL417nm"/><stop style="stop-color:#5200CD;stop-opacity:1;" offset="0.120481927710843" id="WL419nm"/><stop style="stop-color:#6100E2;stop-opacity:1;" offset="0.126506024096386" id="WL421nm"/><stop style="stop-color:#6B00F8;stop-opacity:1;" offset="0.132530120481928" id="WL423nm"/><stop style="stop-color:#6E00FF;stop-opacity:1;" offset="0.13855421686747" id="WL425nm"/><stop style="stop-color:#7000FF;stop-opacity:1;" offset="0.144578313253012" id="WL427nm"/><stop style="stop-color:#6E00FF;stop-opacity:1;" offset="0.150602409638554" id="WL429nm"/><stop style="stop-color:#6C00FF;stop-opacity:1;" offset="0.156626506024096" id="WL431nm"/><stop style="stop-color:#6E00FF;stop-opacity:1;" offset="0.162650602409639" id="WL433nm"/><stop style="stop-color:#7000FF;stop-opacity:1;" offset="0.168674698795181" id="WL435nm"/><stop style="stop-color:#6F00FF;stop-opacity:1;" offset="0.174698795180723" id="WL437nm"/><stop style="stop-color:#6C00FF;stop-opacity:1;" offset="0.180722891566265" id="WL439nm"/><stop style="stop-color:#6A00FF;stop-opacity:1;" offset="0.186746987951807" id="WL441nm"/><stop style="stop-color:#6700FF;stop-opacity:1;" offset="0.192771084337349" id="WL443nm"/><stop style="stop-color:#6700FF;stop-opacity:1;" offset="0.198795180722892" id="WL445nm"/><stop style="stop-color:#6100FF;stop-opacity:1;" offset="0.204819277108434" id="WL447nm"/><stop style="stop-color:#5C00FF;stop-opacity:1;" offset="0.210843373493976" id="WL449nm"/><stop style="stop-color:#5700FF;stop-opacity:1;" offset="0.216867469879518" id="WL451nm"/><stop style="stop-color:#5900FF;stop-opacity:1;" offset="0.22289156626506" id="WL453nm"/><stop style="stop-color:#5400FF;stop-opacity:1;" offset="0.228915662650602" id="WL455nm"/><stop style="stop-color:#4E00FF;stop-opacity:1;" offset="0.234939759036145" id="WL457nm"/><stop style="stop-color:#4300FF;stop-opacity:1;" offset="0.240963855421687" id="WL459nm"/><stop style="stop-color:#3300FF;stop-opacity:1;" offset="0.246987951807229" id="WL461nm"/><stop style="stop-color:#1F00FF;stop-opacity:1;" offset="0.253012048192771" id="WL463nm"/><stop style="stop-color:#0019FF;stop-opacity:1;" offset="0.259036144578313" id="WL465nm"/><stop style="stop-color:#003CFF;stop-opacity:1;" offset="0.265060240963855" id="WL467nm"/><stop style="stop-color:#0050FF;stop-opacity:1;" offset="0.271084337349398" id="WL469nm"/><stop style="stop-color:#0061FF;stop-opacity:1;" offset="0.27710843373494" id="WL471nm"/><stop style="stop-color:#0070FF;stop-opacity:1;" offset="0.283132530120482" id="WL473nm"/><stop style="stop-color:#007FFF;stop-opacity:1;" offset="0.289156626506024" id="WL475nm"/><stop style="stop-color:#008DFF;stop-opacity:1;" offset="0.295180722891566" id="WL477nm"/><stop style="stop-color:#009DFF;stop-opacity:1;" offset="0.301204819277108" id="WL479nm"/><stop style="stop-color:#00A3FA;stop-opacity:1;" offset="0.307228915662651" id="WL481nm"/><stop style="stop-color:#00B1F5;stop-opacity:1;" offset="0.313253012048193" id="WL483nm"/><stop style="stop-color:#00B6ED;stop-opacity:1;" offset="0.319277108433735" id="WL485nm"/><stop style="stop-color:#00BBE6;stop-opacity:1;" offset="0.325301204819277" id="WL487nm"/><stop style="stop-color:#00C4E1;stop-opacity:1;" offset="0.331325301204819" id="WL489nm"/><stop style="stop-color:#00CDDD;stop-opacity:1;" offset="0.337349397590361" id="WL491nm"/><stop style="stop-color:#00D6DA;stop-opacity:1;" offset="0.343373493975904" id="WL493nm"/><stop style="stop-color:#00DFD8;stop-opacity:1;" offset="0.349397590361446" id="WL495nm"/><stop style="stop-color:#00E3D5;stop-opacity:1;" offset="0.355421686746988" id="WL497nm"/><stop style="stop-color:#00EBD4;stop-opacity:1;" offset="0.36144578313253" id="WL499nm"/><stop style="stop-color:#00F6D5;stop-opacity:1;" offset="0.367469879518072" id="WL501nm"/><stop style="stop-color:#00FDD4;stop-opacity:1;" offset="0.373493975903614" id="WL503nm"/><stop style="stop-color:#00FFCF;stop-opacity:1;" offset="0.379518072289157" id="WL505nm"/><stop style="stop-color:#00FFCA;stop-opacity:1;" offset="0.385542168674699" id="WL507nm"/><stop style="stop-color:#00FFC4;stop-opacity:1;" offset="0.391566265060241" id="WL509nm"/><stop style="stop-color:#00FFBF;stop-opacity:1;" offset="0.397590361445783" id="WL511nm"/><stop style="stop-color:#00FFBA;stop-opacity:1;" offset="0.403614457831325" id="WL513nm"/><stop style="stop-color:#00FFB5;stop-opacity:1;" offset="0.409638554216867" id="WL515nm"/><stop style="stop-color:#00FFB2;stop-opacity:1;" offset="0.41566265060241" id="WL517nm"/><stop style="stop-color:#00FFAD;stop-opacity:1;" offset="0.421686746987952" id="WL519nm"/><stop style="stop-color:#00FFAA;stop-opacity:1;" offset="0.427710843373494" id="WL521nm"/><stop style="stop-color:#00FFA6;stop-opacity:1;" offset="0.433734939759036" id="WL523nm"/><stop style="stop-color:#00FFA4;stop-opacity:1;" offset="0.439759036144578" id="WL525nm"/><stop style="stop-color:#00FFA0;stop-opacity:1;" offset="0.44578313253012" id="WL527nm"/><stop style="stop-color:#00FF9C;stop-opacity:1;" offset="0.451807228915663" id="WL529nm"/><stop style="stop-color:#00FF97;stop-opacity:1;" offset="0.457831325301205" id="WL531nm"/><stop style="stop-color:#00FF94;stop-opacity:1;" offset="0.463855421686747" id="WL533nm"/><stop style="stop-color:#00FF8E;stop-opacity:1;" offset="0.469879518072289" id="WL535nm"/><stop style="stop-color:#00FF8B;stop-opacity:1;" offset="0.475903614457831" id="WL537nm"/><stop style="stop-color:#00FF82;stop-opacity:1;" offset="0.481927710843373" id="WL539nm"/><stop style="stop-color:#00FF7E;stop-opacity:1;" offset="0.487951807228916" id="WL541nm"/><stop style="stop-color:#00FF76;stop-opacity:1;" offset="0.493975903614458" id="WL543nm"/><stop style="stop-color:#00FF6A;stop-opacity:1;" offset="0.5" id="WL545nm"/><stop style="stop-color:#00FF5C;stop-opacity:1;" offset="0.506024096385542" id="WL547nm"/><stop style="stop-color:#00FF46;stop-opacity:1;" offset="0.512048192771084" id="WL549nm"/><stop style="stop-color:#00FF24;stop-opacity:1;" offset="0.518072289156627" id="WL551nm"/><stop style="stop-color:#39FF00;stop-opacity:1;" offset="0.524096385542169" id="WL553nm"/><stop style="stop-color:#59FF00;stop-opacity:1;" offset="0.530120481927711" id="WL555nm"/><stop style="stop-color:#73FF00;stop-opacity:1;" offset="0.536144578313253" id="WL557nm"/><stop style="stop-color:#8AFF00;stop-opacity:1;" offset="0.542168674698795" id="WL559nm"/><stop style="stop-color:#9DFF00;stop-opacity:1;" offset="0.548192771084337" id="WL561nm"/><stop style="stop-color:#ABFF00;stop-opacity:1;" offset="0.55421686746988" id="WL563nm"/><stop style="stop-color:#BBFA00;stop-opacity:1;" offset="0.560240963855422" id="WL565nm"/><stop style="stop-color:#C7F600;stop-opacity:1;" offset="0.566265060240964" id="WL567nm"/><stop style="stop-color:#D5F100;stop-opacity:1;" offset="0.572289156626506" id="WL569nm"/><stop style="stop-color:#DFEC00;stop-opacity:1;" offset="0.578313253012048" id="WL571nm"/><stop style="stop-color:#EAE600;stop-opacity:1;" offset="0.58433734939759" id="WL573nm"/><stop style="stop-color:#F3E100;stop-opacity:1;" offset="0.590361445783133" id="WL575nm"/><stop style="stop-color:#FDDA00;stop-opacity:1;" offset="0.596385542168675" id="WL577nm"/><stop style="stop-color:#FFCE00;stop-opacity:1;" offset="0.602409638554217" id="WL579nm"/><stop style="stop-color:#FFC000;stop-opacity:1;" offset="0.608433734939759" id="WL581nm"/><stop style="stop-color:#FFB300;stop-opacity:1;" offset="0.614457831325301" id="WL583nm"/><stop style="stop-color:#FFA800;stop-opacity:1;" offset="0.620481927710843" id="WL585nm"/><stop style="stop-color:#FF9C00;stop-opacity:1;" offset="0.626506024096386" id="WL587nm"/><stop style="stop-color:#FF9100;stop-opacity:1;" offset="0.632530120481928" id="WL589nm"/><stop style="stop-color:#FF8700;stop-opacity:1;" offset="0.63855421686747" id="WL591nm"/><stop style="stop-color:#FF7C00;stop-opacity:1;" offset="0.644578313253012" id="WL593nm"/><stop style="stop-color:#FF7000;stop-opacity:1;" offset="0.650602409638554" id="WL595nm"/><stop style="stop-color:#FF6A00;stop-opacity:1;" offset="0.656626506024096" id="WL597nm"/><stop style="stop-color:#FF5E00;stop-opacity:1;" offset="0.662650602409639" id="WL599nm"/><stop style="stop-color:#FF5500;stop-opacity:1;" offset="0.668674698795181" id="WL601nm"/><stop style="stop-color:#FF4800;stop-opacity:1;" offset="0.674698795180723" id="WL603nm"/><stop style="stop-color:#FF4100;stop-opacity:1;" offset="0.680722891566265" id="WL605nm"/><stop style="stop-color:#FF3300;stop-opacity:1;" offset="0.686746987951807" id="WL607nm"/><stop style="stop-color:#FF2C00;stop-opacity:1;" offset="0.692771084337349" id="WL609nm"/><stop style="stop-color:#FF1200;stop-opacity:1;" offset="0.698795180722892" id="WL611nm"/><stop style="stop-color:#FF0012;stop-opacity:1;" offset="0.704819277108434" id="WL613nm"/><stop style="stop-color:#FF0028;stop-opacity:1;" offset="0.710843373493976" id="WL615nm"/><stop style="stop-color:#FF002C;stop-opacity:1;" offset="0.716867469879518" id="WL617nm"/><stop style="stop-color:#FF0036;stop-opacity:1;" offset="0.72289156626506" id="WL619nm"/><stop style="stop-color:#FF003C;stop-opacity:1;" offset="0.728915662650602" id="WL621nm"/><stop style="stop-color:#FF0041;stop-opacity:1;" offset="0.734939759036145" id="WL623nm"/><stop style="stop-color:#FF0041;stop-opacity:1;" offset="0.740963855421687" id="WL625nm"/><stop style="stop-color:#FF0043;stop-opacity:1;" offset="0.746987951807229" id="WL627nm"/><stop style="stop-color:#FF0043;stop-opacity:1;" offset="0.753012048192771" id="WL629nm"/><stop style="stop-color:#FF004C;stop-opacity:1;" offset="0.759036144578313" id="WL631nm"/><stop style="stop-color:#FF0048;stop-opacity:1;" offset="0.765060240963855" id="WL633nm"/><stop style="stop-color:#FF004A;stop-opacity:1;" offset="0.771084337349398" id="WL635nm"/><stop style="stop-color:#F7004A;stop-opacity:1;" offset="0.77710843373494" id="WL637nm"/><stop style="stop-color:#F3004E;stop-opacity:1;" offset="0.783132530120482" id="WL639nm"/><stop style="stop-color:#E80046;stop-opacity:1;" offset="0.789156626506024" id="WL641nm"/><stop style="stop-color:#E00046;stop-opacity:1;" offset="0.795180722891566" id="WL643nm"/><stop style="stop-color:#D70043;stop-opacity:1;" offset="0.801204819277108" id="WL645nm"/><stop style="stop-color:#CF003E;stop-opacity:1;" offset="0.807228915662651" id="WL647nm"/><stop style="stop-color:#C90043;stop-opacity:1;" offset="0.813253012048193" id="WL649nm"/><stop style="stop-color:#BF003E;stop-opacity:1;" offset="0.819277108433735" id="WL651nm"/><stop style="stop-color:#B50039;stop-opacity:1;" offset="0.825301204819277" id="WL653nm"/><stop style="stop-color:#AF0039;stop-opacity:1;" offset="0.831325301204819" id="WL655nm"/><stop style="stop-color:#A9003C;stop-opacity:1;" offset="0.837349397590361" id="WL657nm"/><stop style="stop-color:#9D0036;stop-opacity:1;" offset="0.843373493975904" id="WL659nm"/><stop style="stop-color:#970030;stop-opacity:1;" offset="0.849397590361446" id="WL661nm"/><stop style="stop-color:#8F0030;stop-opacity:1;" offset="0.855421686746988" id="WL663nm"/><stop style="stop-color:#880030;stop-opacity:1;" offset="0.86144578313253" id="WL665nm"/><stop style="stop-color:#800028;stop-opacity:1;" offset="0.867469879518072" id="WL667nm"/><stop style="stop-color:#760028;stop-opacity:1;" offset="0.873493975903614" id="WL669nm"/><stop style="stop-color:#6E001F;stop-opacity:1;" offset="0.879518072289157" id="WL671nm"/><stop style="stop-color:#640019;stop-opacity:1;" offset="0.885542168674699" id="WL673nm"/><stop style="stop-color:#620024;stop-opacity:1;" offset="0.891566265060241" id="WL675nm"/><stop style="stop-color:#620024;stop-opacity:1;" offset="0.897590361445783" id="WL677nm"/><stop style="stop-color:#570019;stop-opacity:1;" offset="0.903614457831325" id="WL679nm"/><stop style="stop-color:#4A0000;stop-opacity:1;" offset="0.909638554216867" id="WL681nm"/><stop style="stop-color:#550024;stop-opacity:1;" offset="0.91566265060241" id="WL683nm"/><stop style="stop-color:#460019;stop-opacity:1;" offset="0.921686746987952" id="WL685nm"/><stop style="stop-color:#460019;stop-opacity:1;" offset="0.927710843373494" id="WL687nm"/><stop style="stop-color:#330000;stop-opacity:1;" offset="0.933734939759036" id="WL689nm"/><stop style="stop-color:#330000;stop-opacity:1;" offset="0.939759036144578" id="WL691nm"/><stop style="stop-color:#330000;stop-opacity:1;" offset="0.94578313253012" id="WL693nm"/><stop style="stop-color:#330000;stop-opacity:1;" offset="0.951807228915663" id="WL695nm"/><stop style="stop-color:#300019;stop-opacity:1;" offset="0.957831325301205" id="WL697nm"/><stop style="stop-color:#300019;stop-opacity:1;" offset="0.963855421686747" id="WL699nm"/><stop style="stop-color:#300019;stop-opacity:1;" offset="0.969879518072289" id="WL701nm"/><stop style="stop-color:#300019;stop-opacity:1;" offset="0.975903614457831" id="WL703nm"/><stop style="stop-color:#300019;stop-opacity:1;" offset="0.981927710843373" id="WL705nm"/><stop style="stop-color:#300019;stop-opacity:1;" offset="0.987951807228916" id="WL707nm"/><stop style="stop-color:#300019;stop-opacity:1;" offset="0.993975903614458" id="WL709nm"/><stop style="stop-color:#300019;stop-opacity:1;" offset="1.0" id="WL710nm"/></linearGradient><linearGradient inkscape:collect="always" xlink:href="#linearGradient3142" id="linearGradient3148" x1="54.285713" y1="405.21933" x2="697.14282" y2="405.21933" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.907476,0,0,0.1029459,82.806323,22.176943)"/>
+		<linearGradient gradientUnits="userSpaceOnUse" id="aigrd2" y2="63.892601" x2="860" y1="63.892601" x1="90">
+			<stop id="stop3915" offset="0" style="stop-color:#f5f5f5;stop-opacity:1"/>
+			<stop id="stop3913" offset="0.0104" style="stop-color:#f2f0f2;stop-opacity:1"/>
+			<stop id="stop3911" offset="0.0219" style="stop-color:#eae0e8;stop-opacity:1"/>
+			<stop id="stop3909" offset="0.03390002" style="stop-color:#dcc8da;stop-opacity:1"/>
+			<stop id="stop3907" offset="0.04629999" style="stop-color:#caa8c9;stop-opacity:1"/>
+			<stop id="stop3905" offset="0.0589" style="stop-color:#b480b2;stop-opacity:1"/>
+			<stop id="stop3903" offset="0.07179999" style="stop-color:#985299;stop-opacity:1"/>
+			<stop id="stop3901" offset="0.08459997" style="stop-color:#7a2280;stop-opacity:1"/>
+			<stop id="stop3899" offset="0.08990002" style="stop-color:#6d0f76;stop-opacity:1"/>
+			<stop id="stop3897" offset="0.1031" style="stop-color:#670e76;stop-opacity:1"/>
+			<stop id="stop3895" offset="0.12099999" style="stop-color:#590d76;stop-opacity:1"/>
+			<stop id="stop3893" offset="0.1415" style="stop-color:#410a78;stop-opacity:1"/>
+			<stop id="stop3891" offset="0.1638" style="stop-color:#21057a;stop-opacity:1"/>
+			<stop id="stop3889" offset="0.16850001" style="stop-color:#19037b;stop-opacity:1"/>
+			<stop id="stop3887" offset="0.2809" style="stop-color:#1a9bc0;stop-opacity:1"/>
+			<stop id="stop3885" offset="0.40450001" style="stop-color:#168739;stop-opacity:1"/>
+			<stop id="stop3883" offset="0.55059999" style="stop-color:#f7f619;stop-opacity:1"/>
+			<stop id="stop3881" offset="0.56909999" style="stop-color:#f7ee18;stop-opacity:1"/>
+			<stop id="stop3879" offset="0.59799999" style="stop-color:#f8d917;stop-opacity:1"/>
+			<stop id="stop3877" offset="0.63370001" style="stop-color:#f8b615;stop-opacity:1"/>
+			<stop id="stop3875" offset="0.67460001" style="stop-color:#f88512;stop-opacity:1"/>
+			<stop id="stop3873" offset="0.71939999" style="stop-color:#fa470f;stop-opacity:1"/>
+			<stop id="stop3871" offset="0.75839999" style="stop-color:#fb0f0c;stop-opacity:1"/>
+			<stop id="stop3869" offset="0.8989" style="stop-color:#ac0f0d;stop-opacity:1"/>
+			<stop id="stop3867" offset="0.9844" style="stop-color:#f5f5f5;stop-opacity:1"/>
+		</linearGradient>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+		
+	<linearGradient inkscape:collect="always" xlink:href="#linearGradient10974" id="linearGradient10980" x1="47.5466" y1="64.36161" x2="203.10048" y2="64.36161" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.9886793,0,0,1.0111049,19.322144,-1.1837518)"/>
+		<linearGradient gradientUnits="userSpaceOnUse" id="aigrd1" y2="79.360397" x2="844.52728" y1="79.360397" x1="78.8955">
+			<stop id="stop3843" offset="0.0506" style="stop-color:#f5f5f5;stop-opacity:1"/>
+			<stop id="stop3845" offset="0.0639" style="stop-color:#d5d5d5;stop-opacity:1"/>
+			<stop id="stop3847" offset="0.089" style="stop-color:#9f9f9f;stop-opacity:1"/>
+			<stop id="stop3849" offset="0.1078" style="stop-color:#7d7d7d;stop-opacity:1"/>
+			<stop id="stop3851" offset="0.118" style="stop-color:#707070;stop-opacity:1"/>
+			<stop id="stop3853" offset="0.87639999" style="stop-color:#707070;stop-opacity:1"/>
+			<stop id="stop3855" offset="0.88730001" style="stop-color:#7a7a7a;stop-opacity:1"/>
+			<stop id="stop3857" offset="0.90579998" style="stop-color:#949494;stop-opacity:1"/>
+			<stop id="stop3859" offset="0.92940003" style="stop-color:#bfbfbf;stop-opacity:1"/>
+			<stop id="stop3861" offset="0.9551" style="stop-color:#f5f5f5;stop-opacity:1"/>
+		</linearGradient>
+		
+	<linearGradient inkscape:collect="always" xlink:href="#linearGradient10974" id="linearGradient10998" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.2226415,0,0,1.0111049,-874.05646,-1.1837456)" x1="47.5466" y1="64.36161" x2="203.10048" y2="64.36161"/><linearGradient inkscape:collect="always" xlink:href="#linearGradient3142" id="linearGradient11005" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.907476,0,0,0.1029459,82.806323,22.176943)" x1="54.285713" y1="405.21933" x2="697.14282" y2="405.21933"/><linearGradient inkscape:collect="always" xlink:href="#linearGradient10974" id="linearGradient11007" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.9886793,0,0,1.0111049,19.322144,-1.1837518)" x1="47.5466" y1="64.36161" x2="203.10048" y2="64.36161"/><linearGradient inkscape:collect="always" xlink:href="#linearGradient10974" id="linearGradient11009" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.2226415,0,0,1.0111049,-874.05646,-1.1837456)" x1="47.5466" y1="64.36161" x2="203.10048" y2="64.36161"/><linearGradient inkscape:collect="always" xlink:href="#linearGradient10974" id="linearGradient11012" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.2226415,0,0,1.0111049,-874.05646,-1.1837456)" x1="47.5466" y1="64.36161" x2="203.10048" y2="64.36161"/><linearGradient inkscape:collect="always" xlink:href="#linearGradient10974" id="linearGradient11015" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.9886793,0,0,1.0111049,19.322144,-1.1837518)" x1="47.5466" y1="64.36161" x2="203.10048" y2="64.36161"/><linearGradient inkscape:collect="always" xlink:href="#linearGradient3142" id="linearGradient11018" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0.9099634,0,0,0.1029459,77.003216,22.176943)" x1="54.285713" y1="405.21933" x2="697.14282" y2="405.21933"/></defs>
+	<style type="text/css" id="style2429">
+		* {font-family:Verdana,sans-serif;}
+		text, tspan {font-size:9.25px;}
+	</style>
+	<path id="path3766" style="fill:#f5f5f5;fill-rule:nonzero;stroke:none;stroke-miterlimit:4;font-family:Verdana, sans-serif" d="M 0,288.007 L 940.806,288.007 L 940.806,0 L 0,0 L 0,288.007 z "/><path id="path3863" style="fill:url(#aigrd1);fill-rule:nonzero;stroke:none;stroke-miterlimit:4;font-family:Verdana, sans-serif" d="M 844.527,12.552 L 844.527,106.042 L 425.768,129.562 L 425.768,146.168 L 408.778,146.168 L 408.778,129.562 L 78.895,106.042 L 78.895,12.552 L 844.527,12.552 L 844.527,12.552 z "/><rect style="fill:url(#linearGradient11018);fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;font-family:Verdana, sans-serif" id="rect2160" width="584.9765" height="33.236801" x="126.40123" y="47.274185"/><rect style="fill:url(#linearGradient11015);fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;font-family:Verdana, sans-serif" id="rect8064" width="153.79289" height="33.236801" x="66.33046" y="47.274185"/><rect style="fill:url(#linearGradient11012);fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;font-family:Verdana, sans-serif" id="rect10996" width="190.18663" height="33.236801" x="-815.92413" y="47.274185" transform="scale(-1,1)"/>
+	<g style="fill:none;fill-rule:nonzero;stroke:#919191;stroke-width:0.56690001;stroke-miterlimit:4" id="Ebene_x0020_7">
+		<path d="M 847.182,249 L 847.182,193.894" id="path3769"/>
+		<path d="M 809.226,249 L 809.226,191.335" id="path3771"/>
+		<path d="M 885.138,249 L 885.138,193.894" id="path3773"/>
+		<path d="M 923.094,249 L 923.094,193.894" id="path3775"/>
+		<path d="M 771.268,249 L 771.268,189.537" id="path3777"/>
+		<path d="M 733.312,249 L 733.312,196" id="path3779"/>
+		<path d="M 695.354,249 L 695.354,196" id="path3781"/>
+		<path d="M 657.397,249 L 657.397,196" id="path3783"/>
+		<path d="M 619.441,249 L 619.441,196" id="path3785"/>
+		<path d="M 581.483,249 L 581.483,196" id="path3787"/>
+		<path d="M 543.527,249 L 543.527,196" id="path3789"/>
+		<path d="M 505.569,249 L 505.569,196.92" id="path3791"/>
+		<path d="M 467.613,249 L 467.613,196.92" id="path3793"/>
+		<path d="M 429.657,249 L 429.657,190" id="path3795"/>
+		<path d="M 391.701,249 L 391.701,200.829" id="path3797"/>
+		<path d="M 353.743,249 L 353.712,200.829" id="path3799"/>
+		<path d="M 315.786,249 L 315.786,184.991" id="path3801"/>
+		<path d="M 277.829,249 L 277.829,184.991" id="path3803"/>
+		<path d="M 239.874,249 L 239.874,184.991" id="path3805"/>
+		<path d="M 201.917,249 L 201.917,177" id="path3807"/>
+		<path d="M 163.959,249 L 163.959,177" id="path3809"/>
+		<path d="M 126.003,249 L 126.003,177" id="path3811"/>
+		<path d="M 88.045,249 L 88.045,165.866" id="path3813"/>
+		<path d="M 923.25,216.209 L 88.00,216.209" id="path3815"/>
+		<path d="M 923.25,248.977 L 88.00,248.977" id="path3817"/>
+		<path d="M 758.775,213 L 781.775,213 L 781.775,202 L 758.775,202 L 758.775,213 z " style="fill:#f5f5f5;stroke:none" id="path3819"/>
+		<path d="M 876.271,213 L 899.271,213 L 899.271,202 L 876.271,202 L 876.271,213 z " style="fill:#f5f5f5;stroke:none" id="path3821"/>
+		<path d="M 646.775,213 L 669.775,213 L 669.775,202 L 646.775,202 L 646.775,213 z " style="fill:#f5f5f5;stroke:none" id="path3823"/>
+		<path d="M 569.775,213 L 592.775,213 L 592.775,202 L 569.775,202 L 569.775,213 z " style="fill:#f5f5f5;stroke:none" id="path3825"/>
+		<path d="M 531.775,213 L 554.775,213 L 554.775,202 L 531.775,202 L 531.775,213 z " style="fill:#f5f5f5;stroke:none" id="path3827"/>
+		<path d="M 417.775,213 L 440.775,213 L 440.775,202 L 417.775,202 L 417.775,213 z " style="fill:#f5f5f5;stroke:none" id="path3829"/>
+		<path d="M 304.775,213 L 327.775,213 L 327.775,202 L 304.775,202 L 304.775,213 z " style="fill:#f5f5f5;stroke:none" id="path3831"/>
+		<path d="M 76.775,213 L 99.775,213 L 99.775,202 L 76.775,202 L 76.775,213 z " style="fill:#f5f5f5;stroke:none" id="path3833"/>
+		<path d="M 265.775,213 L 288.775,213 L 288.775,200.4 L 265.775,200.4 L 265.775,213 z " style="fill:#f5f5f5;stroke:none" id="path3835"/>
+		<path d="M 191.775,213 L 214.775,213 L 214.775,202 L 191.775,202 L 191.775,213 z " style="fill:#f5f5f5;stroke:none" id="path3837"/>
+		<path d="M 39.777,241.987 L 939.768,241.987 L 939.768,223 L 39.777,223 L 39.777,241.987 L 39.777,241.987 z " style="fill:#f5f5f5;stroke:none" id="path3839"/>
+	</g>
+	
+	<g style="fill:none;fill-rule:nonzero;stroke:white;stroke-miterlimit:4;font-family:Verdana, sans-serif" id="g3923">
+			<path id="path3925" style="stroke:black;stroke-width:2.55119991;font-family:Verdana, sans-serif" d="M 136.458,70.362 L 90.751,70.362"/>
+			<path id="path3927" style="fill:black;stroke:none;font-family:Verdana, sans-serif" d="M 79.868,69.265 L 95.052,75.009 L 95.052,65.435 L 79.868,69.265 z "/>
+		</g><g style="fill:none;fill-rule:nonzero;stroke:white;stroke-miterlimit:4;font-family:Verdana, sans-serif" id="g3929">
+			<path id="path3931" style="stroke:black;stroke-width:2.55119991;font-family:Verdana, sans-serif" d="M 806.959,70.081 L 852.666,70.081"/>
+			<path id="path3933" style="fill:black;stroke:none;font-family:Verdana, sans-serif" d="M 863.549,71.179 L 848.365,65.435 L 848.365,75.009 L 863.549,71.179 z "/>
+		</g><path style="fill:none;fill-rule:nonzero;stroke:white;stroke-miterlimit:4;font-family:Verdana, sans-serif" id="path3935" d="M 694.146,95.658 L 694.146,80.511"/><path style="fill:none;fill-rule:nonzero;stroke:white;stroke-miterlimit:4;font-family:Verdana, sans-serif" id="path3937" d="M 516.885,95.658 L 516.885,80.511"/><path style="fill:none;fill-rule:nonzero;stroke:white;stroke-miterlimit:4;font-family:Verdana, sans-serif" id="path3939" d="M 428.251,95.658 L 428.251,80.511"/><path style="fill:none;fill-rule:nonzero;stroke:white;stroke-miterlimit:4;font-family:Verdana, sans-serif" id="path3941" d="M 339.62,95.658 L 339.62,80.511"/><path style="fill:none;fill-rule:nonzero;stroke:white;stroke-miterlimit:4;font-family:Verdana, sans-serif" id="path3943" d="M 250.987,95.658 L 250.987,80.511"/><path style="fill:none;fill-rule:nonzero;stroke:white;stroke-miterlimit:4;font-family:Verdana, sans-serif" id="path3945" d="M 605.517,95.658 L 605.517,80.511"/>
+	<g style="fill:none;fill-rule:nonzero;stroke:#7f7f7f;stroke-miterlimit:4" id="Ebene_x0020_5">
+		<path d="M 88.76,145.903 L 922.802,145.903" style="stroke:#000000" id="path3948"/>
+		<path d="M 923.05,188.25 L 923.05,141.054" id="path3950"/>
+		<path d="M 809.311,141.054 L 809.311,187.878 L 746.772,187.878" id="path3952"/>
+		<path d="M 820.722,141.054 L 820.722,187.891" id="path3954"/>
+		<path d="M 353.743,141.054 L 353.743,194.195" id="path3956"/>
+		<path d="M 761.354,151.235 L 761.354,141.053" id="path3958"/>
+		<path d="M 716.397,163 L 716.397,141.054" id="path3960"/>
+		<path d="M 671.771,151.235 L 671.771,141.053" id="path3962"/>
+		<path d="M 633.484,188 L 633.483,141.054" id="path3964"/>
+		<path d="M 543.527,141.054 L 543.527,188.231" id="path3966"/>
+		<path d="M 221.528,141.054 L 221.528,173.865 L 239.783,173.865" id="path3968"/>
+		<path d="M 88.045,151.235 L 88.045,141.053" id="path3970"/>
+		<path d="M 391.805,152.426 L 391.805,141.054" id="path3972"/>
+		<path d="M 397.491,149.423 L 397.491,141.054" id="path3974"/>
+		<path d="M 403.177,149.423 L 403.177,141.054" id="path3976"/>
+		<path d="M 374.155,171.251 L 374.155,152.426" id="path3978"/>
+		<path d="M 391.805,152.426 L 374.156,152.426" id="path3980"/>
+		<path d="M 333.891,173.864 L 353.454,173.864" id="path3982"/>
+		<path d="M 408.538,190.387 L 408.538,141.054" id="path3984"/>
+		<path d="M 425.964,170.669 L 425.964,141.054" id="path3986"/>
+		<path d="M 689.771,187.878 L 621.995,187.878" id="path3988"/>
+		<path style="stroke:#000000" id="path3990"/>
+		<path d="M 557.771,187.878 L 543.368,187.878" id="path3992"/>
+		<path d="M 830.771,187.878 L 820.25,187.878" id="path3994"/>
+		<path d="M 923.25,187.878 L 913.769,187.878" id="path3996"/>
+		<path d="M 659.77,163 L 659.77,141.054" id="path3998"/>
+		<path d="M 478.86,141.054 L 478.86,170.472" id="path4000"/>
+		<path d="M 153.521,141.054 L 153.521,170.472" id="path4002"/>
+	</g>
+	<g id="Ebene_x0020_3">
+		<text transform="translate(168.9751,95.1089)" id="text4005"><tspan x="0" y="0" style="font-size:14px;fill:#ffffff;stroke:none" id="tspan4007">400 nm</tspan></text>
+
+
+		<text transform="translate(257.3706,95.1089)" id="text4009"><tspan x="0" y="0" style="font-size:14px;fill:#ffffff;stroke:none" id="tspan4011">450 nm</tspan></text>
+
+
+		<text transform="translate(434.166,95.1089)" id="text4013"><tspan x="0" y="0" style="font-size:14px;fill:#ffffff;stroke:none" id="tspan4015">550 nm</tspan></text>
+
+
+		<text transform="translate(345.7681,95.1089)" id="text4017"><tspan x="0" y="0" style="font-size:14px;fill:#ffffff;stroke:none" id="tspan4019">500 nm</tspan></text>
+
+
+		<text transform="translate(522.5635,95.1089)" id="text4021"><tspan x="0" y="0" style="font-size:14px;fill:#ffffff;stroke:none" id="tspan4023">600 nm</tspan></text>
+
+
+		<text transform="translate(610.9609,95.1089)" id="text4025"><tspan x="0" y="0" style="font-size:14px;fill:#ffffff;stroke:none" id="tspan4027">650 nm</tspan></text>
+
+
+		<text transform="translate(699.3574,95.1089)" id="text4029"><tspan x="0" y="0" style="font-size:14px;fill:#ffffff;stroke:none" id="tspan4031">700 nm</tspan></text>
+
+
+		<text transform="translate(213.1616,37.7104)" id="text4033"><tspan x="0" y="0" style="font-size:21px;fill:#ffffff;stroke:none" id="tspan4035">Das für den Menschen sichtbare Spektrum (Licht)</tspan></text>
+
+
+		<text transform="translate(787.7549,95.1089)" id="text4041"><tspan x="0" y="0" style="font-size:14px;stroke:none" id="tspan4043">750 nm</tspan></text>
+
+
+		<text transform="translate(761.3428,211.209)" id="text4045"><tspan x="0" y="0" style="stroke:none" id="tspan4047">1 km</tspan></text>
+
+
+		<text transform="translate(874.3369,211.209)" id="text4049"><tspan x="0" y="0" style="stroke:none" id="tspan4051">1 Mm</tspan></text>
+
+
+		<text transform="translate(647.8574,211.209)" id="text4053"><tspan x="0" y="0" style="stroke:none" id="tspan4055">1 m</tspan></text>
+
+
+		<text transform="translate(569.1348,211.209)" id="text4057"><tspan x="0" y="0" style="stroke:none" id="tspan4059">1 cm</tspan></text>
+
+
+		<text transform="translate(530.8418,211.209)" id="text4061"><tspan x="0" y="0" style="stroke:none" id="tspan4063">1 mm</tspan></text>
+
+
+		<text transform="translate(305.9404,211.209)" id="text4065"><tspan x="0" y="0" style="stroke:none" id="tspan4067">1 nm</tspan></text>
+
+
+		<text transform="translate(418.9404,211.209)" id="text4069"><tspan x="0" y="0" style="stroke:none" id="tspan4071">1 µm</tspan></text>
+
+
+		<text transform="translate(192.9404,211.209)" id="text4077"><tspan x="0" y="0" style="stroke:none" id="tspan4079">1 pm</tspan></text>
+
+
+		<text transform="translate(77.9404,211.209)" id="text4081"><tspan x="0" y="0" style="stroke:none" id="tspan4083">1 fm</tspan></text>
+
+
+		<text transform="translate(270.9419,211.209)" id="text4085"><tspan x="0" y="0" style="stroke:none" id="tspan4087">1 Å</tspan></text>
+
+
+		<text transform="translate(805.8965,62.2114)" id="text4093"><tspan x="0" y="0" style="font-size:14px;stroke:none" id="tspan4095">Infrarot</tspan></text>
+
+
+		<text transform="translate(72.8447,62.2114)" id="text4097"><tspan x="0" y="0" style="font-size:14px;stroke:none" id="tspan4099">Ultraviolett</tspan></text>
+
+
+	</g>
+	<g id="Ebene_x0020_6">
+		<g style="stroke:none" id="g4102">
+			<g id="g4104">
+				<path d="M 516.657,255.649 L 516.657,249" style="fill:none;stroke:#919191;stroke-width:0.56690001" id="path4106"/>
+				<g id="g4108">
+					<text transform="translate(504.5879,268.2266)" id="text4110"><tspan x="0" y="0" style="font-size:10px" id="tspan4112">10</tspan></text>
+
+
+					<text transform="translate(519.5,261.8008)" id="text4116"><tspan x="0" y="0" style="font-size:8px" id="tspan4118">12</tspan></text>
+
+
+					<text transform="translate(490.9678,280)" id="text4120"><tspan x="0" y="0" style="font-size:9.5px" id="tspan4122">1 Tera-Hz</tspan></text>
+
+
+				</g>
+			</g>
+			<g id="g4124">
+				<path d="M 554.613,255.649 L 554.613,249" style="fill:none;stroke:#919191;stroke-width:0.56690001" id="path4126"/>
+				<g id="g4128">
+					<text transform="translate(542.5439,268.2266)" id="text4130"><tspan x="0" y="0" style="font-size:10px" id="tspan4132">10</tspan></text>
+
+
+					<text transform="translate(557.25,261.8008)" id="text4136"><tspan x="0" y="0" style="font-size:8px" id="tspan4138">11</tspan></text>
+
+
+				</g>
+			</g>
+			<g id="g4142">
+				<path d="M 478.701,255.649 L 478.701,249" style="fill:none;stroke:#919191;stroke-width:0.56690001" id="path4144"/>
+				<g id="g4146">
+					<text transform="translate(466.6323,268.2266)" id="text4148"><tspan x="0" y="0" style="font-size:10px" id="tspan4150">10</tspan></text>
+
+
+					<text transform="translate(481.5,261.8008)" id="text4154"><tspan x="0" y="0" style="font-size:8px" id="tspan4156">13</tspan></text>
+
+
+				</g>
+			</g>
+			<g id="g4160">
+				<path d="M 440.743,255.649 L 440.743,249" style="fill:none;stroke:#919191;stroke-width:0.56690001" id="path4162"/>
+				<g id="g4164">
+					<text transform="translate(428.6743,268.2266)" id="text4166"><tspan x="0" y="0" style="font-size:10px" id="tspan4168">10</tspan></text>
+
+
+					<text transform="translate(443.5,261.8008)" id="text4172"><tspan x="0" y="0" style="font-size:8px" id="tspan4174">14</tspan></text>
+
+
+				</g>
+			</g>
+			<g id="g4178">
+				<path d="M 402.786,255.649 L 402.786,249" style="fill:none;stroke:#919191;stroke-width:0.56690001" id="path4180"/>
+				<g id="g4182">
+					<text transform="translate(390.7173,268.2266)" id="text4184"><tspan x="0" y="0" style="font-size:10px" id="tspan4186">10</tspan></text>
+
+
+					<text transform="translate(405.25,261.8008)" id="text4190"><tspan x="0" y="0" style="font-size:8px" id="tspan4192">15</tspan></text>
+
+
+					<text transform="translate(376.4268,280)" id="text4194"><tspan x="0" y="0" style="font-size:9.5px" id="tspan4196">1 Peta-Hz</tspan></text>
+
+
+				</g>
+			</g>
+			<g id="g4198">
+				<path d="M 364.829,255.649 L 364.829,249" style="fill:none;stroke:#919191;stroke-width:0.56690001" id="path4200"/>
+				<g id="g4202">
+					<text transform="translate(352.7603,268.2266)" id="text4204"><tspan x="0" y="0" style="font-size:10px" id="tspan4206">10</tspan></text>
+
+
+					<text transform="translate(367,261.8008)" id="text4210"><tspan x="0" y="0" style="font-size:8px" id="tspan4212">16</tspan></text>
+
+
+				</g>
+			</g>
+			<g id="g4216">
+				<path d="M 326.874,255.649 L 326.874,249" style="fill:none;stroke:#919191;stroke-width:0.56690001" id="path4218"/>
+				<g id="g4220">
+					<text transform="translate(314.8052,268.2266)" id="text4222"><tspan x="0" y="0" style="font-size:10px" id="tspan4224">10</tspan></text>
+
+
+					<text transform="translate(329,261.8008)" id="text4228"><tspan x="0" y="0" style="font-size:8px" id="tspan4230">17</tspan></text>
+
+
+				</g>
+			</g>
+			<g id="g4234">
+				<path d="M 288.917,255.649 L 288.917,249" style="fill:none;stroke:#919191;stroke-width:0.56690001" id="path4236"/>
+				<g id="g4238">
+					<text transform="translate(276.8481,268.2266)" id="text4240"><tspan x="0" y="0" style="font-size:10px" id="tspan4242">10</tspan></text>
+
+
+					<text transform="translate(291,261.8008)" id="text4246"><tspan x="0" y="0" style="font-size:8px" id="tspan4248">18</tspan></text>
+
+
+					<text transform="translate(264.2798,280)" id="text4250"><tspan x="0" y="0" style="font-size:9.5px" id="tspan4252">1 Exa-Hz</tspan></text>
+
+
+				</g>
+			</g>
+			<g id="g4254">
+				<path d="M 250.959,255.649 L 250.959,249" style="fill:none;stroke:#919191;stroke-width:0.56690001" id="path4256"/>
+				<g id="g4258">
+					<text transform="translate(238.8901,268.2266)" id="text4260"><tspan x="0" y="0" style="font-size:10px" id="tspan4262">10</tspan></text>
+
+
+					<text transform="translate(253,261.8008)" id="text4266"><tspan x="0" y="0" style="font-size:8px" id="tspan4268">19</tspan></text>
+
+
+				</g>
+			</g>
+			<g id="g4272">
+				<path d="M 213.13,255.649 L 213.13,249" style="fill:none;stroke:#919191;stroke-width:0.56690001" id="path4274"/>
+				<g id="g4276">
+					<text transform="translate(201.0615,268.2266)" id="text4278"><tspan x="0" y="0" style="font-size:10px" id="tspan4280">10</tspan></text>
+
+
+					<text transform="translate(216,261.8008)" id="text4284"><tspan x="0" y="0" style="font-size:8px" id="tspan4286">20</tspan></text>
+
+
+				</g>
+			</g>
+			<g id="g4290">
+				<path d="M 174.827,255.649 L 174.827,249" style="fill:none;stroke:#919191;stroke-width:0.56690001" id="path4292"/>
+				<g id="g4294">
+					<text transform="translate(162.7583,268.2266)" id="text4296"><tspan x="0" y="0" style="font-size:10px" id="tspan4298">10</tspan></text>
+
+
+					<text transform="translate(177,261.8008)" id="text4302"><tspan x="0" y="0" style="font-size:8px" id="tspan4304">21</tspan></text>
+
+
+					<text transform="translate(147.3247,280)" id="text4306"><tspan x="0" y="0" style="font-size:9.5px" id="tspan4308">1 Zetta-Hz</tspan></text>
+
+
+				</g>
+			</g>
+			<g id="g4310">
+				<path d="M 174.827,255.649 L 174.827,249" style="fill:none;stroke:#919191;stroke-width:0.56690001" id="path4312"/>
+			</g>
+			<g id="g4314">
+				<path d="M 136.869,255.649 L 136.869,249" style="fill:none;stroke:#919191;stroke-width:0.56690001" id="path4316"/>
+				<g id="g4318">
+					<text transform="translate(124.8003,268.2266)" id="text4320"><tspan x="0" y="0" style="font-size:10px" id="tspan4322">10</tspan></text>
+
+
+					<text transform="translate(139,261.8008)" id="text4326"><tspan x="0" y="0" style="font-size:8px" id="tspan4328">22</tspan></text>
+
+
+				</g>
+			</g>
+			<g id="g4332">
+				<path d="M 99.041,255.649 L 99.041,249" style="fill:none;stroke:#919191;stroke-width:0.56690001" id="path4334"/>
+				<g id="g4336">
+					<text transform="translate(86.9717,268.2266)" id="text4338"><tspan x="0" y="0" style="font-size:10px" id="tspan4340">10</tspan></text>
+
+
+					<text transform="translate(101.5,261.8008)" id="text4344"><tspan x="0" y="0" style="font-size:8px" id="tspan4346">23</tspan></text>
+
+
+				</g>
+			</g>
+			<g id="g4350">
+				<path d="M 592.569,255.649 L 592.569,249" style="fill:none;stroke:#919191;stroke-width:0.56690001" id="path4352"/>
+				<g id="g4354">
+					<text transform="translate(580.5,268.2266)" id="text4356"><tspan x="0" y="0" style="font-size:10px" id="tspan4358">10</tspan></text>
+
+
+					<text transform="translate(595,261.8008)" id="text4362"><tspan x="0" y="0" style="font-size:8px" id="tspan4364">10</tspan></text>
+
+
+				</g>
+			</g>
+			<g id="g4368">
+				<path d="M 630.527,255.649 L 630.527,249" style="fill:none;stroke:#919191;stroke-width:0.56690001" id="path4370"/>
+				<g id="g4372">
+					<text transform="translate(618.458,268.2266)" id="text4374"><tspan x="0" y="0" style="font-size:10px" id="tspan4376">10</tspan></text>
+
+
+					<text transform="translate(633,261.8008)" id="text4380"><tspan x="0" y="0" style="font-size:8px" id="tspan4382">9</tspan></text>
+
+
+					<text transform="translate(603.8838,280)" id="text4384"><tspan x="0" y="0" style="font-size:9.5px" id="tspan4386">1 Giga-Hz</tspan></text>
+
+
+				</g>
+			</g>
+			<g id="g4388">
+				<path d="M 668.483,255.649 L 668.483,249" style="fill:none;stroke:#919191;stroke-width:0.56690001" id="path4390"/>
+				<g id="g4392">
+					<text transform="translate(656.4141,268.2266)" id="text4394"><tspan x="0" y="0" style="font-size:10px" id="tspan4396">10</tspan></text>
+
+
+					<text transform="translate(671,261.8008)" id="text4400"><tspan x="0" y="0" style="font-size:8px" id="tspan4402">8</tspan></text>
+
+
+				</g>
+			</g>
+			<g id="g4406">
+				<path d="M 706.441,255.649 L 706.441,249" style="fill:none;stroke:#919191;stroke-width:0.56690001" id="path4408"/>
+				<g id="g4410">
+					<text transform="translate(694.3721,268.2266)" id="text4412"><tspan x="0" y="0" style="font-size:10px" id="tspan4414">10</tspan></text>
+
+
+					<text transform="translate(708.5,261.8008)" id="text4418"><tspan x="0" y="0" style="font-size:8px" id="tspan4420">7</tspan></text>
+
+
+				</g>
+			</g>
+			<g id="g4424">
+				<path d="M 744.397,255.649 L 744.397,249" style="fill:none;stroke:#919191;stroke-width:0.56690001" id="path4426"/>
+				<g id="g4428">
+					<text transform="translate(732.3281,268.2266)" id="text4430"><tspan x="0" y="0" style="font-size:10px" id="tspan4432">10</tspan></text>
+
+
+					<text transform="translate(747,261.8008)" id="text4436"><tspan x="0" y="0" style="font-size:8px" id="tspan4438">6</tspan></text>
+
+
+					<text transform="translate(715.7471,280)" id="text4440"><tspan x="0" y="0" style="font-size:9.5px" id="tspan4442">1 Mega-Hz</tspan></text>
+
+
+				</g>
+			</g>
+			<g id="g4444">
+				<path d="M 782.354,255.649 L 782.354,249" style="fill:none;stroke:#919191;stroke-width:0.56690001" id="path4446"/>
+				<g id="g4448">
+					<text transform="translate(770.2861,268.2266)" id="text4450"><tspan x="0" y="0" style="font-size:10px" id="tspan4452">10</tspan></text>
+
+
+					<text transform="translate(785,261.8008)" id="text4456"><tspan x="0" y="0" style="font-size:8px" id="tspan4458">5</tspan></text>
+
+
+				</g>
+			</g>
+			<g id="g4462">
+				<path d="M 820.312,255.649 L 820.312,249" style="fill:none;stroke:#919191;stroke-width:0.56690001" id="path4464"/>
+				<g id="g4466">
+					<text transform="translate(808.2422,268.2266)" id="text4468"><tspan x="0" y="0" style="font-size:10px" id="tspan4470">10</tspan></text>
+
+
+					<text transform="translate(823,261.8008)" id="text4474"><tspan x="0" y="0" style="font-size:8px" id="tspan4476">4</tspan></text>
+
+
+				</g>
+			</g>
+			<g id="g4480">
+				<path d="M 858.268,255.649 L 858.268,249" style="fill:none;stroke:#919191;stroke-width:0.56690001" id="path4482"/>
+				<g id="g4484">
+					<text transform="translate(846.1992,268.2266)" id="text4486"><tspan x="0" y="0" style="font-size:10px" id="tspan4488">10</tspan></text>
+
+
+					<text transform="translate(861,261.8008)" id="text4492"><tspan x="0" y="0" style="font-size:8px" id="tspan4494">3</tspan></text>
+
+
+					<text transform="translate(833.917,280)" id="text4496"><tspan x="0" y="0" style="font-size:9.5px" id="tspan4498">1 Kilo-Hz</tspan></text>
+
+
+				</g>
+			</g>
+			<g id="g4500">
+				<path d="M 896.226,255.649 L 896.226,249" style="fill:none;stroke:#919191;stroke-width:0.56690001" id="path4502"/>
+				<g id="g4504">
+					<text transform="translate(884.1562,268.2266)" id="text4506"><tspan x="0" y="0" style="font-size:10px" id="tspan4508">10</tspan></text>
+
+
+					<text transform="translate(899,261.8008)" id="text4512"><tspan x="0" y="0" style="font-size:8px" id="tspan4514">2</tspan></text>
+
+
+				</g>
+			</g>
+		</g>
+		<text style="font-size:10.74800014px;stroke:none" id="text4518"><tspan x="836" y="190.3867" id="tspan4520">Wechselströme</tspan></text>
+
+
+		<text transform="translate(823.8572,160.0557)" id="text4526">
+			<tspan x="0" y="0" style="stroke:none" id="tspan4528">hoch-</tspan>
+			<tspan x="29.5034" y="0" style="stroke:none" id="tspan4532">mittel-</tspan>
+			<tspan x="61.7903" y="0" style="stroke:none" id="tspan4540">nieder-</tspan>
+			<tspan x="23.7864" y="13.0440" style="stroke:none" id="tspan4536">frequente</tspan>
+		</text>
+
+
+		<g style="stroke:none" id="g4542">
+			<text transform="translate(838.2236,237.5615)" id="text4544"><tspan x="0" y="0" style="font-size:10px" id="tspan4546">10</tspan></text>
+
+
+			<text transform="translate(852.5,231.1357)" id="text4548"><tspan x="0" y="0" style="font-size:8px" id="tspan4550">5</tspan></text>
+
+
+		</g>
+		<g style="stroke:none" id="g4552">
+			<text transform="translate(800.6582,237.5615)" id="text4554"><tspan x="0" y="0" style="font-size:10px" id="tspan4556">10</tspan></text>
+
+
+			<text transform="translate(814.5,231.1357)" id="text4558"><tspan x="0" y="0" style="font-size:8px" id="tspan4560">4</tspan></text>
+
+
+		</g>
+		<g style="stroke:none" id="g4562">
+			<text transform="translate(875.5742,237.5615)" id="text4564"><tspan x="0" y="0" style="font-size:10px" id="tspan4566">10</tspan></text>
+
+
+			<text transform="translate(889,231.1357)" id="text4568"><tspan x="0" y="0" style="font-size:8px" id="tspan4570">6</tspan></text>
+
+
+		</g>
+		<g style="stroke:none" id="g4572">
+			<text transform="translate(912.9248,237.5615)" id="text4574"><tspan x="0" y="0" style="font-size:10px" id="tspan4576">10</tspan></text>
+
+
+			<text transform="translate(926.5,231.1357)" id="text4578"><tspan x="0" y="0" style="font-size:8px" id="tspan4580">7</tspan></text>
+
+
+		</g>
+		<g style="stroke:none" id="g4582">
+			<text transform="translate(763.0938,237.5615)" id="text4584"><tspan x="0" y="0" style="font-size:10px" id="tspan4586">10</tspan></text>
+
+
+			<text transform="translate(777.5,231.1357)" id="text4588"><tspan x="0" y="0" style="font-size:8px" id="tspan4590">3</tspan></text>
+
+
+		</g>
+		<g style="stroke:none" id="g4592">
+			<text transform="translate(725.5312,237.5615)" id="text4594"><tspan x="0" y="0" style="font-size:10px" id="tspan4596">10</tspan></text>
+
+
+			<text transform="translate(740,231.1357)" id="text4598"><tspan x="0" y="0" style="font-size:8px" id="tspan4600">2</tspan></text>
+
+
+		</g>
+		<g style="stroke:none" id="g4602">
+			<text transform="translate(687.9658,237.5615)" id="text4604"><tspan x="0" y="0" style="font-size:10px" id="tspan4606">10</tspan></text>
+
+
+			<text transform="translate(702.5,231.1357)" id="text4608"><tspan x="0" y="0" style="font-size:8px" id="tspan4610">1</tspan></text>
+
+
+		</g>
+		<g style="stroke:none" id="g4612">
+			<text transform="translate(650.4023,237.5615)" id="text4614"><tspan x="0" y="0" style="font-size:10px" id="tspan4616">10</tspan></text>
+
+
+			<text transform="translate(665,231.1357)" id="text4618"><tspan x="0" y="0" style="font-size:8px" id="tspan4620">0</tspan></text>
+
+
+		</g>
+		<g style="stroke:none" id="g4622">
+			<text transform="translate(609.4053,237.5615)" id="text4624"><tspan x="0" y="0" style="font-size:10px" id="tspan4626">10</tspan></text>
+
+
+			<text transform="translate(624,231.1357)" id="text4628"><tspan x="0" y="0" style="font-size:8px" id="tspan4630">–1</tspan></text>
+
+
+		</g>
+		<g style="stroke:none" id="g4632">
+			<text transform="translate(571.8418,237.5615)" id="text4634"><tspan x="0" y="0" style="font-size:10px" id="tspan4636">10</tspan></text>
+
+
+			<text transform="translate(586,231.1357)" id="text4638"><tspan x="0" y="0" style="font-size:8px" id="tspan4640">–2</tspan></text>
+
+
+		</g>
+		<g style="stroke:none" id="g4642">
+			<text transform="translate(534.2764,237.5615)" id="text4644"><tspan x="0" y="0" style="font-size:10px" id="tspan4646">10</tspan></text>
+
+
+			<text transform="translate(549,231.1357)" id="text4648"><tspan x="0" y="0" style="font-size:8px" id="tspan4650">–3</tspan></text>
+
+
+		</g>
+		<g style="stroke:none" id="g4652">
+			<text transform="translate(496.7129,237.5615)" id="text4654"><tspan x="0" y="0" style="font-size:10px" id="tspan4656">10</tspan></text>
+
+
+			<text transform="translate(511,231.1357)" id="text4658"><tspan x="0" y="0" style="font-size:8px" id="tspan4660">–4</tspan></text>
+
+
+		</g>
+		<g style="stroke:none" id="g4662">
+			<text transform="translate(459.1484,237.5615)" id="text4664"><tspan x="0" y="0" style="font-size:10px" id="tspan4666">10</tspan></text>
+
+
+			<text transform="translate(474,231.1357)" id="text4668"><tspan x="0" y="0" style="font-size:8px" id="tspan4670">–5</tspan></text>
+
+
+		</g>
+		<g style="stroke:none" id="g4672">
+			<text transform="translate(421.585,237.5615)" id="text4674"><tspan x="0" y="0" style="font-size:10px" id="tspan4676">10</tspan></text>
+
+
+			<text transform="translate(436,231.1357)" id="text4678"><tspan x="0" y="0" style="font-size:8px" id="tspan4680">–6</tspan></text>
+
+
+		</g>
+		<g style="stroke:none" id="g4682">
+			<text transform="translate(384.02,237.5615)" id="text4684"><tspan x="0" y="0" style="font-size:10px" id="tspan4686">10</tspan></text>
+
+
+			<text transform="translate(398.5,231.1357)" id="text4688"><tspan x="0" y="0" style="font-size:8px" id="tspan4690">–7</tspan></text>
+
+
+		</g>
+		<g style="stroke:none" id="g4692">
+			<text transform="translate(346.459,237.5615)" id="text4694"><tspan x="0" y="0" style="font-size:10px" id="tspan4696">10</tspan></text>
+
+
+			<text transform="translate(361,231.1357)" id="text4698"><tspan x="0" y="0" style="font-size:8px" id="tspan4700">–8</tspan></text>
+
+
+		</g>
+		<g style="stroke:none" id="g4702">
+			<text transform="translate(308.8931,237.5615)" id="text4704"><tspan x="0" y="0" style="font-size:10px" id="tspan4706">10</tspan></text>
+
+
+			<text transform="translate(323.5,231.1357)" id="text4708"><tspan x="0" y="0" style="font-size:8px" id="tspan4710">–9</tspan></text>
+
+
+		</g>
+		<g style="stroke:none" id="g4712">
+			<text transform="translate(265.5938,237.5615)" id="text4714"><tspan x="0" y="0" style="font-size:10px" id="tspan4716">10</tspan></text>
+
+
+			<text transform="translate(280,231.1357)" id="text4718"><tspan x="0" y="0" style="font-size:8px" id="tspan4720">–10</tspan></text>
+
+
+		</g>
+		<g style="stroke:none" id="g4722">
+			<text transform="translate(228.7974,237.5615)" id="text4724"><tspan x="0" y="0" style="font-size:10px" id="tspan4726">10</tspan></text>
+
+
+			<text transform="translate(243,231.1357)" id="text4728"><tspan x="0" y="0" style="font-size:8px" id="tspan4730">–11</tspan></text>
+
+
+		</g>
+		<g style="stroke:none" id="g4732">
+			<text transform="translate(190.4668,237.5615)" id="text4734"><tspan x="0" y="0" style="font-size:10px" id="tspan4736">10</tspan></text>
+
+
+			<text transform="translate(205,231.1357)" id="text4738"><tspan x="0" y="0" style="font-size:8px" id="tspan4740">–12</tspan></text>
+
+
+		</g>
+		<g style="stroke:none" id="g4742">
+			<text transform="translate(152.9019,237.5615)" id="text4744"><tspan x="0" y="0" style="font-size:10px" id="tspan4746">10</tspan></text>
+
+
+			<text transform="translate(167.5,231.1357)" id="text4748"><tspan x="0" y="0" style="font-size:8px" id="tspan4750">–13</tspan></text>
+
+
+		</g>
+		<g style="stroke:none" id="g4752">
+			<text transform="translate(115.3389,237.5615)" id="text4754"><tspan x="0" y="0" style="font-size:10px" id="tspan4756">10</tspan></text>
+
+
+			<text transform="translate(129,231.1357)" id="text4758"><tspan x="0" y="0" style="font-size:8px" id="tspan4760">–14</tspan></text>
+
+
+		</g>
+		<g style="stroke:none" id="g4762">
+			<text transform="translate(77.7759,237.5615)" id="text4764"><tspan x="0" y="0" style="font-size:10px" id="tspan4766">10</tspan></text>
+
+
+			<text transform="translate(92,231.1357)" id="text4768"><tspan x="0" y="0" style="font-size:8px" id="tspan4770">–15</tspan></text>
+
+
+		</g>
+	</g>
+	<g id="Ebene_x0020_4">
+		<text transform="translate(758.1543,173.0996)" id="text4773"><tspan x="0" y="0" id="tspan4775">Langwelle</tspan></text>
+
+
+		<text transform="translate(738.2998,160.0557)" id="text4777"><tspan x="0" y="0" id="tspan4779">Mittelwelle</tspan></text>
+
+
+		<text transform="translate(377.3105,162.9824)" id="text4785"><tspan x="0" y="0" id="tspan4787">UV-</tspan><tspan x="0" y="8.7480001" id="tspan4789">C/B/A</tspan></text>
+
+
+		<text transform="translate(225.68111,160.05569)" id="text2899">
+			<tspan x="0" y="0" id="tspan4797">harte-</tspan>
+			<tspan x="35.27198" y="0" id="tspan4793">mittlere-</tspan>
+			<tspan x="84.48088" y="0" id="tspan4783">weiche-</tspan>
+		</text>
+
+
+		<text id="text4799"><tspan x="694.8924" y="190.3867" style="stroke:none" id="tspan4801">Rundfunk</tspan></text>
+
+
+		<text id="text4803"><tspan x="562" y="190.3867" id="tspan4805">Mikrowellen</tspan></text>
+
+
+		<text transform="translate(486.5752,160.334)" id="text4807"><tspan x="0" y="0" id="tspan4809">Terahertz-</tspan><tspan x="2.0829999" y="8.7480001" id="tspan4811">strahlung</tspan></text>
+
+
+		<text id="text4813"><tspan x="245" y="176.85741" id="tspan4815">Röntgenstrahlung</tspan></text>
+
+
+		<text transform="translate(669.7705,160.0557)" id="text4821"><tspan x="0" y="0" id="tspan4823">UKW</tspan></text>
+
+
+		<text transform="translate(649.7705,173.0996)" id="text4825"><tspan x="0" y="0" id="tspan4827">VHF</tspan></text>
+
+
+		<text transform="translate(635.7695,160.0557)" id="text4829"><tspan x="0" y="0" id="tspan4831">UHF</tspan></text>
+
+
+		<text transform="translate(433.9575,160.334)" id="text4833"><tspan x="0" y="0" id="tspan4835">Infrarot-</tspan><tspan x="-3.293" y="8.7480001" id="tspan4837">strahlung</tspan></text>
+
+
+		<text transform="translate(547.1992,160.0557)" id="text4839"><tspan x="0" y="0" id="tspan4841">Radar</tspan></text>
+
+
+		<text transform="translate(584.8311,160.0557)" id="text4843"><tspan x="0" y="0" id="tspan4845">MW-Herd</tspan></text>
+
+
+		<text transform="translate(355.1489,185.4414)" id="text4847"><tspan x="0" y="0" id="tspan4849">Ultraviolett-</tspan><tspan x="0" y="9.92" id="tspan4851">strahlung</tspan></text>
+
+
+		<text transform="translate(164.8701,160.332)" id="text4853"><tspan x="0" y="0" id="tspan4855">Gamma-</tspan><tspan x="-1.207" y="8.75" id="tspan4857">strahlung</tspan></text>
+
+
+		<text transform="translate(102.1455,160.332)" id="text4859"><tspan x="0" y="0" id="tspan4861">Höhen-</tspan><tspan x="-4.4819999" y="8.75" id="tspan4867">strahlung</tspan></text>
+
+
+		<text transform="translate(10.2534,231.4189)" id="text4869"><tspan x="0" y="0" id="tspan4871">Wellen-</tspan><tspan x="0" y="9.9209995" id="tspan4873">länge (m)</tspan></text>
+
+
+		<text transform="translate(10.2534,267.4297)" id="text4879"><tspan x="0" y="0" id="tspan4881">Frequenz (Hz)</tspan></text>
+
+
+		<text transform="translate(695.5439,173.0996)" id="text4883"><tspan x="0" y="0" id="tspan4885">Kurzwelle</tspan></text>
+
+
+	</g>
+</svg>

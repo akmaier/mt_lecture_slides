@@ -1,0 +1,138 @@
+\documentclass[aspectratio=169,t]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{hyperref}
+\usepackage{tikz}
+
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{multirow}
+
+\usepackage{psfrag}
+\usepackage{pgfplots}
+\usepackage{framed}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{epstopdf}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage[]{bookmark}
+%\usepackage[3D]{movie15}
+%\usepackage{media9}
+\usepackage[binary-units,abbreviations]{siunitx}
+\usepackage[textfont=normalsize, labelfont=normalsize, justification=centering]{subcaption}
+\usepackage{marvosym}
+\usepackage{calc}
+\usepackage{color, colortbl}
+\usepackage[]{svg} 
+\usepackage[]{trfsigns} 
+\usepackage[nomessages]{fp}
+\usepackage[]{csquotes}\MakeOuterQuote{"}
+\selectcolormodel{rgb}
+
+\makeatletter
+\def\beamer@calltheme#1#2#3{\def\beamer@themelist{#2}
+	\@for\beamer@themename:=\beamer@themelist\do
+	{\usepackage[{#1}]{\beamer@themelocation/#3\beamer@themename}}}
+\def\usefolder#1{\def\beamer@themelocation{#1}}
+\def\beamer@themelocation{}
+\usefolder{theme}
+
+\usetikzlibrary{matrix,
+	decorations.pathreplacing,
+	calc,
+	positioning,
+	external,
+	3d,
+	shapes,
+	arrows,
+	pgfplots.statistics}
+\pgfplotsset{compat=1.16}
+\tikzstyle{faunode}=[rounded corners, draw=faublue, fill=faublue!10,  align=center, inner sep=0.3cm, line width=0.4mm]
+\tikzstyle{fauellipseFixedWidth}=[ellipse, draw=faublue, fill=faublue!10,  align=center, inner sep=0.3cm, line width=0.4mm, minimum width=3cm]
+\tikzstyle{fauellipse}=[ellipse, draw=faublue, fill=faublue!10,  align=center, inner sep=0.3cm, line width=0.4mm]
+\tikzstyle{fauarrow}=[draw=faublue,->, line width=0.4mm]
+\tikzstyle{fauline}=[draw=faublue, line width=0.4mm]
+
+
+\usepackage[backend=bibtex,sorting=none,doi=true,style=phys]{biblatex}
+%\usepackage[]{biblatex}
+\bibliography{./references}
+
+% Themes:
+%  - fau:          FAU theme
+%  - fau-tf:       TechFak FAU theme
+%  - fau-tf-lme:   TechFak LME FAU theme
+%
+% Options:
+%  - image:        Cover image on title page
+%  - plain:        Plain title page
+%  - longtitle:    Title page layout for long title
+\usetheme[longtitle]{fau-tf-lme}
+
+% END of THEME SETTINGS
+% --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\sisetup{
+exponent-product =\ensuremath{{\,\cdot\,}}
+}
+
+% Enable semi-transparent animation preview
+\setbeamercovered{transparent}
+\setbeamertemplate{blocks}[rounded]
+\captionsetup{labelformat=empty,labelsep=none, labelfont=normalsize, justification=centering}
+
+
+\newcommand\Wider[2][1.0cm]{%
+\makebox[\linewidth][c]{%
+  \begin{minipage}{\dimexpr\textwidth+#1\relax}
+  \raggedright#2
+  \end{minipage}%
+  }%
+}
+
+
+\let\origitem\item
+\renewcommand{\item}{\normalfont\origitem}
+\newcommand{\bluefat}[1]{\textcolor{faublue}{\textbf{#1}}}
+\newcommand{\bolditem}{\normalfont\origitem\bfseries}
+\newcommand{\question}{{\bf Question: }}
+\newcommand{\answer}{{\bf Answer: }}
+\newcommand{\myExample}{{\bf Example }}
+\newcommand{\real}{\mbox{${\mathbb R}$}}
+\definecolor{defColor}{rgb}{0.8,0.87,0.97}
+\definecolor{defColorT}{rgb}{0,0,0}
+\definecolor{defColorF}{rgb}{1,1,1}
+\newenvironment{myDefinition}{%
+	\def\FrameCommand{\fboxsep=\FrameSep{} \fcolorbox{defColorF}{defColor}}%
+	\color{defColorT}\MakeFramed{\FrameRestore{}}}%
+{\endMakeFramed}
+
+% Title page
+\title[Medical Engineering II]{Medical Engineering - Imaging Systems}
+\author{Prof.\ Dr.-Ing.\ habil.\ Andreas Maier}
+\date{SS 2021}
+\institute{Pattern Recognition Lab (CS 5)}
+
+\newcommand{\password}{\texttt{mt2\_ss21}}
+
+
+\AtBeginSection[]{
+	{
+		\setbeamertemplate{footline}{}
+		\begin{frame}[noframenumbering]{\insertsubtitle}
+			 \tableofcontents[currentsection]
+		\end{frame} 
+	}
+}
+\AtBeginSubsection[]{
+	{
+
+		\setbeamertemplate{footline}{}
+		\begin{frame}[noframenumbering]{\insertsubtitle}
+			 \tableofcontents[currentsection, currentsubsection]
+		\end{frame} 
+	}
+}

@@ -1,0 +1,62 @@
+% This file was created by tikzplotlib v0.9.1.
+\begin{tikzpicture}
+
+\definecolor{color0}{rgb}{1,0.498039215686275,0.0549019607843137}
+\definecolor{color1}{rgb}{0.172549019607843,0.627450980392157,0.172549019607843}
+
+\begin{axis}[
+legend cell align={left},
+legend style={fill opacity=0.8, draw opacity=1, text opacity=1, draw=white!80!black},
+tick align=outside,
+tick pos=left,
+x grid style={white!69.0196078431373!black},
+xlabel={i},
+xmajorgrids,
+xmin=0.3, xmax=15.7,
+xtick style={color=black},
+y grid style={white!69.0196078431373!black},
+ymajorgrids,
+ymin=-2.2, ymax=2.2,
+ytick style={color=black}
+]
+\addplot [semithick, color0, mark=*, mark size=3, mark options={solid}, only marks]
+table {%
+1 0.00313845419939037
+2 -0.00313845419939046
+3 0.00313845419939043
+4 -0.00313845419939043
+5 0.00313845419939045
+6 -0.00313845419939044
+7 0.0031384541993904
+8 -0.0031384541993904
+9 0.00313845419939041
+10 -0.0031384541993904
+11 0.00313845419939041
+12 -0.00313845419939042
+13 0.00313845419939046
+14 -0.00313845419939039
+15 0.00313845419939045
+};
+\addlegendentry{Coefficients for $\cos(2\pi i k t/T)$}
+\addplot [semithick, color1, mark=*, mark size=3, mark options={solid}, only marks]
+table {%
+1 1.9999983583506
+2 -0.99999671669959
+3 0.666661741712009
+4 -0.499993433386244
+5 0.399991791720677
+6 -0.333323483380359
+7 0.285702794077957
+8 -0.249986866668998
+9 0.22220744718361
+10 -0.199983583239223
+11 0.181800123319069
+12 -0.16664696641143
+13 0.153824811815386
+14 -0.14283415902982
+15 0.133308707686815
+};
+\addlegendentry{Coefficients for $\sin(2\pi i k t/T)$}
+\end{axis}
+
+\end{tikzpicture}

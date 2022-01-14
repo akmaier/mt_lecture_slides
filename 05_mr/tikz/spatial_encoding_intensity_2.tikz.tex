@@ -1,0 +1,32 @@
+\tikzsetnextfilename{mr_spatial_encoding_intensity_2}
+\begin{tikzpicture}
+	\clip (-0.25, 0) rectangle (9.25, 1.5);
+	% Settings
+	\pgfmathsetmacro{\numstripes}{20}
+	\pgfmathsetmacro{\stripeheight}{0.5}
+	\pgfmathsetmacro{\imagewidth}{10}
+	% /Settings
+	\pgfmathsetmacro{\stripewidth}{\imagewidth/\numstripes}
+	\foreach \idx in {0,...,\numstripes}{
+		\pgfmathsetmacro{\a}{(\idx-1)*\stripewidth}
+		\pgfmathsetmacro{\b}{(\idx)*\stripewidth}
+		\pgfmathparse{int(mod(\idx,2))}
+		\ifnum\pgfmathresult=0{\fill[left color=black, right color=white] (\a, 0) rectangle (\b, \stripeheight);}
+		\else{\fill[left color=white, right color=black] (\a, 0) rectangle (\b, \stripeheight);}\fi
+	}
+	\begin{scope}[scale=0.5]
+	\pgfmathsetmacro{\angle}{180}
+	\pgfmathsetmacro{\startangle}{90}
+	\foreach \idx in {0,1,...,19} {
+		\pgfmathsetmacro{\anglevalue}{\startangle+\idx*\angle}
+		\pgfmathsetmacro{\x}{\idx+0.4*cos(\anglevalue)}
+		\pgfmathsetmacro{\a}{\idx-0.4*cos(\anglevalue)}
+		\pgfmathsetmacro{\y}{1.5+0.4*sin(\anglevalue)}
+		\pgfmathsetmacro{\b}{1.5+-0.4*sin(\anglevalue)}
+		\draw[thick,<-] (\x, \y) -- (\a, \b);
+	}
+	\foreach \idx in {0,1,...,19} {
+		\draw ($(\idx,0)+(-0.5,1)$) rectangle ($(\idx,0)+(0.5,2)$);
+	}
+	\end{scope}
+\end{tikzpicture}

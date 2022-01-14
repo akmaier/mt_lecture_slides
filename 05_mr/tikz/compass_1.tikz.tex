@@ -1,0 +1,16 @@
+\tikzsetnextfilename{mr_compass_1}
+\begin{tikzpicture}
+	\clip (-1.5, -2.8) rectangle (1.5, 2.8);
+	\draw[gray, very thick, densely dotted] (0, -2.2) node [below] {S} -- (0, 2.2) node [above] {N};
+	\begin{scope}[rotate=-30, opacity=0.3]
+		\filldraw (-0.3, 0) -- (0.3, 0) -- (0, 1.8) -- cycle;
+		\filldraw[fill=white] (-0.3, 0) -- (0.3, 0) -- (0, -1.8) -- cycle;
+		\node[circle, inner sep=0pt, gray!20!black, draw=gray!20!black, fill=gray!50!white] at (0, 0) {{\tiny \textbf{+}}};
+	\end{scope}
+	\begin{scope}[rotate=40]
+		\filldraw (-0.3, 0) -- (0.3, 0) -- (0, 1.8) -- cycle;
+		\filldraw[fill=white] (-0.3, 0) -- (0.3, 0) -- (0, -1.8) -- cycle;
+		\node[circle, inner sep=0pt, gray!20!black, draw=gray!20!black, fill=gray!50!white] at (0, 0) {{\tiny \textbf{+}}};
+		\draw[very thick, densely dashed, red, ->] (0, 1.8) arc (90:20:1.8);
+	\end{scope}
+\end{tikzpicture}

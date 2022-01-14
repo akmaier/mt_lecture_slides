@@ -1,0 +1,242 @@
+
+% further readings
+@inbook{taubmann18,
+	abstract = {CT is doubtlessly one of the most important technologies in medical imaging and offers us views inside
+	            the human body that are as valuable to physicians as they are fascinating (cf. Fig. 8.1).},
+	author = {Taubmann, Oliver and Berger, Martin and B{\"o}gel, Marco and Xia, Yan and Balda, Michael and Maier,
+	          Andreas},
+	booktitle = {{Medical Imaging Systems}},
+	doi = {10.1007/978-3-319-96520-8_8},
+	isbn = {978-3-319-96520-8},
+	publisher = {Springer},
+	title = {{Computed Tomography}},
+	url = {http://dx.doi.org/10.1007/978-3-319-96520-8_8},
+	x-fetchedfrom = {SpringerLink},
+	year = {2018},
+}
+
+%% images from papers
+
+@article{wuerfel_beam_hardening,
+	author = {Würfl, Tobias and Hoffmann, Mathis and Aichert, André and Maier, Andreas K. and Maaß, Nicole and
+	          Dennerlein, Frank},
+	title = {Calibration-free beam hardening reduction in x-ray CBCT using the epipolar consistency condition and
+	         physical constraints},
+	journal = {Medical Physics},
+	volume = {46},
+	number = {12},
+	pages = {e810-e822},
+	keywords = {artifacts, beam hardening, computed tomography, consistency conditions, image quality, image
+	            reconstruction},
+	doi = {10.1002/mp.13625},
+	url = {https://aapm.onlinelibrary.wiley.com/doi/abs/10.1002/mp.13625},
+	eprint = {https://aapm.onlinelibrary.wiley.com/doi/pdf/10.1002/mp.13625},
+	abstract = {Background The beam hardening effect is a typical source of artifacts in x-ray cone beam computed
+	            tomography (CBCT). It causes streaks in reconstructions and corrupted Hounsfield units toward the center
+	            of objects, widely known as cupping artifacts. Purpose We present a novel efficient projection data-based
+	            method for reduction of beam-hardening artifacts and incorporate physical constraints on the shape of the
+	            compensation functions. The method is calibration-free and requires no additional knowledge of the
+	            scanning setup. Method The mathematical model of the beam hardening effect caused by a single material is
+	            analyzed. We show that the effect of beam hardening on the resulting functions on the line integral
+	            measurements are monotonous and concave functions of the ideal data. This holds irrespective of any
+	            limiting assumptions on the energy dependency of the material, the detector response or properties of the
+	            x-ray source. A regression model for the beam hardening effect respecting these theoretical restrictions
+	            is proposed. Subsequently, we present an efficient method to estimate the parameters of this model
+	            directly in projection domain using an epipolar consistency condition. Computational efficiency is
+	            achieved by exploiting the linearity of an intermediate function in the formulation of our optimization
+	            problem. Results Our evaluation shows that the proposed physically constrained ECC algorithm is effective
+	            even in challenging measured data scenarios with additional sources of inconsistency. Conclusions The
+	            combination of mathematical consistency condition and a compensation model that is based on the
+	            properties of x-ray physics enables us to improve image quality of measured data retrospectively and to
+	            decrease the need for calibration in a data-driven manner.},
+	year = {2019},
+}
+
+
+@article{bier17,
+	abstract = {Cone beam computed tomography (CBCT) suffers from a large amount of scatter, resulting in severe scatter
+	            artifacts in the reconstructions. Recently, a new scatter correction approach, called improved primary
+	            modulator scatter estimation (iPMSE), was introduced. That approach utilizes a primary modulator that is
+	            inserted between the X-ray source and the object. This modulation enables estimation of the scatter in
+	            the projection domain by optimizing an objective function with respect to the scatter estimate. Up to now
+	            the approach has not been implemented on a clinical angiography C-arm CT system. In our work, the iPMSE
+	            method is transferred to a clinical C-arm CBCT. Additional processing steps are added in order to
+	            compensate for the C-arm scanner motion and the automatic X-ray tube current modulation. These challenges
+	            were overcome by establishing a reference modulator database and a block-matching algorithm. Experiments
+	            with phantom and experimental in vivo data were performed to evaluate the method. We show that scatter
+	            correction using primary modulation is possible on a clinical C-arm CBCT. Scatter artifacts in the
+	            reconstructions are reduced with the newly extended method. Compared to a scan with a narrow collimation,
+	            our approach showed superior results with an improvement of the contrast and the contrast-to-noise ratio
+	            for the phantom experiments. In vivo data are evaluated by comparing the results with a scan with a
+	            narrow collimation and with a constant scatter correction approach. Scatter correction using primary
+	            modulation is possible on a clinical CBCT by compensating for the scanner motion and the tube current
+	            modulation. Scatter artifacts could be reduced in the reconstructions of phantom scans and in
+	            experimental in vivo data.},
+	author = {Bier, Bastian and Berger, Martin and Maier, Andreas and Kachelrie{\ss}, Marc and Ritschl, Ludwig and M{\"u
+	          }ller, Kerstin and Choi, Jang-Hwan and Fahrig, Rebecca},
+	doi = {10.1002/mp.12094},
+	journal = {{Med Phys}},
+	month = sep,
+	nlmuniqueid = {0425746},
+	number = {9},
+	pages = {e125--e137},
+	pubmed = {28061010},
+	title = {{Scatter correction using a primary modulator on a clinical angiography C-arm CT system.}},
+	volume = {44},
+	x-fetchedfrom = {PubMed},
+	year = {2017},
+}
+
+@article{schwemmer14,
+	abstract = {We present a software, called CoroEval, for the evaluation of 3D coronary vessel reconstructions from
+	            clinical data. It runs on multiple operating systems and is designed to be independent of the imaging
+	            modality used. At this point, its purpose is the comparison of reconstruction algorithms or acquisition
+	            protocols, not the clinical diagnosis. Implemented metrics are vessel sharpness and diameter. All
+	            measurements are taken from the raw intensity data to be independent of display windowing functions. The
+	            user can either import a vessel centreline segmentation from other software, or perform a manual
+	            segmentation in CoroEval. An automated segmentation correction algorithm is provided to improve
+	            non-perfect centrelines. With default settings, measurements are taken at 1 mm intervals along the vessel
+	            centreline and from 10 different angles at each measurement point. This allows for outlier detection and
+	            noise-robust measurements without the burden and subjectivity a manual measurement process would incur.
+	            Graphical measurement results can be directly exported to vector or bitmap graphics for integration into
+	            scientific publications. Centreline and lumen segmentations can be exported as point clouds and in
+	            various mesh formats. We evaluated the diameter measurement process using three phantom datasets. An
+	            average deviation of 0.03 ± 0.03 mm was found. The software is available in binary and source code form
+	            at http://www5.cs.fau.de/CoroEval/.},
+	author = {Schwemmer, C and Forman, C and Wetzl, J and Maier, A and Hornegger, J},
+	doi = {10.1088/0031-9155/59/17/5163},
+	journal = {{Phys Med Biol}},
+	month = sep,
+	nlmuniqueid = {0401220},
+	number = {17},
+	pages = {5163--74},
+	pubmed = {25138652},
+	title = {{CoroEval: a multi-platform, multi-modality tool for the evaluation of 3D coronary vessel reconstructions.}
+	         },
+	volume = {59},
+	x-fetchedfrom = {PubMed},
+	year = {2014},
+}
+
+@article{herl_metal_artifacts,
+	author = "Gabriel Herl and Jochen Hiller and Stefan Kasperl and Andreas Maier",
+	title = "Reduktion von Metallartefakten durch multipositionale Datenfusion in der industriellen
+	         Röntgen-Computertomographie",
+	journal = "tm - Technisches Messen",
+	year = "2020",
+	publisher = "De Gruyter",
+	address = "Berlin, Boston",
+	volume = "87",
+	number = "2",
+	pages: = "101 -- 110",
+	url = "https://www.degruyter.com/view/journals/teme/87/2/article-p101.xml",
+}
+
+@inproceedings{yixing_truncation,
+	author = "Huang, Yixing and Gao, Lei and Preuhs, Alexander and Maier, Andreas",
+	editor = "Tolxdorff, Thomas and Deserno, Thomas M. and Handels, Heinz and Maier, Andreas and Maier-Hein, Klaus H.
+	          and Palm, Christoph",
+	title = "Field of View Extension in Computed Tomography Using Deep Learning Prior",
+	booktitle = "Bildverarbeitung f{\"u}r die Medizin 2020",
+	year = "2020",
+	publisher = "Springer Fachmedien Wiesbaden",
+	address = "Wiesbaden",
+	pages = "186--191",
+	abstract = "In computed tomography (CT), data truncation is a common problem. Images reconstructed by the standard
+	            filtered back-projection algorithm from truncated data suffer from cupping artifacts inside the
+	            field-of-view (FOV), while anatomical structures are severely distorted or missing outside the FOV. Deep
+	            learning, particularly the U-Net, has been applied to extend the FOV as a post-processing method. Since
+	            image-to-image prediction neglects the data fidelity to measured projection data, incorrect structures,
+	            even inside the FOV, might be reconstructed by such an approach. Therefore, generating reconstructed
+	            images directly from a post-processing neural network is inadequate. In this work, we propose a data
+	            consistent reconstruction method, which utilizes deep learning reconstruction as prior for extrapolating
+	            truncated projections and a conventional iterative reconstruction to constrain the reconstruction
+	            consistent to measured raw data. Its efficacy is demonstrated in our study, achieving small average
+	            root-mean-square error of 24HU inside the FOV and a high structure similarity index of 0.993 for the
+	            whole body area on a test patient's CT data.",
+	isbn = "978-3-658-29267-6",
+}
+
+%% material decomp
+@inproceedings{lu_material_decomposition,
+	author = {Lu, Yanye and Geret, Jan and Unberath, Mathias and Manhart, Michael and Ren, Qiushi and Fahrig, Rebecca
+	          and Hornegger, Joachim and Maier, Andreas},
+	year = {2015},
+	month = {05},
+	pages = {},
+	title = {Projection-based Material Decomposition by Machine Learning using Image-based Features for Computed
+	         Tomography},
+}
+
+@inproceedings{mueller_material_decomposition,
+	title = {{Towards Material Decomposition on Large Field-of-View Flat Panel Photon-Counting Detectors - First in-vivo
+	         Results}},
+	location = {Bamberg, Germany},
+	editor = {Marc Kachelriess},
+	year = {2016},
+	author = {Kerstin M{\"u}ller and Moiz Ahmad and Martin Spahn and Jang-Hwan Choi and Silke Reitz and Niko K{\"o}ster
+	          and Yanye Lu and Rebecca Fahrig and Andreas Maier},
+	booktitle = {{Proceedings of the fourth international conference on image formation in x-ray computed tomography}},
+	pages = {479--482},
+	url = {https://www5.informatik.uni-erlangen.de/Forschung/Publikationen/2016/Muller16-TMD.pdf},
+	bibsource = {UnivIS, http://univis.uni-erlangen.de/prg?search=publications&id=91699492&show=elong},
+}
+
+
+@article{dorn18_dual_energy,
+	author = {Dorn, Sabrina and Chen, Shuqing and Sawall, Stefan and Maier, Joscha and Knaup, Michael and Uhrig, Monika
+	          and Schlemmer, Heinz-Peter and Maier, Andreas and Lell, Michael and Kachelrie{\ss}, Marc},
+	doi = {10.1002/mp.13127},
+	issn = {0094-2405},
+	journal = {Medical Physics},
+	month = Aug,
+	number = {10},
+	pages = {4541--4557},
+	publisher = {Wiley},
+	title = {Towards context-sensitive CT imaging - organ-specific image formation for single (SECT) and dual energy
+	         computed tomography (DECT)},
+	url = {http://dx.doi.org/10.1002/mp.13127},
+	volume = {45},
+	x-fetchedfrom = {DOI},
+	year = {2018},
+}
+
+
+@article{joscha_dse,
+	author = {Maier, Joscha and Eulig, Elias and Vöth, Tim and Knaup, Michael and Kuntz, Jan and Sawall, Stefan and
+	          Kachelrieß, Marc},
+	title = {Real-time scatter estimation for medical CT using the deep scatter estimation: Method and robustness
+	         analysis with respect to different anatomies, dose levels, tube voltages, and data truncation},
+	journal = {Medical Physics},
+	volume = {46},
+	number = {1},
+	pages = {238-249},
+	doi = {10.1002/mp.13274},
+	url = {https://aapm.onlinelibrary.wiley.com/doi/abs/10.1002/mp.13274},
+	eprint = {https://aapm.onlinelibrary.wiley.com/doi/pdf/10.1002/mp.13274},
+	abstract = {Purpose X-ray scattering leads to CT images with a reduced contrast, inaccurate CT values as well as
+	            streak and cupping artifacts. Therefore, scatter correction is crucial to maintain the diagnostic value
+	            of CT and CBCT examinations. However, existing approaches are not able to combine both high accuracy and
+	            high computational performance. Therefore, we propose the deep scatter estimation (DSE): a deep
+	            convolutional neural network to derive highly accurate scatter estimates in real time. Methods Gold
+	            standard scatter estimation approaches rely on dedicated Monte Carlo (MC) photon transport codes. However
+	            , being computationally expensive, MC methods cannot be used routinely. To enable real-time scatter
+	            correction with similar accuracy, DSE uses a deep convolutional neural network that is trained to predict
+	            MC scatter estimates based on the acquired projection data. Here, the potential of DSE is demonstrated
+	            using simulations of CBCT head, thorax, and abdomen scans as well as measurements at an experimental
+	            table-top CBCT. Two conventional computationally efficient scatter estimation approaches were implemented
+	            as reference: a kernel-based scatter estimation (KSE) and the hybrid scatter estimation (HSE). Results
+	            The simulation study demonstrates that DSE generalizes well to varying tube voltages, varying noise
+	            levels as well as varying anatomical regions as long as they are appropriately represented within the
+	            training data. In any case the deviation of the scatter estimates from the ground truth MC scatter
+	            distribution is less than 1.8\% while it is between 6.2\% and 293.3\% for HSE and between 11.2\% and
+	            20.5\% for KSE. To evaluate the performance for real data, measurements of an anthropomorphic head
+	            phantom were performed. Errors were quantified by a comparison to a slit scan reconstruction. Here, the
+	            deviation is 278 HU (no correction), 123 HU (KSE), 65 HU (HSE), and 6 HU (DSE ), respectively.
+	            Conclusions The DSE clearly outperforms conventional scatter estimation approaches in terms of accuracy.
+	            DSE is nearly as accurate as Monte Carlo simulations but is superior in terms of speed (≈10 ms/projection
+	            ) by orders of magnitude.},
+	year = {2019},
+}
+	 = }
+

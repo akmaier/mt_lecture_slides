@@ -1,0 +1,729 @@
+\input{../preamble}
+
+\usepackage[]{subcaption} 
+
+\renewcommand{\vec}[1]{\boldsymbol{#1}}
+\newcommand{\mat}[1]{\boldsymbol{#1}}
+
+\newcommand\B[1]{\ensuremath{\vec{B}_{#1}}}
+
+\def\longtime{\ensuremath{T_1}}						% T1
+\def\transtime{\ensuremath{T_2}}						% T2
+\def\inhomogtime{\ensuremath{\transtime^*}}						% T2*
+
+\def\spatialfreq{\ensuremath{s}}      % Spatial frequency
+
+\def\larmorfreq{\ensuremath{f_\ell}}  % Larmor frequency
+
+\def\hydrogen{\ensuremath{{}^1\textrm{H}}} % Hydrogen
+
+\def\magn{\ensuremath{\vec M}}
+\def\magnzero{\ensuremath{\magn_0}}
+\def\magnlong{\ensuremath{\magn_z}} % Longitudinal magnetization
+\def\magntrans{\ensuremath{\magn_{xy}}} % Transversal magnetization
+
+
+\subtitle{Magnetic Resonance II}
+\author{Prof.\ Andreas Maier, Jens Wetzl, Felix Lugauer}
+
+
+\begin{document}
+
+\frame[plain]{\titlepage}
+
+\begin{frame}
+  \frametitle{Magnetic Resonance 2}
+  
+  \tableofcontents
+\end{frame}
+
+\section{Principles of Magnetic Resonance Imaging}% (fold)
+\label{sec:principles_of_magnetic_resonance_imaging}
+
+\begin{frame}
+	\frametitle{Magnetic Resonance {\color{red}Imaging}}
+	
+	\begin{itemize}
+		\item So far: excitation of and signal reception from all \hydrogen{} nuclei \\ within the magnetic field
+		\item For \emph{imaging}, we need spatial information
+		\item Two concepts:
+		\begin{itemize}
+			\item \emph{Slice Selection} to restrict excitation to a slice
+			\item \emph{Spatial Encoding} to encode spatial information \\ within a slice or volume
+		\end{itemize}
+		\item Both are based on the gradient coil system
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Components of an MRI Scanner}
+	
+	\begin{center}
+		\includegraphics[height=0.8\textheight]{images/mri_scanner}
+	\end{center}
+	
+	{\flushright
+	\tiny Image source: \url{http://www.magnet.fsu.edu}}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Gradient Coil System}
+	
+	\begin{itemize}
+		\item Main magnetic field \B0 is (theoretically) homogeneous
+		\item Gradient coils allow linear variation of the magnetic field
+		\item Installed in 3 orthogonal directions, combination allows \\ linear variation in arbitrary directions
+		\item $\rightarrow$ Arbitrary slice orientations, as opposed to CT
+	\end{itemize}
+	
+	\begin{center}
+		\includegraphics[height=0.4\textheight]{images/gradients}
+		
+		{\scriptsize Image source: Slides ``Bildgebende Verfahren in der Medizin'', Springer Berlin Heidelberg}
+	\end{center}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Gradient Coil System}
+	
+	\begin{center}
+		\includegraphics[height=0.8\textheight]{images/mri_scannercoils}
+	\end{center}
+	
+	{\scriptsize Image source: \url{http://www.magnet.fsu.edu}}
+\end{frame}
+
+
+
+
+\subsection{Slice Selection} % (fold)
+\label{sub:slice_selection}
+
+\begin{frame}
+	\frametitle{Slice Selection I}
+	
+	\begin{itemize}
+		\item Linear variation of \B0 in head-feet direction ($z$)
+		\item $\rightarrow$ Larmor frequency \larmorfreq{} dependent on offset in $z$ direction:
+		$$\larmorfreq(z) = \gamma \cdot \left( \Vert \B0 \Vert + z \right)$$
+	\end{itemize}
+	
+	\begin{center}
+		\begingroup
+		\tikzset{every picture/.style={scale=0.5}}%
+		\input{tikz/slice_selection_field.tikz}
+		\endgroup
+	\end{center}
+	
+	\begin{itemize}
+		\item $z$ direction is an example, works in arbitrary oblique orientations!
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Slice Selection II}
+	
+	\begin{itemize}
+		\item Excitation of a slice from position $z_1$ to $z_2$: use RF waves with frequencies in the range of $\larmorfreq(z_1)$ to $\larmorfreq(z_2)$
+	\end{itemize}
+	
+	\begin{center}
+		\begingroup
+		\tikzset{every picture/.style={scale=0.8}}
+		\input{tikz/slice_selection.tikz}
+		\endgroup
+	\end{center}
+\end{frame}
+
+% subsection slice_selection (end)
+
+
+
+\subsection{Spatial Encoding} % (fold)
+\label{sub:spatial_encoding}
+
+\begin{frame}
+	\frametitle{Spatial Encoding}
+	
+	\begin{itemize}
+		\item Unfortunately, the slice selection principle cannot be extended to encode spatial locations within a slice
+		\item Even with multiple gradient fields, selection is always a plane (possibly oblique), not a single point
+		
+		\vspace{2ex}
+		
+		\item Recall: magnetization vectors precess in the transversal plane
+		\item Make use of the \textbf{phase shift} between them to encode location
+		
+		\begin{center}
+			\begin{tikzpicture}
+				\fill[blue!30!white] (0, 0) -- (30:0.5) arc (30:140:0.5) -- cycle;
+				\draw[->] (1, 0) arc (0:350:1);
+				\draw[very thick,->] (0, 0) -- (30:1) node [right] {magnetization vector 1};
+				\draw[very thick,->] (0, 0) -- (140:1) node [left] {magnetization vector 2};
+				\draw (30:0.5) arc (30:140:0.5);
+				\draw (85:0.25) to[out=310,in=180] (1.2, -0.075) node [right] {phase shift};
+			\end{tikzpicture}
+		\end{center}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{One-Dimensional Example}
+	
+	\begin{itemize}
+		\item Exemplary explanation for encoding 1-D locations first
+		\item Extension to $n$-D later on
+		\item 1-D example ``image'' with more hydrogen nuclei towards the boundaries, represented by the magnitudes of the vectors:
+	\end{itemize}
+	
+	\begin{center}
+		\begingroup
+		\tikzset{every picture/.style={scale=0.9}}
+		\input{tikz/spatial_encoding_voxels.tikz}
+		\endgroup
+	\end{center}
+	
+	\begin{itemize}
+		\item Directly after excitation, all spins have the same phase
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Net Magnetization}
+	
+	\begin{itemize}
+		\item Measurable quantity in MR scanners: net magnetization
+	\end{itemize}
+	
+	\begin{center}
+		\begingroup
+		\tikzset{every picture/.style={scale=0.9}}
+		\input{tikz/spatial_encoding_net_magnetization.tikz}
+		\endgroup
+	\end{center}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Precession}
+	
+	\begin{itemize}
+		\item Ignore relaxation for now
+		\item Assume a homogeneous magnetic field without gradients
+		\item[$\rightarrow$] Spins precess at the same Larmor frequency and net magnetziation is unchanged
+	\end{itemize}
+	
+	\begin{center}
+		\begingroup
+		\tikzset{every picture/.style={scale=0.9}}
+		\input{tikz/spatial_encoding_precession.tikz} \\
+		$\vdots$
+		\endgroup
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Applying a Gradient Field}
+	
+	\begin{columns}[onlytextwidth,c]
+		\column{.3\linewidth}
+		\column{.7\linewidth}
+		\begin{itemize}
+			\item With a gradient field, magnetization vectors precess at different speeds
+			\item They accumulate a phase shift
+			\item Measurable net magnetization changes
+		\end{itemize}
+	\end{columns}
+	
+	
+	
+	\begin{center}
+		\begingroup
+		\tikzset{every picture/.style={scale=0.9}}
+		\input{tikz/spatial_encoding_gradient.tikz}
+		\endgroup
+	\end{center}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Phase ``Patterns''}
+	
+	\begin{itemize}
+		\item May seem counterproductive, but is core idea of spatial encoding!
+		
+		\vspace{1ex}
+		
+		\item  If hydrogen nuclei distribution matches ``pattern'' implied by the phase shift $\rightarrow$ measurable net magnetization
+	\end{itemize}
+	
+	\vspace{-2ex}
+	
+	\begin{center}
+		\begingroup
+		\tikzset{every picture/.style={scale=0.9}}
+		\input{tikz/spatial_encoding_pattern_1.tikz}
+		\endgroup
+	\end{center}
+	\uncover<2>{
+	\begin{itemize}
+		\item Better match $\rightarrow$ higher net magnetization
+	\end{itemize}
+	\begin{center}
+		\begingroup
+		\tikzset{every picture/.style={scale=0.9}}
+		\input{tikz/spatial_encoding_pattern_2.tikz}
+		\endgroup
+	\end{center}}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Spatial Encoding}
+	
+	\begin{columns}[onlytextwidth,c]
+		\column{.45\linewidth}
+		{\small
+		\begin{itemize}
+			\item Apply different gradients
+			\item Measure net magnetization
+		\end{itemize}}
+		\column{.55\linewidth}
+		{\small
+		\begin{itemize}
+			\item[$\rightarrow$] creates different phase patterns
+			\item[$\rightarrow$] describes similarity to each pattern
+		\end{itemize}}
+	\end{columns}
+	\begin{center}
+		\input{tikz/fourier_representation.tikz}
+	\end{center}
+	
+	\vspace{-2ex}
+	
+	\begin{itemize}
+		\item Results in an intermediate representation of the image
+		\item The image can be reconstructed from this representation
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Phase Pattern $\sim$ Intensity Pattern}
+	
+	\begin{itemize}
+		\item Another way to think of phase patterns: \\
+		Map phase angles to gray values
+	\end{itemize}
+	
+	\begin{center}
+		\begingroup
+		\tikzset{every picture/.style={scale=0.9}}
+		\input{tikz/spatial_encoding_intensity_1.tikz}
+		
+		\input{tikz/spatial_encoding_intensity_2.tikz}
+		\endgroup
+	\end{center}
+	
+	\begin{itemize}
+		\item Lower phase shift $\sim$ slower gray value transition
+		\item Higher phase shift $\sim$ faster gray value transition
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{And now the dreaded math part\ldots}
+	
+	\begin{itemize}
+		\item Phase pattern: function that maps offset in left-right direction $x$ to a complex number of magnitude 1 and an angle dependent on $x$ and the phase shift $k$ corresponding to the gradient field strength
+		$$p_k(x) = \mathsf e^{\mathsf ikx} = \cos(kx) + \mathsf i \sin(kx)$$
+		
+		\item<2> Measure similarity between pattern $p_k(x)$ and image $f(x)$: pointwise multiplication and summation
+		\item<2> Result is the measured net magnetization $m(k)$ for phase shift $k$:
+		\begin{align*}
+			m(k) &= \int f(x)p_k(x)\ \mathsf dx \\
+			     &= \int f(x)\mathsf e^{\mathsf ikx}\ \mathsf dx
+		\end{align*}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{And now the dreaded math part\ldots}
+	\begin{itemize}
+		\item Result is the measured net magnetization $m(k)$ for phase shift $k$:
+		\begin{align*}
+			m(k) &= \int f(x)p_k(x)\ \mathsf dx \\
+			     &= \int f(x)\mathsf e^{\mathsf ikx}\ \mathsf dx
+		\end{align*}
+		
+		\item Now wait a second! We've seen that before!
+		\item<2> $f(x)$ is just the Fourier transform of $m(k)$
+		\item<2> Spatial encoding performs a Fourier decomposition of the image
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Generalization to $n$-D}
+	
+	\begin{itemize}
+		\item Apply gradient fields in multiple directions to generate multi-dimensional phase patterns
+		\item 2-D example: left-right and anterior-posterior encoding
+	\end{itemize}
+	\begin{center}
+		\begingroup
+		\tikzset{every picture/.style={scale=0.7}}
+		\input{tikz/spatial_encoding_2d.tikz}
+		\endgroup
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Generalization to $n$-D}
+	
+	\begin{itemize}
+		\item Spatial location is now a vector $\vec x \in \mathbb R^n$
+		\item Combine phase shifts in each dimension into a vector $\vec k \in \mathbb R^n$
+		\item Phase pattern now uses the scalar product of these vectors:
+		$$p_{\vec k}(\vec x) = \mathsf e^{\mathsf i \langle \vec x, \vec k \rangle} = \cos\left( \sum_{j=1}^n x_j k_j \right) + \mathsf i \sin \left( \sum_{j=1}^n x_j k_j \right)$$
+		\item Reconstruction with the $n$-D Fourier transform:
+		\begin{align*}
+			m(\vec k) &= \int f(\vec x) p_{\vec k}(\vec x)\ \mathsf d\vec x \\
+			          &= \int f(\vec x) e^{\mathsf i \langle \vec x, \vec k \rangle}\ \mathsf d\vec x
+		\end{align*}
+	\end{itemize}
+\end{frame}
+
+% subsection spatial_encoding (end)
+
+
+
+\subsection{$\vec k$-space} % (fold)
+\label{sub:k_space}
+
+\begin{frame}
+	\frametitle{$\vec k$-Space}
+	
+	\begin{itemize}
+		\item In the MR community: Fourier space $\sim$ $\vec k$-space
+		\item Purpose of an MRI examination: fill the $\vec k$-space with data so image reconstruction can be performed
+		\item We've already seen a 1-D $k$-space:
+	\end{itemize}
+	
+	\begin{center}
+		\input{tikz/fourier_representation.tikz}
+	\end{center}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{2-D $\vec k$-Space}
+	
+	\begin{itemize}
+		\item 2-D $\vec k$-space with phase patterns associated with some positions:
+	\end{itemize}
+	
+	\vspace{-2ex}
+	
+	\begin{center}
+		\input{tikz/k_space.tikz}
+	\end{center}
+\end{frame}
+
+% subsection k_space (end)
+
+
+
+\subsection{Slice-selective vs.~Volume-selective 3-D Imaging} % (fold)
+\label{sub:slice_selective_vs_volume_selective_3_d_imaging}
+
+\begin{frame}
+	\frametitle{3-D Imaging}
+	
+	Two options for 3-D imaging:
+	
+	\vspace{-2ex}
+	
+	\begin{columns}[t,onlytextwidth]
+
+	    \column{0.47\textwidth}
+	    \begin{block}{Slice Selective}
+	        \begin{itemize}
+	            \small
+	            \item Use slice selection to acquire stack of 2-D slices
+				\item Localization within each slice using 2-D spatial encoding
+				\item Characteristics:
+				\begin{itemize}
+					\item Commonly anisotropic resolution
+					\item High in-plane resolution
+					\item Low through-plane resolution (thick slices)
+				\end{itemize}
+	        \end{itemize}
+	    \end{block}
+
+	    \column{0.5\textwidth}
+		\uncover<2>{
+	    \begin{block}{Volume Selective}
+	        \begin{itemize}
+	            \small
+	            \item Excite the entire volume without slice selection
+				\item Perform 3-D spatial encoding for localization
+				\item Characteristics:
+				\begin{itemize}
+					\item Commonly isotropic resolution, not as high as slice-selective in-plane
+					\item Inherent SNR benefit: more \hydrogen{} nuclei resonate
+				\end{itemize}
+	        \end{itemize}
+	    \end{block}}
+
+	\end{columns}
+\end{frame}
+
+% subsection slice_selective_vs_volume_selective_3_d_imaging (end)
+
+% section principles_of_magnetic_resonance_imaging (end)
+
+
+
+\section{Advanced Applications} % (fold)
+\label{sec:advanced_applications}
+
+\begin{frame}
+	\frametitle{Advanced Applications}
+	
+	\begin{itemize}
+		\item Going beyond simple morphological \longtime{}/\transtime{}/PD imaging
+		\item Spectrally selective excitation
+		\begin{itemize}
+			\item \transtime{} preparation for better coronary artery depiction
+			\item Water-fat separation
+		\end{itemize}
+		\item Functional imaging
+		\begin{itemize}
+			\item Non-contrast angiography
+			\item BOLD imaging
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+
+\subsection{Spectrally Selective Excitation} % (fold)
+\label{sub:spectrally_selective_excitation}
+
+\begin{frame}
+	\frametitle{\transtime{} Preparation for Coronary Angiography}
+	
+	\begin{itemize}
+		\item Improve contrast between arterial blood and myocardium
+		\item Relies on difference in \transtime{} constants
+		\item Decrease magnetizability of myocardial tissue and venous blood
+		\item Arterial blood remains mostly unaffected
+	\end{itemize}
+	
+	\begin{center}
+		\input{tikz/t2_preparation_constants.tikz}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{\transtime{} Preparation for Coronary Angiography}
+	
+	\begin{columns}[onlytextwidth,c]
+		\column{.5\linewidth}
+		\begin{center}
+			\includegraphics[width=.65\linewidth]{images/without_t2prep}
+			
+			Without \transtime{} preparation
+		\end{center}
+		
+		\column{.5\linewidth}
+		\begin{center}
+			\includegraphics[width=.65\linewidth]{images/with_t2prep}
+			
+			With \transtime{} preparation
+		\end{center}
+	\end{columns}
+	
+	\vspace{1ex}
+	
+	{\scriptsize Image source: Reza Nezafat et al. \emph{B1-Insensitive T2 Preparation for Improved Coronary Magnetic Resonance Angiography at $3\,\textsf{T}$}. Magn Reson Med 55:858–864 (2006).}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Hydrogens in Water and Fat}
+	\framesubtitle{Differences between hydrogens bound in water and fat}
+
+\begin{figure}%
+\includegraphics[height=4cm]{images/hydrogen_in_water_fat.png}%
+\end{figure}
+%
+\begin{itemize}
+		\item Molecule structures of water and fat (triglycerides) are different
+			\begin{itemize}
+			\item Fat: large molecules, high shielding $\rightarrow$ short T1
+			\item Water: small molecules, less shielding $\rightarrow$ long T1
+			\item Resonance frequency differs $\rightarrow$ chemical shift artifacts
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fat-Suppression}
+%\framesubtitle{Fat suppression}
+
+\begin{itemize}
+		\item Fat is hyperintense in many contrasts
+			\begin{itemize}
+		\item Obscures pathologies by decreasing contrast of non-fatty tissue
+		\item Increases motion artifacts
+		\item $\rightarrow$ Fat suppression, water excitation or water-fat separation
+		\end{itemize}
+\end{itemize}
+
+	\begin{figure}
+		\centering
+		\subcaptionbox*{Liver: no suppression}{\includegraphics[height=3.6cm]{images/NoFatsat.png}}
+		\subcaptionbox*{Liver: fat suppression}{\includegraphics[height=3.6cm]{images/WithFatsat.png}}
+				\vspace{-2.5ex}
+		\caption*{\scriptsize Image source: Magnets, Flows and Artifacts, Siemens 2004}
+	\end{figure}
+
+\end{frame}
+
+\begin{frame}
+%\frametitle{Water-Fat Imaging}
+\frametitle{Water-Fat Separation}
+\begin{itemize}
+	\item Separation via chemical shift encoding: pure water and fat signal
+	\begin{itemize}
+		\item Water signal without residual fat $\rightarrow$ lesion detection
+		\item Fat quantification $\rightarrow$ diagnosis of fat-related pathologies
+	\end{itemize}
+	%\item Cleanly separated water and fat images $\rightarrow$ diagnostically useful
+\end{itemize}
+
+	\begin{figure}
+		\centering
+		\subcaptionbox*{Water signal}{\includegraphics[height=3.7cm]{images/water.png}}
+		\subcaptionbox*{Fat signal}{\includegraphics[height=3.7cm]{images/fat.png}}
+	\end{figure}
+	\vspace{-0.5ex}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Fat Quantification}
+%\framesubtitle{Fat fraction }
+\begin{itemize}
+	\item Relative water-fat composition as quantitative biomarker
+		\begin{itemize}
+			\item Diagnosis of liver fibrosis, hepatic steatosis, HIV, ...
+			\item Fat fraction = Fat/(Water+Fat) e.g. pathological liver > 6 \%
+		\end{itemize}
+\end{itemize}
+\vspace{-0.1ex}
+
+	\begin{figure}
+		\centering
+		\subcaptionbox*{}{\includegraphics[height=4cm]{images/fat_quantification.png}}
+\end{figure}
+\vspace{-4ex}
+
+\centering
+\fontsize{8.4}{8.4}\selectfont
+Liver fat assessment before and after drug treatment \\ Image source: Reeder et al., MRM 34.4 (2011): 729-749
+\end{frame}
+
+% subsection spectrally_selective_excitation (end)
+
+
+
+\subsection{Functional Imaging} % (fold)
+\label{sub:functional_imaging}
+
+\begin{frame}
+	\frametitle{Non-Contrast Angiography}
+	
+	\begin{itemize}
+		\item MR angiography typically relies on Gadolinium as contrast agent
+		\item Time-of-Flight angiography
+		\begin{itemize}
+			\item Saturate magnetization within a slice
+			\item Inflow: blood vessels carry non-saturated blood into imaging plane
+			\item Subsequent imaging shows highly contrasted blood vessels
+		\end{itemize}
+	\end{itemize}
+	
+	\begin{columns}[onlytextwidth,c]
+		\column{.5\linewidth}
+		\begin{center}
+			\begingroup
+			\tikzset{every picture/.style={scale=0.6}}
+			\input{tikz/tof_angiography_saturation.tikz}
+			\endgroup
+		\end{center}
+		
+		\column{.5\linewidth}
+		\begin{center}
+			\begingroup
+			\tikzset{every picture/.style={scale=0.6,font=\scriptsize}}
+			\input{tikz/tof_angiography_inflow.tikz}
+			\endgroup
+		\end{center}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Non-Contrast Angiography}
+	
+	\begin{center}
+		\includegraphics[height=0.8\textheight]{images/mra_head}
+	\end{center}
+	
+	\flushright
+	\tiny Image source: \url{http://www.imp.uni-erlangen.de/mri/de/projects_mra.html}
+\end{frame}
+
+\begin{frame}
+	\frametitle{The BOLD Effect and fMRI}
+
+		\begin{itemize}
+		\item Functional MRI often aims to visualize neuronal brain activity
+		\item Idea: increased neuronal activity $\rightarrow$ local oxygen depletion $\rightarrow$ overcompensation $\rightarrow$ high concentration of oxygenated blood
+		\item The blood-oxygenation-level dependent (BOLD) effect correlates oxygenated blood with a high \inhomogtime{} constant
+		\item By comparing images during stimulus and resting state on many repetitions, active regions for that stimulus can be identified
+		\end{itemize}
+		
+				\begin{figure}
+	\includegraphics[height=2.6cm]{images/fmri_bold.jpg}
+	\end{figure}
+	\vspace{-1ex}
+	\centering
+\fontsize{7.5}{8.4}\selectfont
+Image source: \url{http://www.fmrib.ox.ac.uk}
+	%{\scriptsize(Image source: \url{http://www.fmrib.ox.ac.uk})}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{fMRI Study: Gender Differences}
+	%\framesubtitle{Task: Are two presented 3D drawings from the same shape?}
+	
+			\begin{itemize}
+		\item Stimulus for subjects: decide whether two presented 3D drawings are from the same shape
+		\item Study outcome: males and females activate different brain areas for solving mental rotation tasks
+		\end{itemize}
+	
+	\begin{figure}
+	\includegraphics[height=3cm]{images/fmri_men_women.png}
+	\end{figure}
+	
+\centering
+\fontsize{8}{8.4}\selectfont
+Significant MR signal increases for the males after subtracting activity for the females \\during the 3-D mental rotation task\\ Source: K. Hugdahl et al., Neuropsychologia 44.9 (2006): 1575-1583
+\end{frame}
+
+% subsection functional_imaging (end)
+
+% section advanced_applications (end)
+
+\end{document}

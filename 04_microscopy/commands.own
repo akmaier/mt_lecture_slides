@@ -1,0 +1,97 @@
+\def\mat#1{\ensuremath{\bm{\mathit{#1}}}}
+\def\vec#1{\ensuremath{\bm{\mathit{#1}}}}
+%% microscopy chapter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{xspace}
+
+\newcommand\etal{et~al.\xspace}
+
+\newcommand{\micfl}{f}% focal length (mic is prefix of all symbols of the microscopy chapter)
+\newcommand{\micoh}{h} % object height
+\newcommand{\micih}{h'} % image height
+\newcommand{\micod}{d} % object distance
+\newcommand{\micid}{d'} % image distance
+\newcommand{\micof}{F} % object focus
+\newcommand{\micif}{F'} % image focus
+\newcommand{\micoc}{O} % optical center
+\newcommand{\micot}{T} % object top
+\newcommand{\micob}{B} % object base
+\newcommand{\micit}{T'} % image top
+\newcommand{\micib}{B'} % image base
+\newcommand{\miclb}{C} % lens base
+\newcommand{\miclm}{M} % lense magnification
+
+\newcommand{\miccoi}{G_o} % compound objective image
+\newcommand{\miccei}{G_e} % compound eyepiece image
+\newcommand{\miccofl}{\micfl_o} % compound objective f
+\newcommand{\miccefl}{\micfl_e} % compound eyepiece f
+\newcommand{\miccoof}{\micof_o} % compound objective object focus
+\newcommand{\miccoif}{\micif_o} % compound objective image focus
+\newcommand{\micceof}{\micof_e} % compound eyepiece object focus
+\newcommand{\micceif}{\micif_e} % compound eyepiece image focus
+\newcommand{\miccood}{\micod_o}
+\newcommand{\miccoid}{\micid_o}
+\newcommand{\micceod}{\micod_e}
+\newcommand{\micceid}{\micid_e}
+\newcommand{\miccelm}{\miclm_e}
+\newcommand{\miccolm}{\miclm_o}
+
+\newcommand{\micna}{\text{NA}} % numerical aperture
+\newcommand{\miclr}{r} % lens radius
+\newcommand{\micla}{\theta} % lens half angle
+\newcommand{\micri}{n} % refractive index
+\newcommand{\eqs}{Eq.} % equation symbol, e.g. Eq.
+\newcommand{\ses}{Section} % section symbol, e.g. Section
+\newcommand{\micwa}{A} % wave amplitude
+\newcommand{\micwp}{\phi} % wave phase
+\newcommand{\micwpd}{\phi_{\text{diff}}} % wave phase difference
+\newcommand{\micwpdf}{\Phi_{\text{diff}}} % wave phase difference fourier
+\newcommand{\micwad}{a} % wave amplitude attenuation (difference)
+\newcommand{\micwpf}{\Phi} % wave phase fourier
+\newcommand{\micw}{\psi} % wave
+\newcommand{\micwf}{\Psi} % wave fourier
+\newcommand{\micwx}{x} % wave spatial coordinates
+\newcommand{\micwy}{y} % wave spatial coordinates
+\newcommand{\micwz}{z} % wave spatial coordinates
+\newcommand{\micwzi}{z_d} % z of the image plane in phase contrast
+\newcommand{\micwr}{\mathbf{r}} % wave spatial coordinates vector r =(x,y,z)
+\newcommand{\micplane}{\ell}% plane wave index
+\newcommand{\micwkx}{k_x} % wave kx coordinates
+\newcommand{\micwky}{k_y} % wave ky coordinates
+\newcommand{\micwkz}{k_z} % wave kz coordinates
+\newcommand{\micwk}{k} % wave number value
+\newcommand{\micwkk}{\mathbf{k}} % wave number vector
+\newcommand{\micwl}{\lambda} % wave length
+\newcommand{\micww}{w} % wave angular frequency w (time)
+\newcommand{\micI}{I} % image
+\newcommand{\micst}{q}% specimen thickness 
+\newcommand{\micwt}{t}% wave time
+\newcommand{\micwac}{U}% wave amplitude complex
+\newcommand{\micwacf}{\mathcal{U}}% wave amplitude complex fourier
+\newcommand{\micslm}{c}% speed of light in arbitrary medium
+\newcommand{\micslv}{c_0}% speed of light in vacuum
+\newcommand{\micairy}{d_{\text{Airy}}}%airy disk radius
+\newcommand{\micdmin}{d_{\text{min}}}%minimum distance between two points such that both of them are resolved.
+\newcommand{\micmic}{\mathsf{\mu m}}% micometer
+\newcommand{\micnan}{\mathsf{nm}}% nanometer
+\newcommand{\micmm}{\mathsf{mm}}% millimeter
+\newcommand{\micpic}{\mathsf{pm}}% picometer
+\newcommand{\micplanck}{\rho}% Planck constant
+\newcommand{\micelectronspeed}{c_e}% electron speed
+\newcommand{\micelectronmass}{m_e}% electron mass
+\newcommand{\mici}{i}%the imaginary number 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\commentIt}[1]{}% define comment in order to use in switch structure.
+\newcommand\switchit[1]{
+	\ifcase #1 %book
+		\newcommand{\thesistext}{\commentIt}%text to be hidden in book
+		\newcommand{\citeit}{\nocite}% local citations are hidden in book. \citeit may NOT be preceded by a space.
+	\or %2 thesis
+		\newcommand{\thesistext}{\textcolor{black}}%text to be shown in thesis
+		\newcommand{\citeit}{~\cite}% local citations are shown in thesis. \citeit may NOT be preceded by a space.
+	\fi
+}
+\switchit{1}%0 for the book and 1 for my thesis

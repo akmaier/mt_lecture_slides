@@ -1,0 +1,55 @@
+\tikzsetnextfilename{mr_spatial_encoding_precession}
+\begin{tikzpicture}[scale=0.5]
+	\draw[white] (-4, -1) rectangle (20, 1);
+	\draw (-1, 0) node {$\sum$};
+	\draw (-2, 0) node {$=$};
+	\draw[ultra thick,->] (-2.6, 0) -- (-3.4,0);
+	\pgfmathsetmacro{\angle}{0}
+	\pgfmathsetmacro{\startangle}{180}
+	\foreach \idx in {0,1,...,19} {
+		\draw ($(\idx,0)-(0.5,0.5)$) rectangle ($(\idx,0)+(0.5,0.5)$);
+		\pgfmathsetmacro{\anglevalue}{\startangle+\idx*\angle}
+		\pgfmathsetmacro{\magn}{0.125*(cos(\idx*360/20) + 1)+0.075}
+		\pgfmathsetmacro{\x}{\idx+\magn*cos(\anglevalue)}
+		\pgfmathsetmacro{\a}{\idx-\magn*cos(\anglevalue)}
+		\pgfmathsetmacro{\y}{\magn*sin(\anglevalue)}
+		\pgfmathsetmacro{\b}{-\magn*sin(\anglevalue)}
+		\draw[thick,<-] (\x, \y) -- (\a, \b);
+	}
+\end{tikzpicture}
+\begin{tikzpicture}[scale=0.5]
+	\draw[white] (-4, -1) rectangle (20, 1);
+	\draw (-1, 0) node {$\sum$};
+	\draw (-2, 0) node {$=$};
+	\draw[ultra thick,<-] (-3, -0.4) -- (-3,0.4);
+	\pgfmathsetmacro{\angle}{0}
+	\pgfmathsetmacro{\startangle}{270}
+	\foreach \idx in {0,1,...,19} {
+		\draw ($(\idx,0)-(0.5,0.5)$) rectangle ($(\idx,0)+(0.5,0.5)$);
+		\pgfmathsetmacro{\anglevalue}{\startangle+\idx*\angle}
+		\pgfmathsetmacro{\magn}{0.125*(cos(\idx*360/20) + 1)+0.075}
+		\pgfmathsetmacro{\x}{\idx+\magn*cos(\anglevalue)}
+		\pgfmathsetmacro{\a}{\idx-\magn*cos(\anglevalue)}
+		\pgfmathsetmacro{\y}{\magn*sin(\anglevalue)}
+		\pgfmathsetmacro{\b}{-\magn*sin(\anglevalue)}
+		\draw[thick,<-] (\x, \y) -- (\a, \b);
+	}
+\end{tikzpicture}
+\begin{tikzpicture}[scale=0.5]
+	\draw[white] (-4, -1) rectangle (20, 1);
+	\draw (-1, 0) node {$\sum$};
+	\draw (-2, 0) node {$=$};
+	\draw[ultra thick,<-] (-2.6, 0) -- (-3.4,0);
+	\pgfmathsetmacro{\angle}{0}
+	\pgfmathsetmacro{\startangle}{0}
+	\foreach \idx in {0,1,...,19} {
+		\draw ($(\idx,0)-(0.5,0.5)$) rectangle ($(\idx,0)+(0.5,0.5)$);
+		\pgfmathsetmacro{\anglevalue}{\startangle+\idx*\angle}
+		\pgfmathsetmacro{\magn}{0.125*(cos(\idx*360/20) + 1)+0.075}
+		\pgfmathsetmacro{\x}{\idx+\magn*cos(\anglevalue)}
+		\pgfmathsetmacro{\a}{\idx-\magn*cos(\anglevalue)}
+		\pgfmathsetmacro{\y}{\magn*sin(\anglevalue)}
+		\pgfmathsetmacro{\b}{-\magn*sin(\anglevalue)}
+		\draw[thick,<-] (\x, \y) -- (\a, \b);
+	}
+\end{tikzpicture}
