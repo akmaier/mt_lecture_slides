@@ -1,5 +1,3 @@
-[![pipeline status](https://git5.cs.fau.de/teaching/MT1-lecture/badges/master/pipeline.svg)](https://git5.cs.fau.de/teaching/MT1-lecture/pipelines)
-
 # Medizintechnik – Lecture Slides
 
 These are the lecture slides used at FAU Erlangen-Nuremberg, Germany for the lecture "Medical Engineering". This class gives a complete and comprehensive introduction to the fields of medical imaging systems, as designed for a broad range of applications. The authors of the book first explain the foundations of system theory and image processing, before highlighting several modalities in a dedicated chapter. The initial focus is on modalities that are closely related to traditional camera systems such as endoscopy and microscopy. This is followed by more complex image formation processes: magnetic resonance imaging, X-ray projection imaging, computed tomography, X-ray phase-contrast imaging, nuclear imaging, ultrasound, and optical coherence tomography.
@@ -13,6 +11,7 @@ Link to Video Recordings on YouTube:
 https://www.youtube.com/watch?v=vvftvjnXzsY&list=PLpOGQvPCDQzsgK1XuhUXO8r9M4WRqhvDf
 
 Link to compiled slides for Summer 2021:
+
 https://zenodo.org/record/5850336#.YeGYIy1XYUE
 
 ## PDFs
