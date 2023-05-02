@@ -34,7 +34,7 @@
 
 %\title[\color{faugray} MT1: Computed Tomography]{Medical Engineering I:\\Computed Tomography}
 
-\author[A.~Maier, O.~Taubmann, M.~Bögel, Y.~Xia]{Andreas Maier, Oliver Taubmann, Marco Bögel, Yan Xia, Stephan Seitz}
+%\author[A.~Maier, O.~Taubmann, M.~Bögel, Y.~Xia]{Andreas Maier, Oliver Taubmann, Marco Bögel, Yan Xia, Stephan Seitz}
 \subtitle{Computed Tomography}
 
 
@@ -62,17 +62,17 @@
 
 \section{Introduction}\label{sec:ct_intro}
 
-\begin{frame}
-	\frametitle{Introduction}
+%\begin{frame}
+%	\frametitle{Introduction}
 
-	Computed Tomography (CT):
-	\begin{itemize}
-		\item One of the most important technologies in medical imaging
-		\item Offers valuable views inside the human body
-		\item First volumetric imaging technique we cover
-	\end{itemize}
+%	Computed Tomography (CT):
+%	\begin{itemize}
+%		\item One of the most important technologies in medical imaging
+%		\item Offers valuable views inside the human body
+		%\item First volumetric imaging technique we cover
+%	\end{itemize}
+%\end{frame}
 
-\end{frame}
 \begin{frame}
 
 	\frametitle{Introduction}
@@ -203,6 +203,81 @@
 \subsection{Radon Transform}%
 \label{sub:ct_radon}
 
+\begin{frame}{Recap: X-Ray}
+    $I_0$: Incident X-ray intensity. \\
+    $I$: Detected X-ray intensity.
+    \vskip12pt
+    \bluefat{Lambert-Beer's Law}:\\
+    \begin{center}
+     \vskip6pt
+        $I=I_0\cdot e^{-\int \mu d\ell}$\\
+
+   \end{center}
+
+ \end{frame}
+    
+ \begin{frame}{Recap: X-Ray}
+    $I_0$: Incident X-ray intensity. \\
+    $I$: Detected X-ray intensity.
+    \vskip12pt
+    \bluefat{Lambert-Beer's Law}:\\
+    \begin{center}
+     \vskip6pt
+        $I=I_0\cdot e^{-\int \mu d\ell}$\\
+        \vskip6pt
+        $I=I_0\cdot e^{-\int f(\ell) d\ell}$\\
+    \end{center}
+
+	\begin{figure}[tbp]
+		\centering
+		\includegraphics[height=0.3\textheight]{images/x_ray_sketch}
+		\label{fig:x_ray_sketch}
+	\end{figure}
+ \end{frame}
+
+ \begin{frame}{Recap: X-Ray}
+    $I_0$: Incident X-ray intensity. \\
+    $I$: Detected X-ray intensity.
+    \vskip12pt
+    \bluefat{Lambert-Beer's Law}:\\
+    \begin{center}
+     \vskip6pt
+        $I=I_0\cdot e^{-\int \mu d\ell}$\\
+        \vskip6pt
+        $I=I_0\cdot e^{-\int f(\ell) d\ell}$\\
+        \vskip6pt
+        $-ln \frac{I}{I_0} = \int f(\ell) d\ell$
+    \end{center}
+
+	\begin{figure}[tbp]
+		\centering
+		\includegraphics[height=0.3\textheight]{images/x_ray_sketch}
+		\label{fig:x_ray_sketch}
+	\end{figure}	
+ \end{frame}
+ 
+  \begin{frame}{Recap: X-Ray}
+    $I_0$: Incident X-ray intensity. \\
+    $I$: Detected X-ray intensity.
+    \vskip12pt
+    \bluefat{Lambert-Beer's Law}:\\
+    \begin{center}
+     \vskip6pt
+        $I=I_0\cdot e^{-\int \mu d\ell}$\\
+        \vskip6pt
+        $I=I_0\cdot e^{-\int f(\ell) d\ell}$\\
+        \vskip6pt
+        $-ln \frac{I}{I_0} = \int f(\ell) d\ell := p(\ell)$
+    \end{center}
+
+	\begin{figure}[tbp]
+		\centering
+		\includegraphics[height=0.3\textheight]{images/x_ray_sketch}
+		\label{fig:x_ray_sketch}
+	\end{figure}	
+ \end{frame}
+
+ 
 \begin{frame}
 	\frametitle{Radon Transform}
 
@@ -212,7 +287,13 @@
 		\label{eqn:ct_radon_1}
 		p(\ell) = \int_{-\infty}^{+\infty} f\left(x\left(l\right), y\left(l\right)\right) \ \text{d}l, \quad \forall l: \left(x\left(l\right), y\left(l\right)\right)^\top \in \text{line } \ell
 	\end{equation}
-
+		
+	\begin{figure}[tbp]
+		\centering
+		\includegraphics[height=0.4\textheight]{images/radon1_sketch}%
+		\label{fig:ct_radon1_sketch}
+	\end{figure}
+	
 \end{frame}
 
 
@@ -258,9 +339,14 @@
 		\item Contains all line integrals for a constant $\theta$ and variable distance $s$
 		\item Turning $f(x,y)$ into line integral values $p(\theta, s)$ is the Radon transform
 		\item Reconstruction computes the inverse, i.\,e.~$f(x,y)$ from line integrals
-
 	\end{itemize}
 
+	\begin{figure}[tbp]
+		\centering
+		\includegraphics[height=0.4\textheight]{images/radon2_rotation}%
+		\label{fig:ct_radon2_rotation}
+	\end{figure}
+	
 \end{frame}
 
 \begin{frame}
@@ -383,51 +469,6 @@
 \frame[plain,c]{\titlepage}
 
 \section{Image Reconstruction}
-
-\begin{frame}
-	\frametitle{Image Reconstruction}
-
-	\begin{itemize}
-		\setlength\itemsep{0.3cm}
-		\item Beer's law: Convert X-ray projections $\rightarrow$ line integrals images
-		\item We can apply Radon's ideas for X-ray CT reconstruction!
-		\item Slice of our object corresponds to $f(x,y)$
-		\item More precisely: function values are the linear attenuation coefficients
-		\item Typically linearly transformed to the Hounsfield scale:
-		      %%
-		      \begin{equation}
-			      \mu^* = \left( \frac{\mu}{\mu_\text{Water}} - 1 \right) \cdot 1000,
-		      \end{equation}
-		      %%
-	\end{itemize}
-
-\end{frame}
-
-\begin{frame}[c]{Hounsfield Units}
-
-	\begin{table}[tbp]
-		\centering
-		\begin{tabular}{ll}
-			\toprule
-			Material / Tissue & Hounsfield Units \\
-			\midrule
-			Air               & $-1000$          \\
-			Lung              & $-600$ to $-400$ \\
-			Fat               & $-100$ to $-60$  \\
-			Water             & $0$              \\
-			Muscle            & $10$ to $40$     \\
-			Blood             & $30$ to $45$     \\
-			Soft Tissue       & $40$ to $80$     \\
-			Bone              & $400$ to $3000$  \\
-			\bottomrule
-		\end{tabular}%
-		%       \caption{Hounsfield units observed in several materials and tissue classes found in the human body. In general, denser structures exhibit larger Hounsfield values.}
-		\label{tab:ct_reco_1}
-	\end{table}
-
-\end{frame}
-
-
 
 \begin{frame}
 	\frametitle{How do we get volumetric images?}
@@ -562,6 +603,7 @@
 	%\end{tikzpicture}}
 
 \end{frame}
+
 \begin{frame}[c]{Analytic Reconstruction}
 
 	\only<1-2>{\begin{itemize}
@@ -675,6 +717,17 @@
 
 \end{frame}
 
+
+\begin{frame}
+	\frametitle{Filters}
+
+	\begin{figure}[tbp]
+		\centering
+		\includegraphics[width=0.5\linewidth]{images/analytic_2}
+		\caption{The responses in frequency domain as well as the discretized spatial domain kernels of the Ram-Lak and Shepp-Logan filters.}
+	\end{figure}
+\end{frame}
+
 \begin{frame}
 	\frametitle{Importance of Ramp Filtering}
 
@@ -744,15 +797,25 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Filters}
+	\frametitle{Discretization}
 
-	\begin{figure}[tbp]
-		\centering
-		\includegraphics[width=0.5\linewidth]{images/analytic_2}
-		\caption{The responses in frequency domain as well as the discretized spatial domain kernels of the Ram-Lak and Shepp-Logan filters.}
-	\end{figure}
+	\begin{itemize}
+		\item Convolution
+
+
+		      \begin{equation}
+			      \tilde{p}_{\theta}(s) = \int_{-\infty}^{+\infty} p_\theta(s) \cdot h(s - s') \ \textnormal d s'
+		      \end{equation}
+		      becomes
+		      \begin{equation}
+			      \tilde{p}_{\theta, s} = \sum_{s'} p_{\theta, s} \cdot h_{s - s'}\ \Delta s.
+		      \end{equation}
+
+		
+	\end{itemize}
 
 \end{frame}
+
 
 \begin{frame}
 	\frametitle{Discretization}
@@ -775,10 +838,16 @@
 			      f(x, y) = \frac{\pi}{N} \sum_i \tilde{p}_{\theta_i}(s) |_{s=x \cos \theta_i + y \sin \theta_i}
 		      \end{equation}
 
-		\item NB: $\tilde{p}_{\theta_i}(s)$ is interpolated from $\tilde{p}_{\theta_i, s}$
-		\item Rule of thumb: Avoid interpolation in output space, i.\,e.~sample $f$ directly
-		\item This comes naturally with Eq.~\ref{eqn:ct_analytic_3} (voxel-driven BP)
+		%\item NB: $\tilde{p}_{\theta_i}(s)$ is interpolated from $\tilde{p}_{\theta_i, s}$
+		%\item Rule of thumb: Avoid interpolation in output space, i.\,e.~sample $f$ directly
+		%\item This comes naturally with Eq.~\ref{eqn:ct_analytic_3} (voxel-driven BP)
 
+	\begin{figure}[tbp]
+		\centering
+		\includegraphics[width=0.15\linewidth]{images/backprojection_sketch}
+		%\caption{Todo.}
+	\end{figure}
+	
 	\end{itemize}
 
 \end{frame}
@@ -797,11 +866,26 @@
 
 	\begin{figure}[tbp]
 		\centering
-		\includegraphics[height=0.65\textheight]{images/algebraic_1}
+		\includegraphics[height=0.6\textheight]{images/algebraic_1}
 		\caption{Example for an image grid and some projection rays.}
 		\label{fig:ct_algebraic_1}
 	\end{figure}
+\end{frame}
 
+\begin{frame}
+	\frametitle{Algebraic Reconstruction}
+
+	\begin{itemize}
+		\item Formulate reconstruction problem as a system of linear equations
+		\item Sum of pixels each ray passes through should equal measured line integral for that ray
+		\item Example: $p_3 = x_2 \alpha_1 + x_3 \alpha_2 + x_6 \alpha_3$     
+	\end{itemize}
+
+	\begin{figure}[tbp]
+		\centering
+		\includegraphics[height=0.6\textheight]{images/algebraic_1}
+		\caption{Example for an image grid and some projection rays.}
+	\end{figure}
 \end{frame}
 
 \begin{frame}
@@ -827,7 +911,6 @@
 		      \end{itemize}
 		\item $\mat{A}^{-1} \vec{p}$ corresponds to the inverse Radon transform, $\mat{A}^\top \vec{p}$ to the dual
 	\end{itemize}
-
 \end{frame}
 
 \begin{frame}[c]{Solving the System}
@@ -964,6 +1047,50 @@
 
 \end{frame}
 
+\begin{frame}
+	\frametitle{Image Reconstruction}
+
+	\begin{itemize}
+		\setlength\itemsep{0.3cm}
+		\item Beer's law: Convert X-ray projections $\rightarrow$ line integrals images
+		\item We can apply Radon's ideas for X-ray CT reconstruction!
+		\item Slice of our object corresponds to $f(x,y)$
+		\item More precisely: function values are the linear attenuation coefficients
+		\item Typically linearly transformed to the Hounsfield scale:
+		      %%
+		      \begin{equation}
+			      \mu^* = \left( \frac{\mu}{\mu_\text{Water}} - 1 \right) \cdot 1000,
+		      \end{equation}
+		      %%
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}[c]{Hounsfield Units}
+
+	\begin{table}[tbp]
+		\centering
+		\begin{tabular}{ll}
+			\toprule
+			Material / Tissue & Hounsfield Units \\
+			\midrule
+			Air               & $-1000$          \\
+			Lung              & $-600$ to $-400$ \\
+			Fat               & $-100$ to $-60$  \\
+			Water             & $0$              \\
+			Muscle            & $10$ to $40$     \\
+			Blood             & $30$ to $45$     \\
+			Soft Tissue       & $40$ to $80$     \\
+			Bone              & $400$ to $3000$  \\
+			\bottomrule
+		\end{tabular}%
+		%       \caption{Hounsfield units observed in several materials and tissue classes found in the human body. In general, denser structures exhibit larger Hounsfield values.}
+		\label{tab:ct_reco_1}
+	\end{table}
+
+\end{frame}
+
+
 \subsection{Acquisition Geometries}
 \label{sub:ct_geom}
 
@@ -1081,6 +1208,98 @@
 \section{Practical Considerations}
 \label{sec:ct_considerations}
 
+\subsection{From last lecture: Radiation sensitivity of eyes}
+
+\begin{frame}
+    \frametitle{From last lecture: Radiation sensitivity of eyes}
+      \begin{columns}
+		\begin{column}{0.5\textwidth}
+			 \begin{figure}
+        			\centering{}
+       			 \includegraphics[scale=0.25]{images/hamada_2017_eye_sensitivity_radiation.png}
+    			\end{figure}
+		\end{column}
+			\begin{column}{0.5\textwidth}
+			 \begin{figure}
+        			\centering{}
+       			 \includegraphics[scale=0.25]{images/hamada_2017_abstract.png}
+    			\end{figure}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+%\begin{frame}
+    %\frametitle{Radiation sensitivity of eyes}
+
+	%		 \begin{figure}
+        	%		\centering{}
+      % 			 \includegraphics[scale=0.25]{images/hamada_2017_abstract.png}
+   % 			\end{figure}
+%\end{frame}
+
+
+\subsection{CT Measurement Process Reviewed}
+
+\begin{frame}
+    \frametitle{Recap}
+    \begin{itemize}
+        \item Classical fan beam geometry:
+    \end{itemize}
+    \begin{figure}
+        \centering{}
+        \includegraphics[scale=0.35]{images/multict.eps}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Sinogram}
+    \begin{minipage}{0.52\textwidth}
+        \begin{figure}
+            \centering{}
+            \includegraphics[scale=.30]{images/sinogram.eps}
+        \end{figure}
+    \end{minipage}
+    \begin{minipage}{0.45\textwidth}
+        \begin{figure}
+            \centering{}
+            \includegraphics[scale=.35]{images/multict2.eps}
+        \end{figure}
+    \end{minipage}
+\end{frame}
+
+\begin{frame}{Projection Signal}
+
+    \begin{columns}[c, onlytextwidth]
+        \begin{column}{0.6\textwidth}
+            Signal for single reading: \\
+            \psfrag{ln}{{\LARGE $p(\Theta, s)$}}
+            \includegraphics[width=0.8\textwidth]{images/projsig.eps}\\
+            Measured intensity for a ray $l$:
+            \begin{eqnarray*}
+                p(\Theta, s) = \int{\mu}(l)dl
+            \end{eqnarray*}
+        \end{column}\begin{column}{0.4\textwidth}
+            \begin{figure}
+                \psfrag{l}{\LARGE{$\mu(l)$}}
+                \includegraphics[width=0.8\textwidth]{images/multict3.eps}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Attenuation Law}
+    \begin{align*}
+        p^{\star}(\Theta, s)                               & = I_0 \cdot \exp\left(-\int	\mu(l)dl\right) \\
+        -\ln\left(\dfrac{p^{\star}(\Theta, s)}{I_0}\right) & = p(\Theta, s) \tag{Radon transform}
+    \end{align*}
+    \begin{itemize}
+        \item $p^{\star}(\Theta, s)$ denotes the measured X-ray intensity
+        \item $I_0$ is the measured X-ray intensity without any attenuator
+        \item $\mu(\vec x)$ is the \textit{linear attenuation coefficient} of the object at location $\vec x = (x ,y)$
+        \item Reconstruction of $\mu(\vec x)$ from projections $p(\Theta, s)$\\ (e.\,g.\ by Iterative Reconstruction or Filtered Backprojection)
+    \end{itemize}
+\end{frame}
+
 \begin{frame}
 	\frametitle{Practical Considerations}
 
@@ -1096,6 +1315,7 @@
 	\end{itemize}
 
 \end{frame}
+
 
 \subsection{Spatial Resolution}
 
@@ -1167,8 +1387,11 @@
 
 	\begin{itemize}
 		\setlength\itemsep{0.3cm}
-		\item Blur by sampling and reconstruction:
-
+		\item Blur by sampling and reconstruction:.
+		\begin{itemize}
+			\item $c_A$: Constant defined by the reconstruction algorithm.
+			\item $\Delta s$: Detector element spacing.
+		\end{itemize}
 		      \begin{equation}
 			      b_A = c_A \cdot \Delta s
 		      \end{equation}
@@ -1301,6 +1524,12 @@
 
 \begin{frame}
 	\frametitle{Beam Hardening}
+	Practically used X-ray sources are polychromatic
+ 	\begin{center}\includegraphics[height=0.8\textheight ]{images/phxray2-eps-converted-to}\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Beam Hardening}
 
 	\begin{itemize}
 		\setlength\itemsep{0.3cm}
@@ -1316,7 +1545,6 @@
 			      \item[$\Rightarrow$] Streak and cupping artifacts
 		      \end{itemize}
 		\item Common approach: Pre-filter X-rays to absorb low energy photons
-		\item We'll look at beam hardening in more detail later
 	\end{itemize}
 
 \end{frame}
@@ -1334,20 +1562,52 @@
 
 \begin{frame}
 	\frametitle{Scatter Artifacts}
+	\begin{columns}[c, onlytextwidth]
+		\begin{column}{0.75\textwidth}
+		\begin{itemize}
+			\item Scattered photons change direction and energy
+			\item[ ] $\Rightarrow$ Measured in different location
+			\item Large effect when it hits element with few ``regular'' photons
 
-	\begin{itemize}
-		\item Scattered photons change direction and energy
-		\item[ ] $\Rightarrow$ Measured in different location
-		\item Large effect when it hits element with few ``regular'' photons
+			\item Cupping and streak artifacts (esp.\ between high density structures)
+		
+		\end{itemize}
+		\end{column}
+		\begin{column}{0.25\textwidth}
+		 \begin{figure}
+			\centering
+			\includegraphics[height=0.75\textwidth]{images/scatter_sketch}
+		 \end{figure}
+	\end{column}
+	\end{columns}
 
-		\item Cupping and streak artifacts (esp.\ between high density structures)
-		\item Most scanners use anti-scatter grids:
-	\end{itemize}
+\end{frame}
+	
+	\begin{frame}
+	\frametitle{Scatter Artifacts}
+	\begin{columns}[c, onlytextwidth]
+		\begin{column}{0.75\textwidth}
+		\begin{itemize}
+			\item Scattered photons change direction and energy
+			\item[ ] $\Rightarrow$ Measured in different location
+			\item Large effect when it hits element with few ``regular'' photons
 
-	\begin{figure}[tbp]
+			\item Cupping and streak artifacts (esp.\ between high density structures)
+			\item Most scanners use anti-scatter grids:
+		\end{itemize}
+		\end{column}
+		\begin{column}{0.25\textwidth}
+		 \begin{figure}
+			\centering
+			\includegraphics[height=0.75\textwidth]{images/scatter_sketch}
+		 \end{figure}
+	\end{column}
+	\end{columns}
+
+	\begin{figure}
 		\centering
-		\includegraphics[width=0.6\linewidth]{images/scatter_1}
-		\caption{Anti-scatter grids can be placed in front of the detector to reject scattered radiation.}%
+		\includegraphics[width=0.45\linewidth]{images/scatter_1}
+		\caption{Anti-scatter grids can be placed in front of the detector to reject scattered radiation.}
 		\label{fig:ct_scatter_1}
 	\end{figure}
 
@@ -1537,24 +1797,25 @@
 
 \end{frame}
 
-\begin{frame}
-	\frametitle{Motion Artifacts}
+%\begin{frame}
+%	\frametitle{Motion Artifacts}
 
-	\begin{figure}[tbp]
-		\centering
-		\includegraphics[height=0.7\textheight]{images/motion_1}
-		\hspace{1cm}
-		\includegraphics[height=0.7\textheight]{images/motion_2}
-		\caption{An image of human legs reconstructed from motion-corrupted projections using regular filtered back-projection (left) and with an additonal marker-based correction (right). By compensating for motion during reconstruction, structures that were originally blurred due to the movement become visible and streak artifacts caused by misalignments are reduced considerably.}%
-		\label{fig:ct_motion2}
-	\end{figure}
+%	\begin{figure}[tbp]
+%		\centering
+%		\includegraphics[height=0.7\textheight]{images/motion_1}
+%		\hspace{1cm}
+%		\includegraphics[height=0.7\textheight]{images/motion_2}
+%		\caption{An image of human legs reconstructed from motion-corrupted projections using regular filtered back-projection (left) and with an additonal marker-based correction (right). By compensating for motion during reconstruction, structures that were originally blurred due to the movement become visible and streak artifacts caused by misalignments are reduced considerably.}%
+%		\label{fig:ct_motion2}
+%	\end{figure}
 
-\end{frame}
+%\end{frame}
 
 \begin{frame}
 	\frametitle{Truncation Artifacts}
-
-	\begin{itemize}
+	\begin{columns}[c, onlytextwidth]
+		\begin{column}{0.65\textwidth}
+		\begin{itemize}
 		\setlength\itemsep{0.3cm}
 		\item Scanned object larger than detector area, or
 		\item X-rays intentionally collimated to diagnostic ROI (dose!)
@@ -1567,7 +1828,15 @@
 			      \item Water cylinder assumption
 			      \item \ldots
 		      \end{itemize}
-	\end{itemize}
+		\end{itemize}
+		\end{column}
+		\begin{column}{0.35\textwidth}
+		 \begin{figure}
+			\centering
+			\includegraphics[height=0.55\textwidth]{images/truncation_sketch}
+		 \end{figure}
+	\end{column}
+	\end{columns}
 
 \end{frame}
 

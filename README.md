@@ -26,3 +26,7 @@ Rebuild if necessary.
 make s00; make s01; make s02; make s03; make s04; make s05; make s05_2; make s06; make s07; make s07_2; make s08; make s09; make s10; make s11
 ```
 (requires `latexmk`)
+
+## FK note 07.03.2023: If symbolic links are lost: Mac alias does not work
+Symbolic link to theme folder needs to be created in every slide folder, otherwise sty files are not found
+Example: ln -s ~/.../mt_lecture_slides-main/latex-templates/theme ~/.../mt_lecture_slides-main/01_system-theory/theme
