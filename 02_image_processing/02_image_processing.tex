@@ -387,6 +387,14 @@ minimum width=0.75cm, inner sep=0, text depth=0pt}]
 \end{frame}
 
 \begin{frame}
+    \frametitle{Fourier Transform}
+    \begin{center}
+    Great visual summary by 3Blue1Brown:
+        \url{https://youtu.be/spUNpyF58BY}
+    \end{center}
+\end{frame}
+
+\begin{frame}
 	\frametitle{2-D Fourier Space}
 	
 	\begin{itemize}
@@ -400,6 +408,223 @@ minimum width=0.75cm, inner sep=0, text depth=0pt}]
 	\end{center}
 \end{frame}
 
+
+\begin{frame}
+    \frametitle{Fourier Transform}
+    Frequencies in Images?? \newline
+
+    \begin{center}
+        You can think of frequency in an image as the rate of change. Parts of the image that change rapidly from one color to another (e.g. sharp edges) contain high frequencies, and parts that change gradually (e.g. large surfaces with solid colors) contain only low frequencies.
+    \end{center}
+
+     \begin{figure}[]
+        \centering
+        \includegraphics[height=0.5\textheight]{images/kspace.jpg}
+        \caption{Image frequencies (from \url{https://mriquestions.com/negative-frequencies.html})}
+    \end{figure}
+\end{frame}
+
+
+
+
+
+
+\begin{frame}
+\frametitle{2-D Signals}
+
+\begin{itemize}
+\item Images are matrices with intensity values. According to our definition it is a signal, but depending on two variables $x$ and $y$ instead of a single $t$.\newline
+\item The imaging system samples the "function" only at discrete values. We distinguish between node and cell based representation.
+\item The 1-D Fourier transform can easily be extended into the 2-D domain. This allows to detect frequency in images.
+\begin{itemize}
+\item Shift zero-frequency component to center of spectrum
+\item similar to the 1-D second peak "negative frequency"
+\item For visual representation a logarithmic scaling is applied.
+\end{itemize}
+\item The position of locations $(k,l)$ in frequency domain denote the orientation of the wave. The magnitude is decoded in the intensity of the peaks.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{2-D Signals}
+
+\begin{itemize}
+\item The position of locations $(k,l)$ in frequency domain denote the orientation of the wave. The magnitude is decoded in the intensity of the peaks.
+\end{itemize}
+\begin{figure}
+    \includegraphics[height=.55\textheight ]{images/kspace-1.jpg} 
+    \caption{k-space illustration from \url{https://mriquestions.com/what-is-k-space.html}}
+\end{figure}
+\end{frame}
+
+%
+%
+%\begin{frame}
+%\frametitle{2-D Signals (Note)}
+%
+%The imaging system samples the "function" only at discrete values. We distinguish between node and cell based representation.\newline
+%
+%\begin{center}
+%   \includegraphics[height=.50\textheight ]{images/nodebased.eps} \quad\quad
+%   \includegraphics[height=.50\textheight ]{images/cellbased.eps}
+%\end{center}
+%
+%\end{frame}
+%
+%
+%
+%\begin{frame}
+%\frametitle{2-D Fourier Transform}
+%
+%The 1-D Fourier transform can easily be extended into the 2-D domain. This allows to detect frequency in images.\newline
+%
+%%Shift zero-frequency component to center of spectrum
+%%similar to the 1-D second peak "negative frequency"
+%\begin{center}
+%   \includegraphics[height=.50\textheight ]{images/fourier2D1.eps} \quad\quad
+%   \includegraphics[height=.50\textheight ]{images/fourier2D2.eps}
+%\end{center}
+%
+%\end{frame}
+%
+%
+%
+%\begin{frame}
+%\frametitle{2-D Fourier Transform}
+%
+%The position of both dots denote the orientation of the wave. The magnitude is decoded in the intensity of the peaks.
+%\begin{center}
+%   \includegraphics[height=.5\textheight ]{images/fourier2D3.eps} \quad\quad
+%   \includegraphics[height=.5\textheight ]{images/fourier2D4.eps}
+%\end{center}
+%\end{frame}
+%
+%
+%
+%\begin{frame}
+%\frametitle{2-D Fourier Transform}
+%For visual representation a logarithmic scaling is applied.\newline
+%
+%
+%\begin{center}
+%   \includegraphics[height=.4\textheight ]{images/FourierBox1.eps}
+%   \includegraphics[height=.4\textheight ]{images/FourierBox2.eps}
+%   \includegraphics[height=.4\textheight ]{images/FourierBox3.eps}
+%\end{center}
+%% we see that a lot of frequency in the x and y direction are needed (compare square wave)
+%\end{frame}
+
+
+
+\begin{frame}
+\frametitle{2-D Fourier Transform}
+We can extend the 1-D Fourier transform for a 2-D signal by integrating over both dimensions.\newline
+
+1-D Fourier transform:
+
+\begin{eqnarray*}
+ F(\xi)&=& \int\limits_{-\infty}^{+\infty} f(t) e^{-2\pi i\xi t} \, dt\quad
+\end{eqnarray*}
+
+2-D Fourier transform:
+%the order of the integral is irrelevant
+\begin{eqnarray*}
+ F(k,l)&=& \int\limits_{-\infty}^{+\infty}\int\limits_{-\infty}^{+\infty} f(x,y) e^{-2\pi i(kx + ly)} \, dx\, dy\quad
+\end{eqnarray*}
+\end{frame}
+%
+%
+%
+\begin{frame}
+\frametitle{2-D Fourier Transform}
+The Fourier transformation of $F(u,v)$ is again the original image:\newline
+
+\begin{eqnarray*}
+ F(k,l)&=& \int\limits_{-\infty}^{+\infty}\int\limits_{-\infty}^{+\infty} f(x,y) e^{-2\pi i(kx + ly)} \, dx\, dy\quad
+\end{eqnarray*}
+%
+\begin{eqnarray*}
+ f(x,y)&=& \int\limits_{-\infty}^{+\infty}\int\limits_{-\infty}^{+\infty} F(k,l) e^{2\pi i(kx + ly)} \, dk\, dl\quad
+\end{eqnarray*}
+\end{frame}
+%
+%
+%
+\begin{frame}
+\frametitle{2-D Fourier Transform}
+In general we sample our signal at fixed intervals and thereby we can use a discrete version of the 2-D Fourier transform:\newline
+%
+%
+\begin{eqnarray*}
+  F(k,l)& =& \sum^{N-1}_{x=0}
+        \sum^{M-1}_{y=0} f(x,y)
+          e^{-2\pi i\frac{kx}{N}} 
+          e^{-2\pi i\frac{ly}{M}}\\
+         &=&\sum^{N-1}_{x=0} 
+        \left( 
+         \sum^{M-1}_{y=0} f(x,y) e^{-2\pi i\frac{ly}{M}}
+        \right)
+        e^{-2\pi i\frac{kx}{N}}\quad .
+\end{eqnarray*}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Fourier Transform}
+    For a square image of size $N \times N$, the two-dimensional discrete fourier transform DFT is given by: \newline
+
+    \begin{center}
+       $F(k,l) = \sum^{N-1}_{x=0} \sum^{N-1}_{y=0} f(x,y) e^{-i 2\pi(\frac{kx}{N}+\frac{ly}{N})}$
+    \end{center}
+    \begin{itemize}
+
+    \item where $f(a,b)$ is the image in the spatial domain and the exponential term is the basis function corresponding to each point $F(k,l)$ in the Fourier space. The equation can be interpreted as: the value of each point $F(k,l)$ is obtained by multiplying the spatial image with the corresponding base function and summing the result.
+
+    \item The basis functions are sine and cosine waves with increasing frequencies, i.e. $F(0,0)$ represents the DC-component of the image which corresponds to the average brightness and $F(N-1,N-1)$ represents the highest frequency. Note that $(0,0)$ is at the centre of the resulting Fourier transformed image to account for negative frequencies. 
+
+    \item see also \url{https://homepages.inf.ed.ac.uk/rbf/HIPR2/fourier.htm}
+    \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Fourier Transform}
+    In a similar way, the Fourier image can be re-transformed to the spatial domain. The inverse Fourier transform is given by: \newline
+
+    \begin{center}
+        $f(x,y) = \frac{1}{N^2} \sum^{N-1}_{k=0} \sum^{N-1}_{l=0}  F(k,l) e^{i 2\pi(\frac{kx}{N}+\frac{ly}{N})}$
+    \end{center}
+
+Note the $\frac{1}{N^2}$ normalization term in the inverse transformation. This normalization is sometimes applied to the forward transform instead of the inverse transform, but it should not be used for both.
+
+     \begin{figure}[]
+        \centering
+        \includegraphics[height=0.5\textheight]{images/kspace.jpg}
+        \caption{Image frequencies (from \url{https://mriquestions.com/negative-frequencies.html})}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Fourier Transform}
+    To obtain the result for the previous equations, a double sum has to be calculated for each image point. However, because the Fourier Transform is separable, it can be written as \newline
+
+    \begin{itemize}
+        \item $F(k,l) = \frac{1}{N}  \sum^{N-1}_{y=0}  P(k,y) e^{-i 2\pi \frac{ly}{N}}$ 
+        \item $P(k,y) = \frac{1}{N}  \sum^{N-1}_{x=0}  f(x,y) e^{-i 2\pi \frac{kx}{N}}$
+    \end{itemize}
+
+Using these two equations, the spatial domain image is first transformed into an intermediate image using $N$ one-dimensional Fourier Transforms. This intermediate image is then transformed into the final image, again using $N$ one-dimensional Fourier Transforms. Expressing the two-dimensional Fourier Transform in terms of a series of $2N$ one-dimensional transforms decreases the number of required computations.
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Fourier Transform}
+    2D Fourier Transform - An Example
+    \url{https://www.youtube.com/watch?v=js4bLBYtJwY}
+
+\end{frame}
 
 \begin{frame}
     \frametitle{Filter Kernel -- Example: Central Difference}
